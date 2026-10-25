@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { IconArrowRight, IconCheck } from "@tabler/icons-react";
 import styles from "./CategoriesSection.module.css";
 
 interface CategoryItem {
@@ -90,7 +91,7 @@ export default function CategoriesSection({
         <div className={styles.headerRow}>
           <div>
             <h2 className={styles.sectionTitle}>
-              {isHi ? "कैटेगरी के अनुसार खरीदारी करें" : "Shop by Category"}
+              {isHi ? "कैटेगरी के अनुसार खरीदारी करें" : "Shop by category"}
             </h2>
             <p className={styles.sectionSubtitle}>
               {isHi
@@ -104,8 +105,8 @@ export default function CategoriesSection({
             className={styles.seeAllBtn}
             onClick={() => onSelectCategory(null)}
           >
-            <span>{isHi ? "सभी देखें" : "See All"}</span>
-            <span className={styles.seeAllArrow}>→</span>
+            <span>{isHi ? "सभी देखें" : "See all"}</span>
+            <IconArrowRight size={16} stroke={2} />
           </button>
         </div>
 
@@ -131,7 +132,11 @@ export default function CategoriesSection({
                     height={180}
                     className={styles.catImage}
                   />
-                  {isSelected && <span className={styles.activeCheck}>✓</span>}
+                  {isSelected && (
+                    <span className={styles.activeCheck} aria-label="Selected">
+                      <IconCheck size={14} stroke={3} />
+                    </span>
+                  )}
                 </div>
                 <span className={styles.catName}>
                   {isHi ? cat.nameHi : cat.nameEn}
