@@ -1,7 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
+import {
+  IconBolt,
+  IconStarFilled,
+  IconArrowRight,
+} from "@tabler/icons-react";
 import styles from "./PopularShopsSection.module.css";
 
 export interface Shop {
@@ -141,21 +146,13 @@ export default function PopularShopsSection({
       <div className={styles.container}>
         <div className={styles.headerRow}>
           <div>
-            <div className={styles.tagWrap}>
-              <span className={styles.badgeLive}>🟢 {isHi ? "लाइव स्टोर" : "Stores Open Now"}</span>
-              {selectedCategory && (
-                <span className={styles.filterChip}>
-                  Filtered: {selectedCategory}
-                </span>
-              )}
-            </div>
             <h2 className={styles.sectionTitle}>
-              {isHi ? "आपके नज़दीक लोकप्रिय दुकानें" : "Popular Shops Near You"}
+              {isHi ? "आपके नज़दीक लोकप्रिय दुकानें" : "Popular shops near you"}
             </h2>
             <p className={styles.sectionSubtitle}>
               {isHi
                 ? "असली स्थानीय दुकानें, असली मूल्य, 10-30 मिनट में डिलीवरी"
-                : "Real neighborhood shops, in-store prices, delivered fast to your doorstep"}
+                : "Real neighbourhood shops, in-store prices, delivered fast to your doorstep"}
             </p>
           </div>
 
@@ -164,8 +161,8 @@ export default function PopularShopsSection({
             className={styles.seeAllBtn}
             onClick={() => onOpenShopModal(SHOPS[0])}
           >
-            <span>{isHi ? "सभी दुकानें देखें" : "See All"}</span>
-            <span className={styles.seeAllArrow}>→</span>
+            <span>{isHi ? "सभी दुकानें देखें" : "See all"}</span>
+            <IconArrowRight size={16} stroke={2} />
           </button>
         </div>
 
@@ -190,9 +187,9 @@ export default function PopularShopsSection({
                   height={200}
                   className={styles.shopImage}
                 />
-                {/* Delivery Time Badge (bottom-left overlay on image, matching photo) */}
+                {/* Delivery Time Badge overlay on bottom-left */}
                 <div className={styles.deliveryBadge}>
-                  <span className={styles.lightningIcon}>⚡</span>
+                  <IconBolt size={14} stroke={2.2} className={styles.deliveryIcon} />
                   <span className={styles.timeText}>{shop.deliveryTime}</span>
                 </div>
                 {/* Distance pill */}
@@ -203,7 +200,7 @@ export default function PopularShopsSection({
                 <div className={styles.nameRow}>
                   <h3 className={styles.shopName}>{shop.name}</h3>
                   <div className={styles.ratingBadge}>
-                    <span className={styles.starIcon}>★</span>
+                    <IconStarFilled size={13} className={styles.starIcon} />
                     <span className={styles.ratingScore}>{shop.rating}</span>
                     <span className={styles.reviewsCount}>
                       ({shop.reviewsCount})
@@ -218,7 +215,8 @@ export default function PopularShopsSection({
                     ₹{shop.freeDeliveryThreshold} {isHi ? "पर फ्री डिलीवरी" : "for free delivery"}
                   </span>
                   <span className={styles.viewMenuBtn}>
-                    {isHi ? "सामान देखें →" : "View Shop →"}
+                    {isHi ? "सामान देखें" : "View shop"}
+                    <IconArrowRight size={14} stroke={2} />
                   </span>
                 </div>
               </div>
