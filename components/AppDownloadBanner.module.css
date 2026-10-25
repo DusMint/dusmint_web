@@ -1,6 +1,6 @@
 .section {
   padding: 4rem 1.5rem 5rem;
-  background-color: #f7faf8;
+  background-color: var(--cream);
 }
 
 .container {
@@ -9,14 +9,14 @@
 }
 
 .card {
-  background: linear-gradient(135deg, #094025 0%, #062b19 100%);
-  border-radius: 28px;
+  background-color: var(--green-900);
+  border-radius: var(--dm-radius-lg);
   padding: 3.5rem;
   display: grid;
   grid-template-columns: 1.4fr 0.8fr;
   align-items: center;
   gap: 3rem;
-  box-shadow: 0 20px 45px rgba(6, 43, 25, 0.2);
+  box-shadow: 0 4px 20px rgba(10, 54, 34, 0.15);
 }
 
 .contentCol {
@@ -25,30 +25,26 @@
   gap: 1.25rem;
 }
 
-.badge {
-  display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #ffc20e;
-  letter-spacing: 0.05em;
-}
-
+/* H2: Poppins 700 36px/44px */
 .title {
-  font-size: 2.3rem;
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
   color: #ffffff;
-  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
 .yellowText {
-  color: #ffc20e;
+  color: var(--yellow-500);
 }
 
+/* Body: Noto Sans 400 16px/26px */
 .desc {
-  font-size: 1rem;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 26px;
   color: #cde4d6;
-  line-height: 1.6;
   max-width: 560px;
 }
 
@@ -56,7 +52,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  max-width: 460px;
+  max-width: 480px;
   margin-top: 0.5rem;
 }
 
@@ -64,51 +60,71 @@
   display: flex;
   align-items: center;
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: var(--dm-radius-md);
   padding: 0 0.85rem;
+  height: 48px;
   flex: 1;
 }
 
 .countryCode {
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: #121e17;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-900);
   padding-right: 0.5rem;
-  border-right: 1px solid #d5ded8;
+  border-right: 1px solid var(--gray-300);
 }
 
 .smsInput {
   width: 100%;
-  padding: 0.8rem 0.6rem;
+  padding: 0 0.6rem;
   border: none;
-  font-size: 0.95rem;
+  font-family: var(--font-body);
+  font-size: 16px;
   outline: none;
   background: transparent;
+  color: var(--ink-900);
 }
 
+/* btn-yellow on-dark */
 .sendBtn {
-  padding: 0.85rem 1.4rem;
-  background: #ffc20e;
-  color: #121e17;
-  font-size: 0.92rem;
-  font-weight: 800;
-  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 20px;
+  background-color: var(--yellow-500);
+  color: var(--ink-900);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  border-radius: var(--dm-radius-md);
+  border: none;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition: background-color 0.15s ease;
 }
 
 .sendBtn:hover {
-  background: #f0b200;
+  background-color: var(--btn-yellow-hover);
+}
+
+.sendBtn:active {
+  background-color: var(--btn-yellow-pressed);
 }
 
 .smsSentSuccess {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: rgba(34, 197, 94, 0.2);
   border: 1px solid rgba(34, 197, 94, 0.4);
   color: #86efac;
   padding: 0.75rem 1rem;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  font-weight: 700;
+  border-radius: var(--dm-radius-md);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
   width: fit-content;
 }
 
@@ -116,7 +132,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .storeBadge {
@@ -126,20 +142,19 @@
   background: #000000;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.6rem 1.25rem;
-  border-radius: 12px;
-  transition: all 0.2s ease;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--dm-radius-md);
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
 .storeBadge:hover {
   background: #1a1a1a;
-  transform: translateY(-2px);
   border-color: rgba(255, 255, 255, 0.4);
 }
 
 .storeIcon {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
 }
 
 .badgeText {
@@ -148,14 +163,16 @@
 }
 
 .badgeSmall {
-  font-size: 0.62rem;
-  letter-spacing: 0.05em;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.04em;
   opacity: 0.8;
 }
 
 .badgeBold {
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.1;
 }
 
@@ -167,31 +184,33 @@
 
 .qrBox {
   background: #ffffff;
-  border-radius: 24px;
+  border-radius: var(--dm-radius-lg);
   padding: 1.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-  max-width: 230px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  max-width: 220px;
 }
 
 .qrCode {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 0.85rem;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 0.75rem;
 }
 
 .qrLabel {
-  font-size: 0.88rem;
-  font-weight: 800;
-  color: #121e17;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-900);
 }
 
 .qrSub {
-  font-size: 0.72rem;
-  color: #617367;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--gray-600);
   margin-top: 0.15rem;
 }
 
@@ -199,17 +218,23 @@
   .card {
     grid-template-columns: 1fr;
     padding: 2.25rem 1.75rem;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .qrCol {
     display: none;
   }
+
+  .title {
+    font-size: 28px;
+    line-height: 36px;
+  }
 }
 
 @media (max-width: 600px) {
   .title {
-    font-size: 1.75rem;
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .smsForm {

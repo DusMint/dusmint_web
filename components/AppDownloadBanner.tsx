@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { IconCheck } from "@tabler/icons-react";
 import styles from "./AppDownloadBanner.module.css";
 
 interface AppDownloadBannerProps {
@@ -20,14 +21,10 @@ export default function AppDownloadBanner({ language }: AppDownloadBannerProps) 
   };
 
   return (
-    <section className={styles.section}>
+    <section id="download-app" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.card}>
           <div className={styles.contentCol}>
-            <span className={styles.badge}>
-              {isHi ? "📱 मोबाइल ऐप डाउनलोड करें" : "📱 EXPERIENCE DUSMINT ON MOBILE"}
-            </span>
-
             <h2 className={styles.title}>
               {isHi ? (
                 <>
@@ -64,12 +61,17 @@ export default function AppDownloadBanner({ language }: AppDownloadBannerProps) 
                   />
                 </div>
                 <button type="submit" className={styles.sendBtn}>
-                  {isHi ? "ऐप लिंक भेजें" : "Get App Link"}
+                  {isHi ? "ऐप लिंक भेजें" : "Get app link"}
                 </button>
               </form>
             ) : (
               <div className={styles.smsSentSuccess}>
-                ✓ {isHi ? `ऐप डाउनलोड लिंक ${phoneNumber} पर भेज दिया गया है!` : `App download link sent to +91 ${phoneNumber}!`}
+                <IconCheck size={18} stroke={3} />
+                <span>
+                  {isHi
+                    ? `ऐप डाउनलोड लिंक ${phoneNumber} पर भेज दिया गया है!`
+                    : `App download link sent to +91 ${phoneNumber}!`}
+                </span>
               </div>
             )}
 
@@ -114,37 +116,36 @@ export default function AppDownloadBanner({ language }: AppDownloadBannerProps) 
           {/* Right QR Code Box */}
           <div className={styles.qrCol}>
             <div className={styles.qrBox}>
-              {/* Stylized QR Code SVG */}
               <svg className={styles.qrCode} viewBox="0 0 100 100" fill="currentColor">
-                <rect x="10" y="10" width="25" height="25" rx="3" fill="#0b5c38" />
+                <rect x="10" y="10" width="25" height="25" rx="3" fill="#0A3622" />
                 <rect x="15" y="15" width="15" height="15" fill="#ffffff" />
-                <rect x="18" y="18" width="9" height="9" fill="#0b5c38" />
+                <rect x="18" y="18" width="9" height="9" fill="#0A3622" />
                 
-                <rect x="65" y="10" width="25" height="25" rx="3" fill="#0b5c38" />
+                <rect x="65" y="10" width="25" height="25" rx="3" fill="#0A3622" />
                 <rect x="70" y="15" width="15" height="15" fill="#ffffff" />
-                <rect x="73" y="18" width="9" height="9" fill="#0b5c38" />
+                <rect x="73" y="18" width="9" height="9" fill="#0A3622" />
                 
-                <rect x="10" y="65" width="25" height="25" rx="3" fill="#0b5c38" />
+                <rect x="10" y="65" width="25" height="25" rx="3" fill="#0A3622" />
                 <rect x="15" y="70" width="15" height="15" fill="#ffffff" />
-                <rect x="18" y="73" width="9" height="9" fill="#0b5c38" />
+                <rect x="18" y="73" width="9" height="9" fill="#0A3622" />
 
-                <rect x="42" y="12" width="6" height="6" fill="#0b5c38" />
-                <rect x="52" y="18" width="6" height="6" fill="#0b5c38" />
-                <rect x="42" y="28" width="6" height="6" fill="#0b5c38" />
-                <rect x="12" y="45" width="6" height="6" fill="#0b5c38" />
-                <rect x="24" y="50" width="6" height="6" fill="#0b5c38" />
-                <rect x="45" y="45" width="10" height="10" rx="2" fill="#ffc20e" />
-                <rect x="65" y="45" width="6" height="6" fill="#0b5c38" />
-                <rect x="78" y="52" width="8" height="6" fill="#0b5c38" />
-                <rect x="45" y="65" width="6" height="8" fill="#0b5c38" />
-                <rect x="60" y="70" width="8" height="8" fill="#0b5c38" />
-                <rect x="75" y="65" width="12" height="12" rx="2" fill="#0b5c38" />
-                <rect x="80" y="85" width="8" height="6" fill="#0b5c38" />
+                <rect x="42" y="12" width="6" height="6" fill="#0A3622" />
+                <rect x="52" y="18" width="6" height="6" fill="#0A3622" />
+                <rect x="42" y="28" width="6" height="6" fill="#0A3622" />
+                <rect x="12" y="45" width="6" height="6" fill="#0A3622" />
+                <rect x="24" y="50" width="6" height="6" fill="#0A3622" />
+                <rect x="45" y="45" width="10" height="10" rx="2" fill="#FFC82E" />
+                <rect x="65" y="45" width="6" height="6" fill="#0A3622" />
+                <rect x="78" y="52" width="8" height="6" fill="#0A3622" />
+                <rect x="45" y="65" width="6" height="8" fill="#0A3622" />
+                <rect x="60" y="70" width="8" height="8" fill="#0A3622" />
+                <rect x="75" y="65" width="12" height="12" rx="2" fill="#0A3622" />
+                <rect x="80" y="85" width="8" height="6" fill="#0A3622" />
               </svg>
               <span className={styles.qrLabel}>
-                {isHi ? "स्कैन करके डाउनलोड करें" : "Scan to Download App"}
+                {isHi ? "स्कैन करके डाउनलोड करें" : "Scan to download"}
               </span>
-              <span className={styles.qrSub}>Android APK / Play Store</span>
+              <span className={styles.qrSub}>Android & iOS</span>
             </div>
           </div>
         </div>
