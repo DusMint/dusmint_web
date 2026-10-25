@@ -1,63 +1,60 @@
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 4rem 1.5rem 6rem;
+  padding: 3.5rem 1.5rem 5rem;
 }
 
 .header {
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #e2ede6;
+  border-bottom: 1px solid var(--gray-300);
 }
 
-.badge {
-  display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #0b5c38;
-  background: #e6f5eb;
-  padding: 0.3rem 0.75rem;
-  border-radius: 9999px;
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.04em;
-}
-
+/* H1: Poppins 700 48px/56px (design.md 5.1) */
 .title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #121e17;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
+  font-family: var(--font-heading);
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+  color: var(--ink-900);
+  letter-spacing: -0.02em;
 }
 
+/* Body Large: Noto Sans 400 18px/28px */
 .subtitle {
-  font-size: 1.1rem;
-  color: #55695e;
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--gray-600);
   margin-top: 0.5rem;
-  line-height: 1.6;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  color: #27382e;
-  line-height: 1.7;
-  font-size: 1.02rem;
+  gap: 1.5rem;
+  color: var(--ink-900);
+  line-height: 26px;
+  font-size: 16px;
+  font-family: var(--font-body);
 }
 
+/* Card Surface: white, 1px gray-300 border, radius 12 */
 .sectionBlock {
-  background: #ffffff;
-  border: 1px solid #e4eee7;
-  border-radius: 20px;
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--dm-radius-md);
   padding: 2rem;
-  box-shadow: 0 4px 14px rgba(11, 92, 56, 0.04);
+  box-shadow: 0 1px 4px rgba(10, 54, 34, 0.04);
 }
 
+/* H3: Poppins 600 22px/30px */
 .sectionTitle {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #0b5c38;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+  color: var(--green-700);
   margin-bottom: 0.75rem;
 }
 
@@ -70,10 +67,10 @@
 }
 
 .ctaBox {
-  background: #0b5c38;
+  background: var(--green-900);
   color: #ffffff;
-  border-radius: 20px;
-  padding: 2.5rem;
+  border-radius: var(--dm-radius-md);
+  padding: 2.5rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -81,16 +78,54 @@
   gap: 1rem;
 }
 
+.ctaBox h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.ctaBox p {
+  color: #cde4d6;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+/* btn-yellow on-dark */
 .ctaBtn {
-  padding: 0.85rem 1.8rem;
-  background: #ffc20e;
-  color: #121e17;
-  font-weight: 800;
-  font-size: 1rem;
-  border-radius: 9999px;
-  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  background: var(--yellow-500);
+  color: var(--ink-900);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: var(--dm-radius-md);
+  border: none;
+  transition: background-color 0.15s ease;
 }
 
 .ctaBtn:hover {
-  background: #f0b200;
+  background: var(--btn-yellow-hover);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .sectionBlock {
+    padding: 1.5rem;
+  }
 }

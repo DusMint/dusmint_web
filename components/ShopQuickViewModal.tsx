@@ -2,6 +2,17 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import {
+  IconBolt,
+  IconStarFilled,
+  IconMapPin,
+  IconCheck,
+  IconCircleCheck,
+  IconX,
+  IconPlus,
+  IconMinus,
+  IconArrowRight,
+} from "@tabler/icons-react";
 import { Shop } from "./PopularShopsSection";
 import styles from "./ShopQuickViewModal.module.css";
 
@@ -56,7 +67,7 @@ export default function ShopQuickViewModal({
           onClick={onClose}
           aria-label="Close"
         >
-          ✕
+          <IconX size={18} />
         </button>
 
         {/* Hero banner of the shop */}
@@ -70,7 +81,8 @@ export default function ShopQuickViewModal({
               className={styles.storeImg}
             />
             <div className={styles.deliveryPill}>
-              ⚡ {shop.deliveryTime} {isHi ? "डिलीवरी" : "Doorstep Delivery"}
+              <IconBolt size={14} stroke={2.2} />
+              <span>{shop.deliveryTime} {isHi ? "डिलीवरी" : "delivery"}</span>
             </div>
           </div>
 
@@ -78,14 +90,24 @@ export default function ShopQuickViewModal({
             <div className={styles.titleRow}>
               <h3 className={styles.storeName}>{shop.name}</h3>
               <div className={styles.ratingBadge}>
-                ★ {shop.rating} ({shop.reviewsCount} {isHi ? "समीक्षाएँ" : "reviews"})
+                <IconStarFilled size={13} className={styles.starIcon} />
+                <span>{shop.rating} ({shop.reviewsCount})</span>
               </div>
             </div>
-            <p className={styles.locationText}>📍 {shop.location} • {shop.distance}</p>
+            <p className={styles.locationText}>
+              <IconMapPin size={15} stroke={1.8} className={styles.pinIcon} />
+              <span>{shop.location} • {shop.distance}</span>
+            </p>
             <div className={styles.perks}>
-              <span>✓ Verified Local Merchant</span>
-              <span>✓ Live Inventory</span>
-              <span>✓ Free delivery above ₹{shop.freeDeliveryThreshold}</span>
+              <span>
+                <IconCheck size={14} stroke={2.5} /> Verified local merchant
+              </span>
+              <span>
+                <IconCheck size={14} stroke={2.5} /> Live inventory
+              </span>
+              <span>
+                <IconCheck size={14} stroke={2.5} /> Free delivery above ₹{shop.freeDeliveryThreshold}
+              </span>
             </div>
           </div>
         </div>
@@ -93,14 +115,16 @@ export default function ShopQuickViewModal({
         {/* Catalog list */}
         <div className={styles.catalogSection}>
           <h4 className={styles.catalogTitle}>
-            {isHi ? "दुकान के लोकप्रिय सामान" : "Featured Store Inventory"}
+            {isHi ? "दुकान के सामान" : "Store inventory"}
           </h4>
 
           {orderPlaced ? (
             <div className={styles.successBox}>
-              <div className={styles.successIcon}>🎉</div>
-              <h4>{isHi ? "ऑर्डर प्लेस हो गया!" : "Mock Order Placed!"}</h4>
-              <p>
+              <IconCircleCheck size={52} stroke={1.8} className={styles.successCheckIcon} />
+              <h4 className={styles.successTitle}>
+                {isHi ? "ऑर्डर प्लेस हो गया!" : "Order placed successfully"}
+              </h4>
+              <p className={styles.successDesc}>
                 {isHi
                   ? `आपका ₹${totalPrice} का ऑर्डर ${shop.name} को भेज दिया गया है। 15 मिनट में डिलीवरी पार्टनर आपके घर पहुंचेगा।`
                   : `Your ₹${totalPrice} order has been sent to ${shop.name}. Delivery rider will pick it up and reach your doorstep in ${shop.deliveryTime}.`}
@@ -114,7 +138,7 @@ export default function ShopQuickViewModal({
                   onClose();
                 }}
               >
-                {isHi ? "बंद करें" : "Back to Home"}
+                {isHi ? "बंद करें" : "Back to home"}
               </button>
             </div>
           ) : (
@@ -137,12 +161,14 @@ export default function ShopQuickViewModal({
 
                     <div className={styles.actionCol}>
                       {qty === 0 ? (
+                        /* design.md 602: Add to cart is btn-yellow with 1px border */
                         <button
                           type="button"
                           className={styles.addBtn}
                           onClick={() => handleAddItem(item.id)}
                         >
-                          + {isHi ? "जोड़ें" : "ADD"}
+                          <IconPlus size={14} stroke={2.5} />
+                          <span>{isHi ? "जोड़ें" : "Add"}</span>
                         </button>
                       ) : (
                         <div className={styles.qtyControl}>
@@ -150,16 +176,18 @@ export default function ShopQuickViewModal({
                             type="button"
                             className={styles.qtyBtn}
                             onClick={() => handleRemoveItem(item.id)}
+                            aria-label="Decrease quantity"
                           >
-                            -
+                            <IconMinus size={14} stroke={2.5} />
                           </button>
                           <span className={styles.qtyNum}>{qty}</span>
                           <button
                             type="button"
                             className={styles.qtyBtn}
                             onClick={() => handleAddItem(item.id)}
+                            aria-label="Increase quantity"
                           >
-                            +
+                            <IconPlus size={14} stroke={2.5} />
                           </button>
                         </div>
                       )}
@@ -171,7 +199,7 @@ export default function ShopQuickViewModal({
           )}
         </div>
 
-        {/* Floating Cart bar at bottom if items added */}
+        {/* Floating Cart bar at bottom: design.md 603 Buy now is btn-green */}
         {totalItems > 0 && !orderPlaced && (
           <div className={styles.cartBar}>
             <div className={styles.cartInfo}>
@@ -186,8 +214,8 @@ export default function ShopQuickViewModal({
               className={styles.checkoutBtn}
               onClick={() => setOrderPlaced(true)}
             >
-              <span>{isHi ? "ऑर्डर प्लेस करें" : "Quick Checkout"}</span>
-              <span>→</span>
+              <span>{isHi ? "ऑर्डर प्लेस करें" : "Place order"}</span>
+              <IconArrowRight size={18} stroke={2} />
             </button>
           </div>
         )}

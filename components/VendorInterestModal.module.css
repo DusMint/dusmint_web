@@ -2,98 +2,69 @@
   position: fixed;
   inset: 0;
   z-index: 999;
-  background: rgba(8, 20, 14, 0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(10, 54, 34, 0.65);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  animation: fadeIn 0.2s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
 .modalCard {
   position: relative;
-  background: #ffffff;
-  border-radius: 24px;
+  background: var(--white);
+  border-radius: var(--dm-radius-lg);
   width: 100%;
-  max-width: 540px;
+  max-width: 520px;
   padding: 2.25rem 2rem;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
-  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  border: 1px solid var(--gray-300);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
 }
 
 .closeBtn {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: #f1f5f3;
-  color: #3e5046;
-  font-size: 1rem;
+  color: var(--ink-900);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.closeBtn:hover {
-  background: #e2ede7;
-  color: #0b5c38;
+  border: 1px solid var(--gray-300);
+  cursor: pointer;
 }
 
 .modalHeader {
   margin-bottom: 1.5rem;
 }
 
-.badgePromo {
-  display: inline-block;
-  background: #fef3c7;
-  color: #92400e;
-  font-size: 0.78rem;
-  font-weight: 800;
-  padding: 0.25rem 0.65rem;
-  border-radius: 9999px;
-  margin-bottom: 0.5rem;
-}
-
+/* H3: Poppins 600 24px/32px */
 .modalTitle {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: #121e17;
-  line-height: 1.2;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  color: var(--ink-900);
 }
 
 .modalSub {
-  font-size: 0.88rem;
-  color: #5c6e64;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--gray-600);
   margin-top: 0.35rem;
-  line-height: 1.5;
 }
 
 .errorAlert {
-  background: #fee2e2;
-  color: #b91c1c;
+  background: var(--error-bg);
+  color: var(--error);
   padding: 0.65rem 1rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
+  border-radius: var(--dm-radius-sm);
+  font-family: var(--font-body);
+  font-size: 14px;
   margin-bottom: 1rem;
 }
 
@@ -116,56 +87,70 @@
 }
 
 .label {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #24342a;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-900);
 }
 
 .input, .select {
-  padding: 0.75rem 0.9rem;
-  border: 1.5px solid #d5e2d9;
-  border-radius: 12px;
-  font-size: 0.92rem;
-  color: #14221a;
-  background: #fdfdfd;
-  transition: border-color 0.2s ease;
+  height: 48px;
+  padding: 0 0.9rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--dm-radius-md);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--ink-900);
+  background: var(--white);
 }
 
 .input:focus, .select:focus {
   outline: none;
-  border-color: #0b5c38;
-  box-shadow: 0 0 0 3px rgba(11, 92, 56, 0.12);
+  border-color: var(--green-700);
+  box-shadow: 0 0 0 2px var(--mint-100);
 }
 
 .guaranteeBox {
   display: flex;
   justify-content: space-between;
-  background: #f4f8f5;
-  border: 1px dashed #c0d8c8;
-  border-radius: 12px;
+  background: var(--mint-100);
+  border: 1px solid rgba(17, 102, 58, 0.2);
+  border-radius: var(--dm-radius-sm);
   padding: 0.65rem 0.85rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #0b5c38;
-  margin-top: 0.25rem;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--green-700);
 }
 
+.guaranteeItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* btn-green (design.md 2.7) */
 .submitBtn {
   margin-top: 0.5rem;
-  padding: 0.95rem;
-  background: #0b5c38;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 800;
-  border-radius: 14px;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(11, 92, 56, 0.25);
+  height: 48px;
+  background: var(--btn-green);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  border-radius: var(--dm-radius-md);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
 }
 
 .submitBtn:hover {
-  background: #074529;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(11, 92, 56, 0.32);
+  background: var(--btn-green-hover);
+}
+
+.submitBtn:active {
+  background: var(--btn-green-pressed);
 }
 
 /* Success state */
@@ -178,48 +163,47 @@
 }
 
 .successIcon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #10b981;
-  color: #ffffff;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
+  color: var(--green-700);
+  margin-bottom: 1rem;
 }
 
 .successTitle {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #121e17;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink-900);
 }
 
 .successText {
-  font-size: 0.92rem;
-  color: #4a5c51;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--gray-600);
   margin-top: 0.5rem;
 }
 
 .successNote {
-  background: #f0f7f3;
+  background: var(--mint-100);
   padding: 0.75rem 1rem;
-  border-radius: 10px;
-  font-size: 0.85rem;
-  color: #0b5c38;
+  border-radius: var(--dm-radius-sm);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--green-700);
   margin: 1.25rem 0;
   width: 100%;
 }
 
 .doneBtn {
   width: 100%;
-  padding: 0.85rem;
-  background: #0b5c38;
-  color: #ffffff;
-  font-weight: 700;
-  border-radius: 12px;
+  height: 48px;
+  background: var(--btn-green);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: var(--dm-radius-md);
+  border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {

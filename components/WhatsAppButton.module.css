@@ -9,78 +9,44 @@
 }
 
 .tooltip {
-  background: #121e17;
+  background: var(--green-900);
   color: #ffffff;
-  padding: 0.6rem 0.9rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--dm-radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  animation: fadeIn 0.2s ease-out;
   white-space: nowrap;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateX(6px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
 .tooltipTitle {
-  font-size: 0.82rem;
-  font-weight: 800;
-  color: #25d366;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--yellow-500);
 }
 
 .tooltipSub {
-  font-size: 0.72rem;
-  color: #c4d4ca;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #d1ded6;
 }
 
 .waButton {
-  position: relative;
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: #25d366;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+  transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
 .waButton:hover {
-  transform: scale(1.08) translateY(-2px);
+  transform: translateY(-2px);
   background: #22bf5b;
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
-}
-
-.waIcon {
-  width: 32px;
-  height: 32px;
-}
-
-.pulseRing {
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 2px solid #25d366;
-  animation: waPulse 2.5s infinite;
-  opacity: 0;
-}
-
-@keyframes waPulse {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.25);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(0.95);
-    opacity: 0;
-  }
 }
