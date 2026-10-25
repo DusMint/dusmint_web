@@ -1,0 +1,54 @@
+/* DusMint Global Design Tokens */
+:root {
+  /* Brand Palette */
+  --dm-primary: #0b5c38;
+  --dm-primary-hover: #074529;
+  --dm-primary-light: #e8f5ee;
+  --dm-primary-surface: #f2f9f5;
+  --dm-primary-rgb: 11, 92, 56;
+
+  --dm-accent: #ffc20e;
+  --dm-accent-hover: #e6ac05;
+  --dm-accent-light: #fff8e1;
+
+  --dm-secondary: #166534;
+  --dm-dark: #111e16;
+  --dm-dark-muted: #2d3e33;
+
+  /* Neutrals */
+  --dm-bg: #f8faf8;
+  --dm-card-bg: #ffffff;
+  --dm-text-main: #141c17;
+  --dm-text-muted: #5e6d64;
+  --dm-text-subtle: #8a9990;
+  --dm-border: #e3eae5;
+  --dm-border-focus: #0b5c38;
+
+  /* Status Colors */
+  --dm-success: #10b981;
+  --dm-warning: #f59e0b;
+  --dm-danger: #ef4444;
+  --dm-info: #0284c7;
+
+  /* Typography */
+  --dm-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --dm-font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  /* Shadows */
+  --dm-shadow-xs: 0 1px 2px rgba(11, 92, 56, 0.05);
+  --dm-shadow-sm: 0 2px 8px rgba(11, 92, 56, 0.06);
+  --dm-shadow-md: 0 8px 24px rgba(11, 92, 56, 0.08);
+  --dm-shadow-lg: 0 16px 36px rgba(11, 92, 56, 0.12);
+  --dm-shadow-hover: 0 12px 28px rgba(11, 92, 56, 0.14);
+
+  /* Border Radii */
+  --dm-radius-sm: 8px;
+  --dm-radius-md: 14px;
+  --dm-radius-lg: 20px;
+  --dm-radius-xl: 28px;
+  --dm-radius-full: 9999px;
+
+  /* Layout */
+  --dm-max-width: 1240px;
+  --dm-nav-height: 80px;
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dusmint.customer",
+      "sha256_cert_fingerprints": [
+        "14:6D:E9:7D:0F:52:AB:E0:4F:91:29:9F:8B:22:92:49:AE:CF:D3:45:9B:A3:A3:34:36:2C:12:34:56:78:9A:BC"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dusmint.partner",
+      "sha256_cert_fingerprints": [
+        "28:1A:C2:5E:7B:3F:89:01:4A:BC:DE:F0:12:34:56:78:9A:BC:DE:F0:12:34:56:78:9A:BC:DE:F0:12:34:56:78"
+      ]
+    }
+  }
+]

@@ -1,0 +1,187 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(10, 24, 16, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalCard {
+  background: #ffffff;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #121e17;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #5c6e64;
+  margin-top: 0.2rem;
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f1f5f3;
+  color: #3e5046;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.searchWrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: #7b8e83;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.4rem;
+  border: 1.5px solid #dbe6df;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  background: #fdfdfd;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #0b5c38;
+  box-shadow: 0 0 0 3px rgba(11, 92, 56, 0.12);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.itemBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #f8faf8;
+  border: 1px solid #e5ece7;
+  border-radius: 12px;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.itemBtn:hover {
+  background: #edf6f0;
+  border-color: #b9ddc5;
+}
+
+.itemSelected {
+  background: #e6f5eb;
+  border-color: #0b5c38;
+}
+
+.itemLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pinIcon {
+  font-size: 1.1rem;
+}
+
+.itemText {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemName {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #121e17;
+}
+
+.itemTag {
+  font-size: 0.75rem;
+  color: #0b5c38;
+  font-weight: 600;
+}
+
+.itemRight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.popularBadge {
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.checkmark {
+  color: #0b5c38;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.footerNote {
+  margin-top: 1.25rem;
+  padding: 0.75rem;
+  background: #f2f7f4;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  color: #3b5043;
+}
