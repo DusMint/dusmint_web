@@ -2,75 +2,65 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--green-900);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 2px 8px rgba(10, 54, 34, 0.15);
+  background-color: rgba(255, 252, 242, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(211, 219, 214, 0.55);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .container {
   max-width: var(--dm-max-width);
   margin: 0 auto;
-  padding: 0.75rem 1.5rem;
+  padding: 1.35rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
 .logoGroup {
   display: flex;
   align-items: center;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logoMark {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.75rem;
 }
 
 .leafIcon {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   flex-shrink: 0;
-}
-
-.brandText {
-  display: flex;
-  flex-direction: column;
 }
 
 .brandTitle {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--ink-900);
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .brandMint {
-  color: #22c55e;
+  color: var(--green-700);
 }
 
 .brandDomain {
-  color: var(--yellow-500);
+  color: var(--yellow-800);
   font-weight: 700;
-  font-size: 1.2rem;
-}
-
-.brandTagline {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #a3c4b1;
-  letter-spacing: 0.01em;
+  font-size: 1.35rem;
 }
 
 .navMenu {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 2.25rem;
 }
 
 .navLink {
@@ -78,129 +68,99 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
-  color: #d2e4d8;
-  padding: 0.35rem 0.1rem;
+  color: var(--ink-900);
+  padding: 0.35rem 0.2rem;
   position: relative;
   transition: color 0.15s ease;
 }
 
 .navLink:hover {
-  color: #ffffff;
+  color: var(--green-700);
 }
 
 .activeLink {
-  color: #ffffff;
+  color: var(--green-700);
   font-weight: 600;
 }
 
 .activeLink::after {
   content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: -4px;
   left: 0;
-  width: 100%;
+  right: 0;
   height: 2px;
-  background-color: var(--yellow-500);
-  border-radius: 1px;
+  background-color: var(--green-700);
+  border-radius: 2px;
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.25rem;
+  flex-shrink: 0;
 }
 
-.locationBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 0.85rem;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--dm-radius-pill);
-  font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 500;
-  color: #ffffff;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
-}
-
-.locationBtn:hover {
-  background-color: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.locationIcon {
-  color: var(--yellow-500);
-}
-
-.locationText {
-  max-width: 115px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
+/* Language Switcher */
 .langBtn {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.45rem 0.75rem;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: var(--dm-radius-pill);
+  gap: 6px;
+  background-color: var(--white);
+  border: 1px solid var(--gray-300);
+  color: var(--ink-900);
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--dm-radius-sm);
   font-family: var(--font-body);
   font-size: 14px;
-  line-height: 20px;
   font-weight: 500;
-  color: #e0eee4;
-  transition: all 0.15s ease;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .langBtn:hover {
-  border-color: #ffffff;
-  color: #ffffff;
+  border-color: var(--green-700);
+  background-color: var(--mint-50);
 }
 
-/* design.md 2.7 Nav buttons */
+/* Outline Vendor Button */
 .vendorBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 44px;
-  padding: 0 16px;
-  background: transparent;
-  color: #ffffff;
-  border: 1.5px solid #ffffff;
+  height: 46px;
+  padding: 0 18px;
+  background-color: transparent;
+  color: var(--green-700);
+  border: 1.5px solid var(--green-700);
   border-radius: var(--dm-radius-md);
   font-family: var(--font-heading);
-  font-weight: 600;
   font-size: 15px;
-  line-height: 20px;
-  transition: background-color 0.15s ease;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
 }
 
 .vendorBtn:hover {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: var(--mint-100);
 }
 
+/* Highlight Yellow Get The App Button */
 .getAppBtn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  height: 44px;
-  padding: 0 18px;
+  gap: 8px;
+  height: 46px;
+  padding: 0 20px;
   background-color: var(--yellow-500);
   color: var(--ink-900);
-  border: none;
+  border: 1px solid var(--btn-yellow-border);
   border-radius: var(--dm-radius-md);
   font-family: var(--font-heading);
-  font-weight: 600;
   font-size: 15px;
-  line-height: 20px;
+  font-weight: 600;
+  cursor: pointer;
   transition: background-color 0.15s ease;
   white-space: nowrap;
 }
@@ -213,140 +173,115 @@
   background-color: var(--btn-yellow-pressed);
 }
 
-.adminLink {
-  padding: 0.4rem 0.65rem;
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 600;
-  color: #9cbda9;
-  border-radius: 6px;
-  transition: color 0.15s ease;
-}
-
-.adminLink:hover {
-  color: #ffffff;
-}
-
 .mobileMenuBtn {
   display: none;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  background: none;
+  border: none;
+  color: var(--ink-900);
+  padding: 0.4rem;
+  cursor: pointer;
 }
 
 /* Mobile Drawer */
 .mobileDrawer {
   display: none;
-  background: var(--green-900);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 1.25rem 1.5rem 1.5rem;
-  flex-direction: column;
-  gap: 1.25rem;
 }
 
-.mobileNavLinks {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.mobileNavLink {
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  color: #e2ede5;
-  padding: 0.4rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.mobileDrawerFooter {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding-top: 0.5rem;
-}
-
-.mobileLocationBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 15px;
-  border-radius: var(--dm-radius-md);
-  text-align: center;
-}
-
-.mobileVendorBtn {
-  height: 48px;
-  border: 1.5px solid #ffffff;
-  color: #ffffff;
-  background: transparent;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 16px;
-  border-radius: var(--dm-radius-md);
-  text-align: center;
-}
-
-.mobileAppBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 48px;
-  background: var(--yellow-500);
-  color: var(--ink-900);
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 16px;
-  border-radius: var(--dm-radius-md);
-  text-align: center;
-}
-
-/* Responsive queries */
-@media (max-width: 960px) {
-  .navMenu {
-    display: none;
+/* Responsive */
+@media (max-width: 1080px) {
+  .container {
+    padding: 1.1rem 1.75rem;
+    gap: 1.5rem;
   }
 
+  .navMenu {
+    gap: 1.35rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    padding: 1rem 1.25rem;
+  }
+
+  .navMenu,
   .vendorBtn {
     display: none;
   }
 
   .mobileMenuBtn {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .mobileDrawer {
     display: flex;
-  }
-}
-
-@media (max-width: 640px) {
-  .container {
-    padding: 0.65rem 1rem;
-    gap: 0.5rem;
-  }
-
-  .brandTagline {
-    display: none;
+    flex-direction: column;
+    background-color: var(--cream);
+    border-top: 1px solid var(--gray-300);
+    padding: 1.5rem;
+    gap: 1.5rem;
+    box-shadow: 0 8px 24px rgba(10, 54, 34, 0.1);
   }
 
-  .getAppBtn {
-    display: none;
+  .mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
-  .adminLink {
-    display: none;
+  .mobileNavLink {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink-900);
+    padding: 0.65rem 0.5rem;
+    border-radius: var(--dm-radius-sm);
+    transition: background-color 0.15s ease;
+  }
+
+  .mobileNavLink:hover {
+    background-color: var(--mint-100);
+    color: var(--green-700);
+  }
+
+  .mobileDrawerFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-300);
+  }
+
+  .mobileVendorBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    border: 1.5px solid var(--green-700);
+    background-color: transparent;
+    color: var(--green-700);
+    border-radius: var(--dm-radius-md);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .mobileAppBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 48px;
+    background-color: var(--yellow-500);
+    border: 1px solid var(--btn-yellow-border);
+    color: var(--ink-900);
+    border-radius: var(--dm-radius-md);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
   }
 }

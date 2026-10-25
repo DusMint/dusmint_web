@@ -52,8 +52,6 @@ export default function MarketingLayoutClient({
       }}
     >
       <Navbar
-        currentLocation={currentLocation}
-        onOpenLocationModal={() => setIsLocationModalOpen(true)}
         onOpenVendorModal={() => setIsVendorModalOpen(true)}
         language={language}
         onToggleLanguage={toggleLanguage}

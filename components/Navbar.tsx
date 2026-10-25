@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import {
-  IconMapPin,
-  IconChevronDown,
   IconLanguage,
   IconMenu2,
   IconX,
@@ -13,16 +11,12 @@ import {
 import styles from "./Navbar.module.css";
 
 interface NavbarProps {
-  currentLocation: string;
-  onOpenLocationModal: () => void;
   onOpenVendorModal: () => void;
   language: "en" | "hi";
   onToggleLanguage: () => void;
 }
 
 export default function Navbar({
-  currentLocation,
-  onOpenLocationModal,
   onOpenVendorModal,
   language,
   onToggleLanguage,
@@ -40,7 +34,7 @@ export default function Navbar({
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        {/* Brand Logo */}
+        {/* Brand Logo - Clean, bold, no extra tagline or lines */}
         <Link href="/" className={styles.logoGroup} aria-label="Dusmint Home">
           <div className={styles.logoMark}>
             <svg
@@ -51,7 +45,7 @@ export default function Navbar({
             >
               <path
                 d="M16 4C16 4 9 9 9 17C9 21.4183 12.134 25 16 25C19.866 25 23 21.4183 23 17C23 9 16 4 16 4Z"
-                fill="#22C55E"
+                fill="#16A34A"
               />
               <path
                 d="M23 11C23 11 27 14 27 19C27 21.7614 25.2091 24 23 24C20.7909 24 19 21.7614 19 19C19 14 23 11 23 11Z"
@@ -64,28 +58,26 @@ export default function Navbar({
                 strokeLinecap="round"
               />
             </svg>
-            <div className={styles.brandText}>
-              <span className={styles.brandTitle}>
-                dus<span className={styles.brandMint}>mint</span>
-                <span className={styles.brandDomain}>.com</span>
-              </span>
-              <span className={styles.brandTagline}>
-                {isHi ? "आपका पड़ोस, सीधे घर तक" : "Your Neighbourhood, Delivered."}
-              </span>
-            </div>
+            <span className={styles.brandTitle}>
+              dus<span className={styles.brandMint}>mint</span>
+              <span className={styles.brandDomain}>.com</span>
+            </span>
           </div>
         </Link>
 
-        {/* Desktop Nav Links */}
+        {/* Desktop Nav Links - Product focused */}
         <nav className={styles.navMenu}>
           <Link href="/" className={`${styles.navLink} ${styles.activeLink}`}>
-            {isHi ? "होम" : "Home"}
+            {isHi ? "उत्पाद परिचय" : "Overview"}
           </Link>
-          <a href="#shops" className={styles.navLink}>
-            {isHi ? "दुकानें" : "Shops"}
+          <a href="#how-it-works" className={styles.navLink}>
+            {isHi ? "यह कैसे काम करता है" : "How it works"}
           </a>
-          <a href="#categories" className={styles.navLink}>
-            {isHi ? "श्रेणियां" : "Categories"}
+          <a href="#network" className={styles.navLink}>
+            {isHi ? "दुकान नेटवर्क" : "Partner network"}
+          </a>
+          <a href="#why-dusmint" className={styles.navLink}>
+            {isHi ? "डसमिट क्यों" : "Why Dusmint"}
           </a>
           <Link href="/about" className={styles.navLink}>
             {isHi ? "हमारे बारे में" : "About"}
@@ -95,20 +87,8 @@ export default function Navbar({
           </Link>
         </nav>
 
-        {/* Right Actions */}
+        {/* Right Actions - Spacious, No location, No admin */}
         <div className={styles.actions}>
-          {/* Location Selector Button */}
-          <button
-            type="button"
-            className={styles.locationBtn}
-            onClick={onOpenLocationModal}
-            title="Change Delivery Location"
-          >
-            <IconMapPin size={16} stroke={2} className={styles.locationIcon} />
-            <span className={styles.locationText}>{currentLocation}</span>
-            <IconChevronDown size={14} stroke={2} />
-          </button>
-
           {/* Language Toggle */}
           <button
             type="button"
@@ -116,11 +96,11 @@ export default function Navbar({
             onClick={onToggleLanguage}
             title="Switch Language"
           >
-            <IconLanguage size={16} stroke={1.8} />
+            <IconLanguage size={18} stroke={1.8} />
             <span>{isHi ? "English" : "हिंदी"}</span>
           </button>
 
-          {/* Nav bar buttons as specified in design.md line 604 & section 2.7 */}
+          {/* Become a Vendor Button */}
           <button
             type="button"
             className={styles.vendorBtn}
@@ -129,19 +109,15 @@ export default function Navbar({
             {isHi ? "दुकान जोड़ें" : "Become a vendor"}
           </button>
 
+          {/* Get The App CTA Button */}
           <button
             type="button"
             className={styles.getAppBtn}
             onClick={handleDownloadClick}
           >
-            <IconDeviceMobile size={16} stroke={2} />
-            <span>{isHi ? "ऐप पाएं" : "Get the app"}</span>
+            <IconDeviceMobile size={18} stroke={2.2} />
+            <span>{isHi ? "ऐप डाउनलोड करें" : "Get the app"}</span>
           </button>
-
-          {/* Admin link */}
-          <Link href="/admin" className={styles.adminLink} title="Operations Admin">
-            Admin
-          </Link>
 
           {/* Mobile Menu Toggle Button */}
           <button
@@ -150,7 +126,7 @@ export default function Navbar({
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation"
           >
-            {mobileMenuOpen ? <IconX size={22} /> : <IconMenu2 size={22} />}
+            {mobileMenuOpen ? <IconX size={24} /> : <IconMenu2 size={24} />}
           </button>
         </div>
       </div>
@@ -164,64 +140,53 @@ export default function Navbar({
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {isHi ? "होम" : "Home"}
+              {isHi ? "उत्पाद परिचय" : "Overview"}
             </Link>
             <a
-              href="#shops"
+              href="#how-it-works"
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {isHi ? "दुकानें" : "Shops"}
+              {isHi ? "यह कैसे काम करता है" : "How it works"}
             </a>
             <a
-              href="#categories"
+              href="#network"
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {isHi ? "श्रेणियां" : "Categories"}
+              {isHi ? "दुकान नेटवर्क" : "Partner network"}
+            </a>
+            <a
+              href="#why-dusmint"
+              className={styles.mobileNavLink}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {isHi ? "डसमिट क्यों" : "Why Dusmint"}
             </a>
             <Link
               href="/about"
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {isHi ? "हमारे बारे में" : "About Us"}
+              {isHi ? "हमारे बारे में" : "About"}
             </Link>
             <Link
               href="/vendors"
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {isHi ? "किराना पार्टनर्स" : "For Vendors"}
+              {isHi ? "किराना पार्टनर्स" : "For vendors"}
             </Link>
             <Link
               href="/faq"
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {isHi ? "सहायता व अक्सर पूछे जाने वाले सवाल" : "FAQs & Support"}
-            </Link>
-            <Link
-              href="/admin"
-              className={styles.mobileNavLink}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Operations Admin
+              {isHi ? "सहायता व अक्सर पूछे जाने वाले सवाल" : "FAQs"}
             </Link>
           </div>
 
           <div className={styles.mobileDrawerFooter}>
-            <button
-              type="button"
-              className={styles.mobileLocationBtn}
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenLocationModal();
-              }}
-            >
-              <IconMapPin size={16} stroke={2} />
-              <span>{currentLocation} (Change)</span>
-            </button>
             <button
               type="button"
               className={styles.mobileVendorBtn}
@@ -240,7 +205,7 @@ export default function Navbar({
                 handleDownloadClick();
               }}
             >
-              <IconDeviceMobile size={16} stroke={2} />
+              <IconDeviceMobile size={18} stroke={2.2} />
               <span>{isHi ? "डसमिट ऐप डाउनलोड करें" : "Get the app"}</span>
             </button>
           </div>
