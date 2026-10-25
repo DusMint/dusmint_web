@@ -2,6 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
+import {
+  IconMapPin,
+  IconPhone,
+  IconMail,
+} from "@tabler/icons-react";
 import styles from "./Footer.module.css";
 
 interface FooterProps {
@@ -31,8 +36,18 @@ export default function Footer({ language, onOpenVendorModal }: FooterProps) {
             </p>
 
             <div className={styles.contactDetails}>
-              <p>📍 Sector V, Salt Lake, Kolkata, West Bengal 700091</p>
-              <p>📞 +91 98765 43210 • ✉️ support@dusmint.com</p>
+              <div className={styles.contactItem}>
+                <IconMapPin size={16} stroke={1.8} className={styles.contactIcon} />
+                <span>Sector V, Salt Lake, Kolkata 700091</span>
+              </div>
+              <div className={styles.contactItem}>
+                <IconPhone size={16} stroke={1.8} className={styles.contactIcon} />
+                <span>+91 98765 43210</span>
+              </div>
+              <div className={styles.contactItem}>
+                <IconMail size={16} stroke={1.8} className={styles.contactIcon} />
+                <span>support@dusmint.com</span>
+              </div>
             </div>
           </div>
 
@@ -46,13 +61,13 @@ export default function Footer({ language, onOpenVendorModal }: FooterProps) {
                 <Link href="/">{isHi ? "मुख्य पृष्ठ" : "Home"}</Link>
               </li>
               <li>
-                <a href="#shops">{isHi ? "लोकप्रिय दुकानें" : "Popular Shops"}</a>
+                <a href="#shops">{isHi ? "दुकानें" : "Popular shops"}</a>
               </li>
               <li>
                 <a href="#categories">{isHi ? "श्रेणियां" : "Categories"}</a>
               </li>
               <li>
-                <Link href="/about">{isHi ? "डसमिट के बारे में" : "About Us"}</Link>
+                <Link href="/about">{isHi ? "डसमिट के बारे में" : "About us"}</Link>
               </li>
               <li>
                 <Link href="/faq">{isHi ? "अक्सर पूछे जाने वाले सवाल" : "FAQs"}</Link>
@@ -63,7 +78,7 @@ export default function Footer({ language, onOpenVendorModal }: FooterProps) {
           {/* For Merchants */}
           <div className={styles.linksCol}>
             <h4 className={styles.colTitle}>
-              {isHi ? "दुकानदारों के लिए" : "For Merchants"}
+              {isHi ? "दुकानदारों के लिए" : "For merchants"}
             </h4>
             <ul className={styles.linkList}>
               <li>
@@ -72,17 +87,17 @@ export default function Footer({ language, onOpenVendorModal }: FooterProps) {
                   className={styles.textBtn}
                   onClick={onOpenVendorModal}
                 >
-                  {isHi ? "दुकान रजिस्टर करें (0% कमीशन)" : "Register Your Kirana (0% Comm.)"}
+                  {isHi ? "दुकान रजिस्टर करें" : "Register your kirana"}
                 </button>
               </li>
               <li>
                 <Link href="/vendors">
-                  {isHi ? "पार्टनर पोर्टल" : "Merchant Guide & Benefits"}
+                  {isHi ? "पार्टनर पोर्टल" : "Merchant guide & benefits"}
                 </Link>
               </li>
               <li>
                 <Link href="/admin">
-                  {isHi ? "ऑपरेशंस एडमिन" : "Admin Operations"}
+                  {isHi ? "ऑपरेशंस एडमिन" : "Admin operations"}
                 </Link>
               </li>
               <li>
@@ -91,7 +106,7 @@ export default function Footer({ language, onOpenVendorModal }: FooterProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {isHi ? "पार्टनर एंड्रॉइड ऐप" : "Partner POS App"}
+                  {isHi ? "पार्टनर एंड्रॉइड ऐप" : "Partner POS app"}
                 </a>
               </li>
             </ul>
@@ -100,14 +115,14 @@ export default function Footer({ language, onOpenVendorModal }: FooterProps) {
           {/* Legal & Compliance */}
           <div className={styles.linksCol}>
             <h4 className={styles.colTitle}>
-              {isHi ? "कानूनी नियम" : "Legal & Trust"}
+              {isHi ? "कानूनी नियम" : "Legal & trust"}
             </h4>
             <ul className={styles.linkList}>
               <li>
-                <Link href="/privacy">{isHi ? "गोपनीयता नीति" : "Privacy Policy"}</Link>
+                <Link href="/privacy">{isHi ? "गोपनीयता नीति" : "Privacy policy"}</Link>
               </li>
               <li>
-                <Link href="/terms">{isHi ? "नियम और शर्तें" : "Terms of Service"}</Link>
+                <Link href="/terms">{isHi ? "नियम और शर्तें" : "Terms of service"}</Link>
               </li>
               <li>
                 <span className={styles.fssaiBadge}>FSSAI Lic: 12824001000456</span>
@@ -122,7 +137,7 @@ export default function Footer({ language, onOpenVendorModal }: FooterProps) {
         {/* Bottom Bar */}
         <div className={styles.bottomBar}>
           <p className={styles.copyright}>
-            © 2026 Dusmint Hyperlocal Technologies Pvt. Ltd. All rights reserved. Made with ❤️ in Kolkata.
+            © 2026 Dusmint Hyperlocal Technologies Pvt. Ltd. All rights reserved. Kolkata, West Bengal.
           </p>
           <div className={styles.socialRow}>
             <span>Twitter / X</span> • <span>Instagram</span> • <span>LinkedIn</span> • <span>WhatsApp</span>

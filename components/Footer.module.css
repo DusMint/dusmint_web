@@ -1,8 +1,8 @@
 .footer {
-  background: #0d1a12;
+  background-color: var(--green-900);
   color: #d1ded6;
-  padding: 4.5rem 1.5rem 2rem;
-  border-top: 1px solid #1a2f22;
+  padding: 4rem 1.5rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .container {
@@ -14,8 +14,8 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 3rem;
-  padding-bottom: 3.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .brandCol {
@@ -25,10 +25,11 @@
 }
 
 .brandTitle {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
   color: #ffffff;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
 }
 
 .brandMint {
@@ -36,60 +37,80 @@
 }
 
 .brandDomain {
-  color: #ffc20e;
-  font-size: 1.4rem;
+  color: var(--yellow-500);
+  font-size: 1.3rem;
 }
 
 .brandDesc {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: #9cb1a4;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 22px;
+  color: #b1c7ba;
   max-width: 360px;
 }
 
 .contactDetails {
-  font-size: 0.82rem;
-  color: #799183;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.5rem;
   margin-top: 0.5rem;
 }
 
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 18px;
+  color: #9cb5a5;
+}
+
+.contactIcon {
+  color: var(--yellow-500);
+  flex-shrink: 0;
+}
+
+/* H5: Poppins 600 18px/26px (design.md 5.1) */
 .colTitle {
-  font-size: 1rem;
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
   color: #ffffff;
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
 }
 
 .linkList {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
+/* Body Small: Noto Sans 400 14px/22px */
 .linkList a, .textBtn {
-  font-size: 0.88rem;
-  color: #9cb1a4;
-  transition: color 0.2s ease;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 22px;
+  color: #d1ded6;
+  transition: color 0.15s ease;
   text-align: left;
 }
 
 .linkList a:hover, .textBtn:hover {
-  color: #ffc20e;
+  color: var(--yellow-500);
 }
 
 .fssaiBadge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   padding: 0.25rem 0.6rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  color: #b1c7ba;
+  border-radius: var(--dm-radius-sm);
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #c4d8cc;
 }
 
 .bottomBar {
@@ -97,8 +118,10 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 2rem;
-  font-size: 0.82rem;
-  color: #799183;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 18px;
+  color: #8da496;
 }
 
 .socialRow {
