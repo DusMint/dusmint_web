@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Poppins, Noto_Sans } from "next/font/google";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  weight: ["400", "500", "600", "700", "800"],
+const poppins = Poppins({
+  subsets: ["latin", "devanagari"],
+  variable: "--font-poppins",
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
+
+const notoSans = Noto_Sans({
+  subsets: ["latin", "devanagari"],
+  variable: "--font-noto-sans",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -43,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={jakarta.variable}>
+    <html lang="en" className={`${poppins.variable} ${notoSans.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>

@@ -2,6 +2,14 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import {
+  IconMapPin,
+  IconChevronDown,
+  IconLanguage,
+  IconMenu2,
+  IconX,
+  IconDeviceMobile,
+} from "@tabler/icons-react";
 import styles from "./Navbar.module.css";
 
 interface NavbarProps {
@@ -20,14 +28,21 @@ export default function Navbar({
   onToggleLanguage,
 }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isHi = language === "hi";
+
+  const handleDownloadClick = () => {
+    const el = document.getElementById("download-app");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         {/* Brand Logo */}
-        <Link href="/" className={styles.logoGroup}>
+        <Link href="/" className={styles.logoGroup} aria-label="Dusmint Home">
           <div className={styles.logoMark}>
-            {/* Mint leaves SVG motif */}
             <svg
               className={styles.leafIcon}
               viewBox="0 0 32 32"
@@ -44,7 +59,7 @@ export default function Navbar({
               />
               <path
                 d="M16 11V22M16 15L12 13M16 18L13 19M16 17L19 16"
-                stroke="#0F5132"
+                stroke="#0A3622"
                 strokeWidth="1.5"
                 strokeLinecap="round"
               />
@@ -54,7 +69,9 @@ export default function Navbar({
                 dus<span className={styles.brandMint}>mint</span>
                 <span className={styles.brandDomain}>.com</span>
               </span>
-              <span className={styles.brandTagline}>Your Neighbourhood, Delivered.</span>
+              <span className={styles.brandTagline}>
+                {isHi ? "आपका पड़ोस, सीधे घर तक" : "Your Neighbourhood, Delivered."}
+              </span>
             </div>
           </div>
         </Link>
@@ -62,34 +79,34 @@ export default function Navbar({
         {/* Desktop Nav Links */}
         <nav className={styles.navMenu}>
           <Link href="/" className={`${styles.navLink} ${styles.activeLink}`}>
-            {language === "en" ? "Home" : "होम"}
+            {isHi ? "होम" : "Home"}
           </Link>
           <a href="#shops" className={styles.navLink}>
-            {language === "en" ? "Shops" : "दुकानें"}
+            {isHi ? "दुकानें" : "Shops"}
           </a>
           <a href="#categories" className={styles.navLink}>
-            {language === "en" ? "Categories" : "श्रेणियां"}
-          </a>
-          <a href="#offers" className={styles.navLink}>
-            {language === "en" ? "Offers" : "ऑफ़र्स"}
+            {isHi ? "श्रेणियां" : "Categories"}
           </a>
           <Link href="/about" className={styles.navLink}>
-            {language === "en" ? "About" : "हमारे बारे में"}
+            {isHi ? "हमारे बारे में" : "About"}
+          </Link>
+          <Link href="/faq" className={styles.navLink}>
+            {isHi ? "सहायता" : "FAQs"}
           </Link>
         </nav>
 
         {/* Right Actions */}
         <div className={styles.actions}>
-          {/* Location Selector */}
+          {/* Location Selector Button */}
           <button
             type="button"
             className={styles.locationBtn}
             onClick={onOpenLocationModal}
             title="Change Delivery Location"
           >
-            <span className={styles.locationPin}>📍</span>
+            <IconMapPin size={16} stroke={2} className={styles.locationIcon} />
             <span className={styles.locationText}>{currentLocation}</span>
-            <span className={styles.chevron}>▾</span>
+            <IconChevronDown size={14} stroke={2} />
           </button>
 
           {/* Language Toggle */}
@@ -99,20 +116,30 @@ export default function Navbar({
             onClick={onToggleLanguage}
             title="Switch Language"
           >
-            {language === "en" ? "🇮🇳 हिंदी" : "🇬🇧 English"}
+            <IconLanguage size={16} stroke={1.8} />
+            <span>{isHi ? "English" : "हिंदी"}</span>
           </button>
 
-          {/* Merchant Join Button */}
+          {/* Nav bar buttons as specified in design.md line 604 & section 2.7 */}
           <button
             type="button"
-            className={styles.partnerBtn}
+            className={styles.vendorBtn}
             onClick={onOpenVendorModal}
           >
-            {language === "en" ? "Partner with Us" : "दुकान जोड़ें"}
+            {isHi ? "दुकान जोड़ें" : "Become a vendor"}
+          </button>
+
+          <button
+            type="button"
+            className={styles.getAppBtn}
+            onClick={handleDownloadClick}
+          >
+            <IconDeviceMobile size={16} stroke={2} />
+            <span>{isHi ? "ऐप पाएं" : "Get the app"}</span>
           </button>
 
           {/* Admin link */}
-          <Link href="/admin" className={styles.adminLink} title="Admin Portal">
+          <Link href="/admin" className={styles.adminLink} title="Operations Admin">
             Admin
           </Link>
 
@@ -123,9 +150,7 @@ export default function Navbar({
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation"
           >
-            <span className={styles.hamburgerBar}></span>
-            <span className={styles.hamburgerBar}></span>
-            <span className={styles.hamburgerBar}></span>
+            {mobileMenuOpen ? <IconX size={22} /> : <IconMenu2 size={22} />}
           </button>
         </div>
       </div>
@@ -139,42 +164,42 @@ export default function Navbar({
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {language === "en" ? "Home" : "होम"}
+              {isHi ? "होम" : "Home"}
             </Link>
             <a
               href="#shops"
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {language === "en" ? "Popular Shops" : "लोकप्रिय दुकानें"}
+              {isHi ? "दुकानें" : "Shops"}
             </a>
             <a
               href="#categories"
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {language === "en" ? "Categories" : "श्रेणियां"}
+              {isHi ? "श्रेणियां" : "Categories"}
             </a>
             <Link
               href="/about"
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {language === "en" ? "About Us" : "हमारे बारे में"}
+              {isHi ? "हमारे बारे में" : "About Us"}
             </Link>
             <Link
               href="/vendors"
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {language === "en" ? "For Kirana Stores" : "किराना पार्टनर्स"}
+              {isHi ? "किराना पार्टनर्स" : "For Vendors"}
             </Link>
             <Link
               href="/faq"
               className={styles.mobileNavLink}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {language === "en" ? "FAQs & Support" : "सहायता"}
+              {isHi ? "सहायता व अक्सर पूछे जाने वाले सवाल" : "FAQs & Support"}
             </Link>
             <Link
               href="/admin"
@@ -194,17 +219,29 @@ export default function Navbar({
                 onOpenLocationModal();
               }}
             >
-              📍 {currentLocation} (Change)
+              <IconMapPin size={16} stroke={2} />
+              <span>{currentLocation} (Change)</span>
             </button>
             <button
               type="button"
-              className={styles.mobilePartnerBtn}
+              className={styles.mobileVendorBtn}
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenVendorModal();
               }}
             >
-              {language === "en" ? "Register Your Store" : "अपनी दुकान जोड़ें"}
+              {isHi ? "अपनी दुकान जोड़ें" : "Become a vendor"}
+            </button>
+            <button
+              type="button"
+              className={styles.mobileAppBtn}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                handleDownloadClick();
+              }}
+            >
+              <IconDeviceMobile size={16} stroke={2} />
+              <span>{isHi ? "डसमिट ऐप डाउनलोड करें" : "Get the app"}</span>
             </button>
           </div>
         </div>
