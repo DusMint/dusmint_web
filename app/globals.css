@@ -7,9 +7,10 @@
 }
 
 html {
-  font-family: var(--dm-font-sans);
-  color: var(--dm-text-main);
-  background-color: var(--dm-bg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--ink-900);
+  background-color: var(--cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -19,8 +20,21 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--dm-bg);
+  background-color: var(--cream);
+  color: var(--ink-900);
   overflow-x: hidden;
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--ink-900);
+  font-weight: 600;
+  text-transform: none; /* sentence case as per design.md */
+}
+
+h1 {
+  font-weight: 700;
 }
 
 a {
@@ -29,20 +43,105 @@ a {
 }
 
 button {
-  font-family: inherit;
+  font-family: var(--font-heading);
   cursor: pointer;
   border: none;
   background: none;
 }
 
 input, select, textarea {
-  font-family: inherit;
+  font-family: var(--font-body);
+  font-size: 16px; /* prevent iOS auto-zoom and adhere to 16px base */
+  color: var(--ink-900);
 }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* 2.7 Button classes from design.md */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-green {
+  background: var(--btn-green);
+  color: var(--white);
+  border: 0;
+}
+
+.btn-green:hover {
+  background: var(--btn-green-hover);
+}
+
+.btn-green:active {
+  background: var(--btn-green-pressed);
+}
+
+.btn-yellow {
+  background: var(--btn-yellow);
+  color: var(--ink-900);
+  border: 1px solid var(--btn-yellow-border);
+}
+
+.btn-yellow:hover {
+  background: var(--btn-yellow-hover);
+}
+
+.btn-yellow:active {
+  background: var(--btn-yellow-pressed);
+}
+
+.btn-yellow.on-dark {
+  border-color: transparent;
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid var(--white);
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.btn-outline-green {
+  background: transparent;
+  color: var(--green-700);
+  border: 1.5px solid var(--green-700);
+}
+
+.btn-outline-green:hover {
+  background: var(--mint-100);
+}
+
+.btn:disabled {
+  background: var(--btn-disabled-bg);
+  color: var(--btn-disabled-text);
+  border-color: transparent;
+  cursor: not-allowed;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--yellow-500);
+  outline-offset: 2px;
 }
 
 /* Custom Scrollbar */
@@ -61,5 +160,5 @@ img {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0b5c38;
+  background: var(--green-700);
 }

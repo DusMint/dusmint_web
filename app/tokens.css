@@ -1,54 +1,54 @@
-/* DusMint Global Design Tokens */
+/* Dusmint Design System Design Tokens (from design.md) */
 :root {
-  /* Brand Palette */
-  --dm-primary: #0b5c38;
-  --dm-primary-hover: #074529;
-  --dm-primary-light: #e8f5ee;
-  --dm-primary-surface: #f2f9f5;
-  --dm-primary-rgb: 11, 92, 56;
+  /* 2.1 Brand Colours */
+  --green-900: #0A3622; /* Forest: Splash, footer, dark brand panels, dark nav */
+  --green-700: #11663A; /* Dusmint Green (primary): Primary buttons, links, price text */
+  --green-600: #1A8A4F; /* Fresh Green: Icons, large headings */
+  --mint-100:  #E8F5EC; /* Mint Tint: Selected states, chips, soft section backgrounds */
+  --mint-50:   #F4FBF6; /* Mint Mist: Page background alternative */
+  --yellow-500:#FFC82E; /* Marigold (accent): Highlight buttons, discount badges */
+  --yellow-100:#FFF3C4; /* Butter: Offer strips, info callouts, soft highlights */
+  --yellow-800:#7A5A00; /* Turmeric Dark: Text that sits on yellow-100 */
 
-  --dm-accent: #ffc20e;
-  --dm-accent-hover: #e6ac05;
-  --dm-accent-light: #fff8e1;
+  /* 2.2 Neutrals */
+  --cream:     #FFFCF2; /* Default page and card surface */
+  --white:     #FFFFFF; /* Cards, sheets, inputs */
+  --ink-900:   #14211B; /* Primary text and headings */
+  --gray-600:  #56655D; /* Secondary text (units, descriptions, captions) */
+  --gray-500:  #6B7A72; /* Placeholder text and disabled labels */
+  --gray-300:  #D3DBD6; /* Dividers and input borders */
 
-  --dm-secondary: #166534;
-  --dm-dark: #111e16;
-  --dm-dark-muted: #2d3e33;
+  /* 2.3 Status colours */
+  --error:     #C62828; /* Errors, rejected, failed payment */
+  --error-bg:  #FDECEA; /* Error banners */
+  --offer-coral: #E8553D;
 
-  /* Neutrals */
-  --dm-bg: #f8faf8;
-  --dm-card-bg: #ffffff;
-  --dm-text-main: #141c17;
-  --dm-text-muted: #5e6d64;
-  --dm-text-subtle: #8a9990;
-  --dm-border: #e3eae5;
-  --dm-border-focus: #0b5c38;
+  /* 2.7 Button Tokens */
+  --btn-green: #11663A;
+  --btn-green-hover: #0E5330;
+  --btn-green-pressed: #0A3E24;
+  --btn-yellow: #FFC82E;
+  --btn-yellow-hover: #F5B800;
+  --btn-yellow-pressed: #E0A500;
+  --btn-yellow-border: #B88700;
+  --btn-disabled-bg: #D3DBD6;
+  --btn-disabled-text: #6B7A72;
 
-  /* Status Colors */
-  --dm-success: #10b981;
-  --dm-warning: #f59e0b;
-  --dm-danger: #ef4444;
-  --dm-info: #0284c7;
+  /* Aliases for semantic usage */
+  --dm-bg: var(--cream);
+  --dm-card-bg: var(--white);
+  --dm-text-main: var(--ink-900);
+  --dm-text-muted: var(--gray-600);
+  --dm-border: var(--gray-300);
 
   /* Typography */
-  --dm-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --dm-font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-heading: var(--font-poppins), "Poppins", system-ui, sans-serif;
+  --font-body: var(--font-noto-sans), "Noto Sans", system-ui, sans-serif;
 
-  /* Shadows */
-  --dm-shadow-xs: 0 1px 2px rgba(11, 92, 56, 0.05);
-  --dm-shadow-sm: 0 2px 8px rgba(11, 92, 56, 0.06);
-  --dm-shadow-md: 0 8px 24px rgba(11, 92, 56, 0.08);
-  --dm-shadow-lg: 0 16px 36px rgba(11, 92, 56, 0.12);
-  --dm-shadow-hover: 0 12px 28px rgba(11, 92, 56, 0.14);
-
-  /* Border Radii */
+  /* Shapes and Spacing */
   --dm-radius-sm: 8px;
-  --dm-radius-md: 14px;
-  --dm-radius-lg: 20px;
-  --dm-radius-xl: 28px;
-  --dm-radius-full: 9999px;
-
-  /* Layout */
-  --dm-max-width: 1240px;
-  --dm-nav-height: 80px;
+  --dm-radius-md: 12px;
+  --dm-radius-lg: 16px;
+  --dm-radius-pill: 999px;
+  --dm-max-width: 1200px;
 }
