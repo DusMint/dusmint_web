@@ -2,6 +2,12 @@
 
 import React from "react";
 import Image from "next/image";
+import {
+  IconBuildingStore,
+  IconBolt,
+  IconShieldCheck,
+  IconArrowRight,
+} from "@tabler/icons-react";
 import styles from "./Hero.module.css";
 
 interface HeroProps {
@@ -18,17 +24,7 @@ export default function Hero({ language, onShopNowClick, onPartnerClick }: HeroP
       <div className={styles.container}>
         {/* Left Column: Copy & Actions */}
         <div className={styles.heroContent}>
-          {/* Top Hyperlocal Pill */}
-          <div className={styles.pillBadge}>
-            <span className={styles.pillPulse}></span>
-            <span className={styles.pillText}>
-              {isHi
-                ? "⚡ 10-30 मिनट में आपके घर तक डिलीवरी"
-                : "⚡ 10-30 MIN HYPERLOCAL DELIVERY"}
-            </span>
-          </div>
-
-          {/* Main Title */}
+          {/* Main Title - Poppins Bold 48px/56px on desktop, 32px/40px on mobile */}
           <h1 className={styles.title}>
             {isHi ? (
               <>
@@ -37,28 +33,28 @@ export default function Hero({ language, onShopNowClick, onPartnerClick }: HeroP
               </>
             ) : (
               <>
-                Local Shops. <br />
-                <span className={styles.titleHighlight}>Faster to You.</span>
+                Local shops. <br />
+                <span className={styles.titleHighlight}>Faster to you.</span>
               </>
             )}
           </h1>
 
-          {/* Subtitle */}
+          {/* Subtitle - Noto Sans Regular 18px/28px */}
           <p className={styles.subtitle}>
             {isHi
               ? "किराना, ताज़ी सब्जियां, दूध, मांस, मछली और बहुत कुछ—आपकी भरोसेमंद नजदीकी दुकानों से मिनटों में आपके दरवाज़े पर।"
               : "Groceries, fresh produce, dairy, meat, seafood and more from your trusted neighbourhood shops delivered in minutes."}
           </p>
 
-          {/* Call to Actions */}
+          {/* Call to Actions using design.md two-colour system */}
           <div className={styles.ctaGroup}>
             <button
               type="button"
               className={styles.shopNowBtn}
               onClick={onShopNowClick}
             >
-              <span>{isHi ? "अभी ऑर्डर करें" : "Shop Now"}</span>
-              <span className={styles.arrowIcon}>→</span>
+              <span>{isHi ? "अभी ऑर्डर करें" : "Shop now"}</span>
+              <IconArrowRight size={18} stroke={2.2} />
             </button>
 
             <button
@@ -66,80 +62,64 @@ export default function Hero({ language, onShopNowClick, onPartnerClick }: HeroP
               className={styles.partnerBtn}
               onClick={onPartnerClick}
             >
-              <span>{isHi ? "दुकान रजिस्टर करें" : "List Your Shop"}</span>
+              <span>{isHi ? "दुकान रजिस्टर करें" : "List your shop"}</span>
             </button>
           </div>
 
-          {/* Trust Features Badges */}
+          {/* Trust Features Row using React icons */}
           <div className={styles.featuresRow}>
             <div className={styles.featureItem}>
-              <div className={styles.featureIcon}>🏪</div>
+              <IconBuildingStore size={22} stroke={1.8} className={styles.featureIcon} />
               <span className={styles.featureLabel}>
-                {isHi ? "स्थानीय दुकानदार" : "Local Shopkeepers"}
+                {isHi ? "स्थानीय दुकानदार" : "Local shopkeepers"}
               </span>
             </div>
 
             <div className={styles.featureDivider}></div>
 
             <div className={styles.featureItem}>
-              <div className={styles.featureIcon}>⚡</div>
+              <IconBolt size={22} stroke={1.8} className={styles.featureIcon} />
               <span className={styles.featureLabel}>
-                {isHi ? "सुपरफास्ट डिलीवरी" : "Quick Delivery"}
+                {isHi ? "10-30 मिनट डिलीवरी" : "10-30 min delivery"}
               </span>
             </div>
 
             <div className={styles.featureDivider}></div>
 
             <div className={styles.featureItem}>
-              <div className={styles.featureIcon}>🛡️</div>
+              <IconShieldCheck size={22} stroke={1.8} className={styles.featureIcon} />
               <span className={styles.featureLabel}>
-                {isHi ? "ताज़ा और भरोसेमंद" : "Fresh & Trusted"}
+                {isHi ? "ताज़ा और भरोसेमंद" : "Fresh & trusted"}
               </span>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Hero Visual with Overlays */}
+        {/* Right Column: Grounded Photography Visual */}
         <div className={styles.heroVisual}>
           <div className={styles.imageCard}>
             <div className={styles.imageWrapper}>
               <Image
                 src="/images/hero_shopkeeper.jpg"
-                alt="Friendly Indian Kirana Shopkeeper"
-                width={600}
-                height={500}
+                alt="Local Indian Kirana Shopkeeper"
+                width={580}
+                height={480}
                 priority
                 className={styles.heroImg}
               />
             </div>
 
-            {/* Floating Badge Card 1: Your Neighbourhood Shop */}
-            <div className={styles.floatingCardOnline}>
+            {/* Clean, Grounded Info Badge (No floating gimmick) */}
+            <div className={styles.storeBadgeGrounded}>
               <div className={styles.cardStoreIcon}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
+                <IconBuildingStore size={22} stroke={2} />
               </div>
               <div className={styles.cardOnlineText}>
                 <span className={styles.cardOnlineTitle}>
-                  {isHi ? "आपकी पड़ोस की दुकान" : "Your Neighbourhood Shop."}
+                  {isHi ? "आपकी पड़ोस की दुकान" : "Your neighbourhood shop"}
                 </span>
                 <span className={styles.cardOnlineSub}>
-                  {isHi ? "अब ऑनलाइन डिलीवरी पर" : "Now Online on Dusmint"}
-                </span>
-              </div>
-            </div>
-
-            {/* Floating Badge Card 2: Rating & Trust */}
-            <div className={styles.floatingCardRating}>
-              <div className={styles.starBadge}>⭐ 4.9</div>
-              <div className={styles.ratingText}>
-                <span className={styles.ratingTitle}>
-                  {isHi ? "12,000+ खुश ग्राहक" : "12,000+ Happy Families"}
-                </span>
-                <span className={styles.ratingSub}>
-                  {isHi ? "आपके इलाके में 98.9% ऑन-टाइम" : "98.9% On-time in Kolkata"}
+                  {isHi ? "अब ऑनलाइन डसमिट पर" : "Now online on Dusmint"}
                 </span>
               </div>
             </div>
