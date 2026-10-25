@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { IconArrowRight, IconCheck } from "@tabler/icons-react";
+import { IconCheck } from "@tabler/icons-react";
 import styles from "./CategoriesSection.module.css";
 
 interface CategoryItem {
@@ -11,64 +11,82 @@ interface CategoryItem {
   nameHi: string;
   image: string;
   itemCount: string;
+  descEn: string;
+  descHi: string;
 }
 
 export const CATEGORIES: CategoryItem[] = [
   {
     id: "groceries",
-    nameEn: "Groceries",
-    nameHi: "किराना",
+    nameEn: "Kirana & Staples",
+    nameHi: "किराना और राशन",
     image: "/images/cat_groceries.jpg",
     itemCount: "420+ items",
+    descEn: "Atta, rice, dals, oils & spices",
+    descHi: "आटा, दाल, चावल और मसाले",
   },
   {
     id: "vegetables",
-    nameEn: "Fresh Vegetables",
-    nameHi: "ताज़ी सब्जियां",
+    nameEn: "Morning Mandi",
+    nameHi: "मंडी की सब्जियां",
     image: "/images/cat_vegetables.jpg",
     itemCount: "85+ items",
+    descEn: "Dawn-picked fresh greens & roots",
+    descHi: "सुबह की ताज़ी हरी सब्जियां",
   },
   {
     id: "fruits",
-    nameEn: "Fruits",
+    nameEn: "Fresh Fruits",
     nameHi: "ताज़े फल",
     image: "/images/cat_fruits.jpg",
     itemCount: "60+ items",
+    descEn: "Hand-sorted seasonal fruits",
+    descHi: "हाथ से चुने मौसमी फल",
   },
   {
     id: "dairy",
-    nameEn: "Dairy & Eggs",
-    nameHi: "दूध और अंडे",
+    nameEn: "Dairy & Milk",
+    nameHi: "डेयरी और दूध",
     image: "/images/cat_dairy.jpg",
     itemCount: "110+ items",
+    descEn: "Fresh milk, paneer & butter",
+    descHi: "दूध, ताज़ा पनीर और मक्खन",
   },
   {
     id: "meat",
-    nameEn: "Chicken & Meat",
+    nameEn: "Poultry & Meat",
     nameHi: "चिकन और मीट",
     image: "/images/cat_meat.jpg",
     itemCount: "45+ items",
+    descEn: "Fresh hygienic cuts & eggs",
+    descHi: "ताज़ा चिकन और अंडे",
   },
   {
     id: "seafood",
-    nameEn: "Fish & Seafood",
+    nameEn: "Local Fish Catch",
     nameHi: "मछली और झींगा",
     image: "/images/cat_seafood.jpg",
     itemCount: "50+ items",
+    descEn: "Kolkata fresh morning fish",
+    descHi: "कोलकाता की ताज़ी मछली",
   },
   {
     id: "bakery",
-    nameEn: "Bakery & Breads",
+    nameEn: "Artisanal Bakery",
     nameHi: "बेकरी और ब्रेड",
     image: "/images/cat_bakery.jpg",
     itemCount: "75+ items",
+    descEn: "Oven-fresh bread, pav & rusks",
+    descHi: "ताज़ा पाव, ब्रेड और बिस्कुट",
   },
   {
     id: "household",
-    nameEn: "Household",
+    nameEn: "Home Essentials",
     nameHi: "घरेलू सामान",
     image: "/images/cat_household.jpg",
     itemCount: "190+ items",
+    descEn: "Cleaning & puja essentials",
+    descHi: "सफाई और पूजा का सामान",
   },
 ];
 
@@ -91,45 +109,39 @@ export default function CategoriesSection({
         <div className={styles.headerRow}>
           <div>
             <h2 className={styles.sectionTitle}>
-              {isHi ? "कैटेगरी के अनुसार खरीदारी करें" : "Shop by category"}
+              {isHi
+                ? "डसमिट प्लेटफॉर्म द्वारा डिजिटाइज़्ड श्रेणियां"
+                : "Essential categories digitized on Dusmint"}
             </h2>
             <p className={styles.sectionSubtitle}>
               {isHi
-                ? "सभी रोज़मर्रा की ज़रूरतें आपके नजदीकी बाज़ार से"
-                : "Handpicked selections straight from neighbourhood vendors"}
+                ? "हम आपके पड़ोस के प्रत्येक विशेषज्ञ दुकानदार को आधुनिक कैटलॉग और ऑन-डिमांड इलेक्ट्रिक डिलीवरी से जोड़ते हैं"
+                : "Connecting specialized neighbourhood vendors directly to customers with live inventory and 10–30 minute dispatch"}
             </p>
           </div>
-
-          <button
-            type="button"
-            className={styles.seeAllBtn}
-            onClick={() => onSelectCategory(null)}
-          >
-            <span>{isHi ? "सभी देखें" : "See all"}</span>
-            <IconArrowRight size={16} stroke={2} />
-          </button>
         </div>
 
-        {/* Categories Grid */}
+        {/* Categories Grid - 8 across on wide desktop */}
         <div className={styles.grid}>
           {CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat.id;
 
             return (
-              <button
+              <div
                 key={cat.id}
-                type="button"
                 className={`${styles.card} ${isSelected ? styles.cardActive : ""}`}
                 onClick={() =>
                   onSelectCategory(isSelected ? null : cat.id)
                 }
+                role="button"
+                tabIndex={0}
               >
                 <div className={styles.imageBox}>
                   <Image
                     src={cat.image}
                     alt={isHi ? cat.nameHi : cat.nameEn}
-                    width={180}
-                    height={180}
+                    width={220}
+                    height={220}
                     className={styles.catImage}
                   />
                   {isSelected && (
@@ -141,8 +153,10 @@ export default function CategoriesSection({
                 <span className={styles.catName}>
                   {isHi ? cat.nameHi : cat.nameEn}
                 </span>
-                <span className={styles.catCount}>{cat.itemCount}</span>
-              </button>
+                <span className={styles.catDesc}>
+                  {isHi ? cat.descHi : cat.descEn}
+                </span>
+              </div>
             );
           })}
         </div>

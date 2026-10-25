@@ -5,6 +5,8 @@ import Image from "next/image";
 import {
   IconBolt,
   IconStarFilled,
+  IconDeviceMobile,
+  IconBuildingStore,
   IconArrowRight,
 } from "@tabler/icons-react";
 import styles from "./PopularShopsSection.module.css";
@@ -13,6 +15,7 @@ export interface Shop {
   id: string;
   name: string;
   categoryTag: string;
+  categoryName: string;
   deliveryTime: string;
   rating: number;
   reviewsCount: string;
@@ -20,6 +23,7 @@ export interface Shop {
   image: string;
   distance: string;
   location: string;
+  merchantStory: string;
   featuredItems: {
     id: string;
     name: string;
@@ -34,13 +38,15 @@ export const SHOPS: Shop[] = [
     id: "sharma-kirana",
     name: "Sharma Kirana Store",
     categoryTag: "groceries",
-    deliveryTime: "15 min",
+    categoryName: "Kirana & Staples",
+    deliveryTime: "10–15 min",
     rating: 4.8,
     reviewsCount: "890",
     freeDeliveryThreshold: 150,
     image: "/images/shop_kirana.jpg",
     distance: "0.8 km",
     location: "Block B, Salt Lake Sector 1",
+    merchantStory: "Family-run neighbourhood grocery for over 22 years. Partnered with Dusmint to offer instant digital delivery across Sector 1.",
     featuredItems: [
       { id: "i1", name: "Aashirvaad Shudh Chakki Atta", weight: "5 kg", price: 245, originalPrice: 280 },
       { id: "i2", name: "Tata Salt Vacuum Evaporated", weight: "1 kg", price: 28, originalPrice: 30 },
@@ -50,15 +56,17 @@ export const SHOPS: Shop[] = [
   },
   {
     id: "fresh-basket",
-    name: "Fresh Basket",
+    name: "Fresh Basket Mandi",
     categoryTag: "vegetables",
-    deliveryTime: "15 min",
+    categoryName: "Morning Mandi",
+    deliveryTime: "10–15 min",
     rating: 4.7,
     reviewsCount: "1.2k",
     freeDeliveryThreshold: 199,
     image: "/images/shop_freshbasket.jpg",
     distance: "1.1 km",
     location: "City Centre 1, Salt Lake",
+    merchantStory: "Fresh greens and seasonal vegetables brought in every morning from local Bengal mandis. Sorted and hand-inspected daily.",
     featuredItems: [
       { id: "i5", name: "Farm Fresh Desi Red Tomatoes", weight: "1 kg", price: 38, originalPrice: 50 },
       { id: "i6", name: "Crisp Green Capsicum", weight: "500 g", price: 45, originalPrice: 60 },
@@ -68,8 +76,9 @@ export const SHOPS: Shop[] = [
   },
   {
     id: "new-town-dairy",
-    name: "New Town Dairy",
+    name: "New Town Fresh Dairy",
     categoryTag: "dairy",
+    categoryName: "Dairy & Milk",
     deliveryTime: "10 min",
     rating: 4.9,
     reviewsCount: "540",
@@ -77,6 +86,7 @@ export const SHOPS: Shop[] = [
     image: "/images/shop_dairy.jpg",
     distance: "0.4 km",
     location: "Action Area 1, New Town",
+    merchantStory: "Pure milk pouches, fresh morning malai paneer, and artisanal Mishti Doi prepared daily according to Kolkata traditions.",
     featuredItems: [
       { id: "i9", name: "Fresh Farm Cow Milk Pouch", weight: "500 ml", price: 34, originalPrice: 36 },
       { id: "i10", name: "Soft Malai Paneer Block", weight: "200 g", price: 90, originalPrice: 105 },
@@ -86,36 +96,22 @@ export const SHOPS: Shop[] = [
   },
   {
     id: "alam-chicken",
-    name: "Alam Chicken Centre",
+    name: "Bengal Fresh Poultry & Catch",
     categoryTag: "meat",
-    deliveryTime: "20 min",
+    categoryName: "Poultry & Fish",
+    deliveryTime: "15–20 min",
     rating: 4.6,
     reviewsCount: "390",
     freeDeliveryThreshold: 250,
     image: "/images/shop_meat.jpg",
-    distance: "1.6 km",
+    distance: "1.4 km",
     location: "Sector 3 Market, Salt Lake",
+    merchantStory: "Hygienically dressed poultry and daily morning river catch. Cut, cleaned, and packed to custom specifications upon order.",
     featuredItems: [
       { id: "i13", name: "Fresh Curry Cut Chicken (Skinless)", weight: "500 g", price: 140, originalPrice: 165 },
       { id: "i14", name: "Tender Chicken Breast Boneless", weight: "500 g", price: 175, originalPrice: 210 },
-      { id: "i15", name: "Fresh Goat Mutton Curry Cut", weight: "500 g", price: 440, originalPrice: 490 },
-    ],
-  },
-  {
-    id: "bay-seafood",
-    name: "Bay Seafood",
-    categoryTag: "seafood",
-    deliveryTime: "25 min",
-    rating: 4.8,
-    reviewsCount: "710",
-    freeDeliveryThreshold: 300,
-    image: "/images/shop_seafood.jpg",
-    distance: "2.0 km",
-    location: "Ultadanga VIP Road Hub",
-    featuredItems: [
-      { id: "i16", name: "Fresh Bengal Katla / Rohu Steaks", weight: "500 g", price: 210, originalPrice: 250 },
-      { id: "i17", name: "Padma River Fresh Hilsa (Ilish)", weight: "800 g", price: 1100, originalPrice: 1300 },
-      { id: "i18", name: "Tiger Prawns Cleaned & Deveined", weight: "300 g", price: 320, originalPrice: 380 },
+      { id: "i15", name: "Fresh Katla Bengali Cut Fish", weight: "500 g", price: 220, originalPrice: 250 },
+      { id: "i16", name: "Cleaned Medium Tiger Prawns", weight: "250 g", price: 210, originalPrice: 245 },
     ],
   },
 ];
@@ -141,32 +137,43 @@ export default function PopularShopsSection({
       )
     : SHOPS;
 
+  const handleScrollToApp = () => {
+    const el = document.getElementById("download-app");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section id="shops" className={styles.section}>
+    <section id="network" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.headerRow}>
           <div>
+            <div className={styles.badgeSection}>
+              <IconBuildingStore size={16} />
+              <span>{isHi ? "सत्यापित पार्टनर स्टोर" : "Verified Merchant Partners"}</span>
+            </div>
             <h2 className={styles.sectionTitle}>
-              {isHi ? "आपके नज़दीक लोकप्रिय दुकानें" : "Popular shops near you"}
+              {isHi
+                ? "हमारे पड़ोस के स्टोर नेटवर्क को जानें"
+                : "Explore our verified neighbourhood store network"}
             </h2>
             <p className={styles.sectionSubtitle}>
               {isHi
-                ? "असली स्थानीय दुकानें, असली मूल्य, 10-30 मिनट में डिलीवरी"
-                : "Real neighbourhood shops, in-store prices, delivered fast to your doorstep"}
+                ? "डसमिट वास्तविक पारिवारिक दुकानों को आधुनिक तकनीक से जोड़ता है। ग्राहक मोबाइल ऐप से ऑर्डर करते हैं और 10-30 मिनट में ताज़ा सामान पाते हैं।"
+                : "Dusmint integrates real family-run stores into our hyper-dispatch ecosystem. Every merchant operates our POS software with zero warehouse holding."}
             </p>
           </div>
 
           <button
             type="button"
-            className={styles.seeAllBtn}
-            onClick={() => onOpenShopModal(SHOPS[0])}
+            className={styles.downloadCtaBtn}
+            onClick={handleScrollToApp}
           >
-            <span>{isHi ? "सभी दुकानें देखें" : "See all"}</span>
-            <IconArrowRight size={16} stroke={2} />
+            <IconDeviceMobile size={18} stroke={2} />
+            <span>{isHi ? "ऐप पर सभी देखें" : "Explore on customer app"}</span>
           </button>
         </div>
 
-        {/* Shops Card Grid */}
+        {/* Shops Card Grid - 4 wide on desktop */}
         <div className={styles.grid}>
           {filteredShops.map((shop) => (
             <div
@@ -183,20 +190,24 @@ export default function PopularShopsSection({
                 <Image
                   src={shop.image}
                   alt={shop.name}
-                  width={340}
-                  height={200}
+                  width={380}
+                  height={220}
                   className={styles.shopImage}
                 />
-                {/* Delivery Time Badge overlay on bottom-left */}
+                {/* Delivery Time Badge */}
                 <div className={styles.deliveryBadge}>
                   <IconBolt size={14} stroke={2.2} className={styles.deliveryIcon} />
                   <span className={styles.timeText}>{shop.deliveryTime}</span>
                 </div>
-                {/* Distance pill */}
-                <div className={styles.distanceBadge}>{shop.distance}</div>
+                {/* Distance */}
+                <div className={styles.distanceBadge}>{shop.distance} away</div>
               </div>
 
               <div className={styles.cardContent}>
+                <div className={styles.categoryLine}>
+                  <span>{shop.categoryName}</span>
+                </div>
+
                 <div className={styles.nameRow}>
                   <h3 className={styles.shopName}>{shop.name}</h3>
                   <div className={styles.ratingBadge}>
@@ -210,13 +221,28 @@ export default function PopularShopsSection({
 
                 <p className={styles.shopLocation}>{shop.location}</p>
 
-                <div className={styles.deliveryThresholdRow}>
-                  <span className={styles.deliveryThreshold}>
-                    ₹{shop.freeDeliveryThreshold} {isHi ? "पर फ्री डिलीवरी" : "for free delivery"}
+                <p className={styles.merchantStory}>{shop.merchantStory}</p>
+
+                <div className={styles.itemsPreview}>
+                  <span className={styles.itemsLabel}>
+                    {isHi ? "डिजिटाइज़्ड सामान:" : "Digitized catalog:"}
                   </span>
-                  <span className={styles.viewMenuBtn}>
-                    {isHi ? "सामान देखें" : "View shop"}
+                  <div className={styles.chipsRow}>
+                    {shop.featuredItems.slice(0, 3).map((item) => (
+                      <span key={item.id} className={styles.itemChip}>
+                        {item.name.split(" ").slice(0, 3).join(" ")}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className={styles.footerRow}>
+                  <span className={styles.viewDetailsText}>
+                    {isHi ? "स्टोर प्रोफाइल देखें" : "View store profile"}
                     <IconArrowRight size={14} stroke={2} />
+                  </span>
+                  <span className={styles.activePill}>
+                    {isHi ? "डसमिट ऐप पर लाइव" : "Live on Dusmint"}
                   </span>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 .section {
-  padding: 3.5rem 1.5rem 2.5rem;
+  padding: 5rem 3rem 4rem;
   background-color: var(--cream);
+  border-bottom: 1px solid var(--gray-300);
 }
 
 .container {
@@ -12,51 +13,34 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 2rem;
-  gap: 1rem;
+  margin-bottom: 2.75rem;
+  gap: 2rem;
 }
 
-/* H2: Poppins 600 36px/44px (design.md 5.1) */
+/* H2: Poppins 700 36px/44px */
 .sectionTitle {
   font-family: var(--font-heading);
   font-size: 36px;
   line-height: 44px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink-900);
+  letter-spacing: -0.02em;
 }
 
-/* Body: Noto Sans 400 16px/26px */
+/* Body: Noto Sans 400 17px/26px */
 .sectionSubtitle {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 26px;
   color: var(--gray-600);
-  margin-top: 0.25rem;
-}
-
-.seeAllBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-heading);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 600;
-  color: var(--green-700);
-  padding: 0.4rem 0.6rem;
-  border-radius: var(--dm-radius-sm);
-  transition: color 0.15s ease, transform 0.15s ease;
-}
-
-.seeAllBtn:hover {
-  color: var(--btn-green-hover);
-  transform: translateX(2px);
+  margin-top: 0.5rem;
+  max-width: 780px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .card {
@@ -64,32 +48,34 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: transparent;
-  padding: 0.25rem;
+  background: var(--white);
+  padding: 1rem 0.75rem 1.25rem;
   border-radius: var(--dm-radius-md);
-  transition: transform 0.15s ease;
+  border: 1px solid var(--gray-300);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
+  box-shadow: 0 1px 4px rgba(10, 54, 34, 0.03);
 }
 
 .card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  border-color: var(--green-700);
+  box-shadow: 0 6px 16px rgba(10, 54, 34, 0.08);
+}
+
+.cardActive {
+  border-color: var(--green-700);
+  box-shadow: 0 0 0 2px var(--green-700);
 }
 
 .imageBox {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: var(--dm-radius-md);
+  border-radius: var(--dm-radius-sm);
   overflow: hidden;
-  background-color: var(--white);
-  border: 1px solid var(--gray-300);
-  margin-bottom: 0.65rem;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.card:hover .imageBox {
-  border-color: var(--green-700);
-  box-shadow: 0 4px 12px rgba(10, 54, 34, 0.08);
+  background-color: var(--mint-50);
+  margin-bottom: 0.85rem;
 }
 
 .catImage {
@@ -100,12 +86,7 @@
 }
 
 .card:hover .catImage {
-  transform: scale(1.05);
-}
-
-.cardActive .imageBox {
-  border-color: var(--green-700);
-  box-shadow: 0 0 0 2px var(--green-700);
+  transform: scale(1.06);
 }
 
 .activeCheck {
@@ -122,26 +103,26 @@
   justify-content: center;
 }
 
-/* Category Title: Poppins 500 16px/22px */
+/* Category Title: Poppins 600 15px/22px */
 .catName {
   font-family: var(--font-heading);
   font-size: 15px;
   line-height: 22px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--ink-900);
 }
 
-/* Category Count: Noto Sans 400 13px/18px */
-.catCount {
+/* Category Description: Noto Sans 400 12px/16px */
+.catDesc {
   font-family: var(--font-body);
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 16px;
   color: var(--gray-600);
-  margin-top: 0.15rem;
+  margin-top: 0.35rem;
 }
 
 /* Responsive */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
@@ -149,38 +130,26 @@
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
   .sectionTitle {
     font-size: 26px;
     line-height: 34px;
   }
 
   .sectionSubtitle {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 22px;
   }
 
   .grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
-  .catName {
-    font-size: 13px;
-    line-height: 18px;
-  }
-
-  .catCount {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .section {
-    padding: 2rem 1rem 1.5rem;
-  }
-
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
+  .card {
+    padding: 0.75rem 0.5rem 1rem;
   }
 }

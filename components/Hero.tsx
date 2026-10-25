@@ -6,55 +6,65 @@ import {
   IconBuildingStore,
   IconBolt,
   IconShieldCheck,
-  IconArrowRight,
+  IconDeviceMobile,
+  IconSparkles,
 } from "@tabler/icons-react";
 import styles from "./Hero.module.css";
 
 interface HeroProps {
   language: "en" | "hi";
-  onShopNowClick: () => void;
+  onExploreAppClick: () => void;
   onPartnerClick: () => void;
 }
 
-export default function Hero({ language, onShopNowClick, onPartnerClick }: HeroProps) {
+export default function Hero({ language, onExploreAppClick, onPartnerClick }: HeroProps) {
   const isHi = language === "hi";
 
   return (
     <section className={styles.heroSection}>
       <div className={styles.container}>
-        {/* Left Column: Copy & Actions */}
+        {/* Left Column: Product Value Story & Actions */}
         <div className={styles.heroContent}>
-          {/* Main Title - Poppins Bold 48px/56px on desktop, 32px/40px on mobile */}
+          <div className={styles.taglineChip}>
+            <IconSparkles size={16} className={styles.chipIcon} />
+            <span>
+              {isHi
+                ? "भारत का विश्वसनीय हाइपरलोकल रिटेल नेटवर्क"
+                : "India's True Hyperlocal Commerce Network"}
+            </span>
+          </div>
+
+          {/* Main Title - Poppins Bold 52px/62px desktop, 32px/40px mobile */}
           <h1 className={styles.title}>
             {isHi ? (
               <>
-                स्थानीय दुकानें। <br />
-                <span className={styles.titleHighlight}>आप तक सबसे तेज़।</span>
+                पड़ोस की असली दुकानें। <br />
+                <span className={styles.titleHighlight}>10–30 मिनट में आपके घर।</span>
               </>
             ) : (
               <>
-                Local shops. <br />
-                <span className={styles.titleHighlight}>Faster to you.</span>
+                Your local shops. <br />
+                <span className={styles.titleHighlight}>Delivered in 10–30 minutes.</span>
               </>
             )}
           </h1>
 
-          {/* Subtitle - Noto Sans Regular 18px/28px */}
+          {/* Subtitle - Noto Sans 19px/30px */}
           <p className={styles.subtitle}>
             {isHi
-              ? "किराना, ताज़ी सब्जियां, दूध, मांस, मछली और बहुत कुछ—आपकी भरोसेमंद नजदीकी दुकानों से मिनटों में आपके दरवाज़े पर।"
-              : "Groceries, fresh produce, dairy, meat, seafood and more from your trusted neighbourhood shops delivered in minutes."}
+              ? "डसमिट आपके इलाके के किराना, सुबह की मंडी और ताज़ी डेयरी को डिजिटल तकनीक और इलेक्ट्रिक डिलीवरी से जोड़ता है। कोई वेयरहाउस डार्क स्टोर नहीं, कोई छुपा हुआ शुल्क नहीं—वही असली दुकान वाला दाम।"
+              : "Dusmint connects your trusted neighbourhood kiranas, morning mandis, and fresh dairies with instant mobile ordering and high-speed electric delivery. Zero warehouse dark stores. Zero inflated markups. Just honest counter prices."}
           </p>
 
-          {/* Call to Actions using design.md two-colour system */}
+          {/* Product CTAs */}
           <div className={styles.ctaGroup}>
             <button
               type="button"
-              className={styles.shopNowBtn}
-              onClick={onShopNowClick}
+              className={styles.getAppBtn}
+              onClick={onExploreAppClick}
             >
-              <span>{isHi ? "अभी ऑर्डर करें" : "Shop now"}</span>
-              <IconArrowRight size={18} stroke={2.2} />
+              <IconDeviceMobile size={20} stroke={2.2} />
+              <span>{isHi ? "डसमिट ऐप डाउनलोड करें" : "Get the customer app"}</span>
             </button>
 
             <button
@@ -62,64 +72,82 @@ export default function Hero({ language, onShopNowClick, onPartnerClick }: HeroP
               className={styles.partnerBtn}
               onClick={onPartnerClick}
             >
-              <span>{isHi ? "दुकान रजिस्टर करें" : "List your shop"}</span>
+              <IconBuildingStore size={20} stroke={1.8} />
+              <span>{isHi ? "अपनी दुकान जोड़ें" : "Partner your store"}</span>
             </button>
           </div>
 
-          {/* Trust Features Row using React icons */}
+          {/* Platform Trust Features Row */}
           <div className={styles.featuresRow}>
             <div className={styles.featureItem}>
               <IconBuildingStore size={22} stroke={1.8} className={styles.featureIcon} />
-              <span className={styles.featureLabel}>
-                {isHi ? "स्थानीय दुकानदार" : "Local shopkeepers"}
-              </span>
+              <div className={styles.featureTextBox}>
+                <span className={styles.featureTitle}>
+                  {isHi ? "शून्य डार्क स्टोर" : "Zero dark stores"}
+                </span>
+                <span className={styles.featureDesc}>
+                  {isHi ? "100% स्थानीय दुकानें" : "100% neighbourhood retail"}
+                </span>
+              </div>
             </div>
 
             <div className={styles.featureDivider}></div>
 
             <div className={styles.featureItem}>
               <IconBolt size={22} stroke={1.8} className={styles.featureIcon} />
-              <span className={styles.featureLabel}>
-                {isHi ? "10-30 मिनट डिलीवरी" : "10-30 min delivery"}
-              </span>
+              <div className={styles.featureTextBox}>
+                <span className={styles.featureTitle}>
+                  {isHi ? "10–30 मिनट डिलीवरी" : "10–30 min delivery"}
+                </span>
+                <span className={styles.featureDesc}>
+                  {isHi ? "1.5 किमी के भीतर से" : "Dispatched under 1.5 km"}
+                </span>
+              </div>
             </div>
 
             <div className={styles.featureDivider}></div>
 
             <div className={styles.featureItem}>
               <IconShieldCheck size={22} stroke={1.8} className={styles.featureIcon} />
-              <span className={styles.featureLabel}>
-                {isHi ? "ताज़ा और भरोसेमंद" : "Fresh & trusted"}
-              </span>
+              <div className={styles.featureTextBox}>
+                <span className={styles.featureTitle}>
+                  {isHi ? "असली दुकान वाला दाम" : "Honest counter MRP"}
+                </span>
+                <span className={styles.featureDesc}>
+                  {isHi ? "कोई छुपा सरचार्ज नहीं" : "No hidden surge fees"}
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Grounded Photography Visual */}
+        {/* Right Column: Grounded Platform Visual */}
         <div className={styles.heroVisual}>
           <div className={styles.imageCard}>
             <div className={styles.imageWrapper}>
               <Image
                 src="/images/hero_shopkeeper.jpg"
-                alt="Local Indian Kirana Shopkeeper"
-                width={580}
-                height={480}
+                alt="Local Indian Kirana Shopkeeper partnered with Dusmint"
+                width={620}
+                height={500}
                 priority
                 className={styles.heroImg}
               />
             </div>
 
-            {/* Clean, Grounded Info Badge (No floating gimmick) */}
+            {/* Clean Grounded Platform Info Badge */}
             <div className={styles.storeBadgeGrounded}>
               <div className={styles.cardStoreIcon}>
-                <IconBuildingStore size={22} stroke={2} />
+                <IconBuildingStore size={24} stroke={2} />
               </div>
               <div className={styles.cardOnlineText}>
                 <span className={styles.cardOnlineTitle}>
-                  {isHi ? "आपकी पड़ोस की दुकान" : "Your neighbourhood shop"}
+                  {isHi ? "450+ सत्यापित स्थानीय दुकानें" : "450+ verified local merchants"}
                 </span>
                 <span className={styles.cardOnlineSub}>
-                  {isHi ? "अब ऑनलाइन डसमिट पर" : "Now online on Dusmint"}
+                  {isHi
+                    ? "सॉल्ट लेक, न्यू टाउन और बालीगंज में लाइव"
+                    : "Live across Salt Lake, New Town & South Kolkata"}
                 </span>
               </div>
             </div>

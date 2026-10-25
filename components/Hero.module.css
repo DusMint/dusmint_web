@@ -1,7 +1,7 @@
 .heroSection {
   position: relative;
   overflow: hidden;
-  padding: 3.5rem 1.5rem 4rem;
+  padding: 4.5rem 3rem 5.5rem;
   background-color: var(--cream);
   border-bottom: 1px solid var(--gray-300);
 }
@@ -10,24 +10,43 @@
   max-width: var(--dm-max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.15fr 0.95fr;
+  grid-template-columns: 1.18fr 0.95fr;
   align-items: center;
-  gap: 3.5rem;
+  gap: 4.5rem;
 }
 
 .heroContent {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
-/* H1: Poppins 700 48px/56px on desktop (design.md Section 5.1) */
+.taglineChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--mint-100);
+  color: var(--green-700);
+  border: 1px solid rgba(17, 102, 58, 0.2);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--dm-radius-sm);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.chipIcon {
+  color: var(--green-700);
+}
+
+/* H1: Poppins 700 52px/62px on desktop (design.md Section 5.1) */
 .title {
   font-family: var(--font-heading);
-  font-size: 48px;
-  line-height: 56px;
+  font-size: 52px;
+  line-height: 62px;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   color: var(--ink-900);
 }
 
@@ -35,29 +54,29 @@
   color: var(--green-700);
 }
 
-/* Body Large: Noto Sans 400 18px/28px (design.md Section 5.2) */
+/* Body Large: Noto Sans 400 19px/30px */
 .subtitle {
   font-family: var(--font-body);
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 19px;
+  line-height: 30px;
   color: var(--gray-600);
-  max-width: 540px;
+  max-width: 660px;
 }
 
 .ctaGroup {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
   margin-top: 0.25rem;
 }
 
-/* btn-yellow with 1px #B88700 border as one highlight per screen (design.md 2.7 & 601) */
-.shopNowBtn {
+/* Highlight Yellow Button with 1px border on light surface */
+.getAppBtn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 48px;
-  padding: 0 24px;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 26px;
   background-color: var(--yellow-500);
   color: var(--ink-900);
   border: 1px solid var(--btn-yellow-border);
@@ -67,14 +86,15 @@
   font-size: 16px;
   line-height: 24px;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
-.shopNowBtn:hover {
+.getAppBtn:hover {
   background-color: var(--btn-yellow-hover);
+  transform: translateY(-1px);
 }
 
-.shopNowBtn:active {
+.getAppBtn:active {
   background-color: var(--btn-yellow-pressed);
 }
 
@@ -82,9 +102,10 @@
 .partnerBtn {
   display: inline-flex;
   align-items: center;
+  gap: 10px;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 22px;
+  min-height: 52px;
+  padding: 0 24px;
   background-color: transparent;
   color: var(--green-700);
   border: 1.5px solid var(--green-700);
@@ -94,26 +115,28 @@
   font-size: 16px;
   line-height: 24px;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
 .partnerBtn:hover {
   background-color: var(--mint-100);
+  transform: translateY(-1px);
 }
 
+/* Platform Features Row */
 .featuresRow {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  padding-top: 1.5rem;
+  gap: 1.75rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--gray-300);
+  margin-top: 0.5rem;
 }
 
 .featureItem {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.85rem;
 }
 
 .featureIcon {
@@ -121,23 +144,34 @@
   flex-shrink: 0;
 }
 
-.featureLabel {
-  font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 22px;
-  font-weight: 500;
+.featureTextBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.featureTitle {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
   color: var(--ink-900);
+}
+
+.featureDesc {
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--gray-600);
 }
 
 .featureDivider {
   width: 1px;
-  height: 20px;
+  height: 34px;
   background-color: var(--gray-300);
 }
 
 /* Right Visual */
 .heroVisual {
-  position: relative;
   display: flex;
   justify-content: center;
 }
@@ -145,51 +179,47 @@
 .imageCard {
   position: relative;
   width: 100%;
-  max-width: 520px;
+  max-width: 580px;
+  border-radius: var(--dm-radius-lg);
+  background: var(--white);
+  padding: 0.75rem;
+  border: 1px solid var(--gray-300);
+  box-shadow: 0 8px 30px rgba(10, 54, 34, 0.08);
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
   height: 440px;
-  border-radius: 16px;
+  border-radius: var(--dm-radius-md);
   overflow: hidden;
-  border: 1px solid var(--gray-300);
-  background-color: var(--white);
-  box-shadow: 0 4px 16px rgba(10, 54, 34, 0.08);
+  background-color: #e5ece8;
 }
 
 .heroImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
 }
 
-/* Grounded badge without exaggerated floating keyframes */
+/* Grounded badge attached to the card bottom */
 .storeBadgeGrounded {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  margin-top: 0.75rem;
+  padding: 0.85rem 1.15rem;
+  background-color: var(--mint-50);
   border: 1px solid var(--gray-300);
-  border-radius: var(--dm-radius-md);
-  padding: 0.75rem 1rem;
+  border-radius: var(--dm-radius-sm);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  box-shadow: 0 4px 12px rgba(10, 54, 34, 0.08);
+  gap: 1rem;
 }
 
 .cardStoreIcon {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  background-color: var(--mint-100);
-  color: var(--green-700);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--dm-radius-sm);
+  background-color: var(--green-700);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -204,7 +234,7 @@
 .cardOnlineTitle {
   font-family: var(--font-heading);
   font-size: 15px;
-  line-height: 20px;
+  line-height: 22px;
   font-weight: 600;
   color: var(--ink-900);
 }
@@ -216,11 +246,35 @@
   color: var(--gray-600);
 }
 
-/* Mobile View (below 768px, Section 6.1) */
-@media (max-width: 960px) {
+/* Mobile & Tablet */
+@media (max-width: 1100px) {
+  .heroSection {
+    padding: 3.5rem 1.75rem 4rem;
+  }
+
   .container {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 38px;
+    line-height: 48px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .imageWrapper {
+    height: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 2.5rem 1.25rem 3rem;
   }
 
   .title {
@@ -233,31 +287,13 @@
     line-height: 24px;
   }
 
-  .heroVisual {
-    order: -1;
-  }
-
-  .imageWrapper {
-    height: 320px;
-  }
-}
-
-@media (max-width: 640px) {
-  .heroSection {
-    padding: 2rem 1rem 2.5rem;
-  }
-
-  .title {
-    font-size: 28px;
-    line-height: 36px;
-  }
-
   .ctaGroup {
     flex-direction: column;
     width: 100%;
   }
 
-  .shopNowBtn, .partnerBtn {
+  .getAppBtn,
+  .partnerBtn {
     width: 100%;
     justify-content: center;
   }
@@ -265,7 +301,7 @@
   .featuresRow {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .featureDivider {
@@ -273,6 +309,6 @@
   }
 
   .imageWrapper {
-    height: 260px;
+    height: 280px;
   }
 }
