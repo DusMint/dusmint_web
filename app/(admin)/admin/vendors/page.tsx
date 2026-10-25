@@ -13,6 +13,7 @@ import {
   SimpleGrid,
   Card,
 } from "@mantine/core";
+import { IconCheck, IconX } from "@tabler/icons-react";
 
 interface VendorApplication {
   id: string;
@@ -246,16 +247,18 @@ export default function AdminVendorsPage() {
             <Group grow mb="xs">
               <Button
                 color="green"
+                leftSection={<IconCheck size={16} />}
                 onClick={() => handleStatusChange(selectedVendor.id, "Approved")}
               >
-                ✓ Approve & Activate POS
+                Approve & activate POS
               </Button>
               <Button
                 color="red"
                 variant="outline"
+                leftSection={<IconX size={16} />}
                 onClick={() => handleStatusChange(selectedVendor.id, "Rejected")}
               >
-                ✕ Reject Application
+                Reject application
               </Button>
             </Group>
           </Box>

@@ -5,7 +5,7 @@ import {
   IconBuildingStore,
   IconLeaf,
   IconTag,
-  IconClockFast,
+  IconClock,
 } from "@tabler/icons-react";
 import styles from "./WhyDusmint.module.css";
 
@@ -45,7 +45,7 @@ export default function WhyDusmint({ language }: WhyDusmintProps) {
         "वही ईमानदार दाम जो आप खुद जाकर देते हैं। कोई छिपा हुआ पैकिंग चार्ज या अचानक बढ़ा हुआ शुल्क नहीं।",
     },
     {
-      icon: <IconClockFast size={26} stroke={1.8} className={styles.icon} />,
+      icon: <IconClock size={26} stroke={1.8} className={styles.icon} />,
       titleEn: "True hyperlocal: 10–30 mins",
       titleHi: "सच्ची हाइपरलोकल: 10-30 मिनट",
       descEn:

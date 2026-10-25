@@ -14,6 +14,7 @@ import {
   Card,
   Divider,
 } from "@mantine/core";
+import { IconCheck } from "@tabler/icons-react";
 
 export default function AdminSlotsPage() {
   const [monsoonSurge, setMonsoonSurge] = useState(false);
@@ -37,8 +38,12 @@ export default function AdminSlotsPage() {
             Configure cluster delivery windows, free delivery bands and monsoon surge adjustments
           </Text>
         </div>
-        <Button color="green" onClick={handleSave}>
-          {saved ? "✓ Settings Saved!" : "Save Configuration"}
+        <Button
+          color="green"
+          leftSection={saved ? <IconCheck size={16} /> : undefined}
+          onClick={handleSave}
+        >
+          {saved ? "Settings saved" : "Save configuration"}
         </Button>
       </Group>
 

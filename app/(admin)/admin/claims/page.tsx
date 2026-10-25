@@ -13,6 +13,7 @@ import {
   SimpleGrid,
   Modal,
 } from "@mantine/core";
+import { IconCheck, IconX } from "@tabler/icons-react";
 
 interface ClaimRecord {
   id: string;
@@ -222,16 +223,18 @@ export default function AdminClaimsPage() {
               <Group grow>
                 <Button
                   color="green"
+                  leftSection={<IconCheck size={16} />}
                   onClick={() => handleResolveClaim(selectedClaim.id, "Refunded")}
                 >
-                  ✓ Approve Instant UPI Refund
+                  Approve instant UPI refund
                 </Button>
                 <Button
                   color="gray"
                   variant="outline"
+                  leftSection={<IconX size={16} />}
                   onClick={() => handleResolveClaim(selectedClaim.id, "Rejected")}
                 >
-                  Reject Claim
+                  Reject claim
                 </Button>
               </Group>
             ) : (
