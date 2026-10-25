@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "@/components/InfoPage.module.css";
 import Link from "next/link";
+import { IconArrowRight } from "@tabler/icons-react";
 
 export default function VendorsPage() {
   return (
@@ -40,7 +41,8 @@ export default function VendorsPage() {
             Our Kolkata onboarding executive will visit your shop to set up your digital inventory.
           </p>
           <Link href="/?action=join-vendor" className={styles.ctaBtn}>
-            Apply for vendor onboarding →
+            <span>Apply for vendor onboarding</span>
+            <IconArrowRight size={18} stroke={2} style={{ marginLeft: "8px" }} />
           </Link>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "@/components/InfoPage.module.css";
 import Link from "next/link";
+import { IconArrowRight } from "@tabler/icons-react";
 
 export default function AboutPage() {
   return (
@@ -39,7 +40,8 @@ export default function AboutPage() {
             Join 450+ verified vendors in Salt Lake, New Town, and Ballygunge. 0% commission for your first month.
           </p>
           <Link href="/vendors" className={styles.ctaBtn}>
-            Learn about merchant partnership →
+            <span>Learn about merchant partnership</span>
+            <IconArrowRight size={18} stroke={2} style={{ marginLeft: "8px" }} />
           </Link>
         </div>
       </div>
