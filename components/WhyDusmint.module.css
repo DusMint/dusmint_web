@@ -1,8 +1,8 @@
 .section {
   padding: 4.5rem 1.5rem;
-  background: #f4f8f5;
-  border-top: 1px solid #e3ede6;
-  border-bottom: 1px solid #e3ede6;
+  background-color: var(--cream);
+  border-top: 1px solid var(--gray-300);
+  border-bottom: 1px solid var(--gray-300);
 }
 
 .container {
@@ -19,31 +19,23 @@
   align-items: center;
 }
 
-.pillBadge {
-  display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #0b5c38;
-  background: #e1f2e6;
-  padding: 0.3rem 0.8rem;
-  border-radius: 9999px;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.75rem;
-}
-
+/* H2: Poppins 600 36px/44px */
 .title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #121e17;
+  font-family: var(--font-heading);
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 600;
+  color: var(--ink-900);
   letter-spacing: -0.02em;
-  line-height: 1.2;
 }
 
+/* Body: Noto Sans 400 16px/26px */
 .subtitle {
-  font-size: 1rem;
-  color: #55675c;
-  margin-top: 0.6rem;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-600);
+  margin-top: 0.5rem;
 }
 
 .grid {
@@ -52,51 +44,57 @@
   gap: 1.5rem;
 }
 
+/* Card Surface: white, 1px gray-300 border, radius 12 */
 .card {
-  background: #ffffff;
-  border: 1px solid #e2ede6;
-  border-radius: 20px;
-  padding: 2rem 1.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--dm-radius-md);
+  padding: 1.75rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(11, 92, 56, 0.04);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: #0b5c38;
-  box-shadow: 0 12px 28px rgba(11, 92, 56, 0.1);
+  box-shadow: 0 1px 4px rgba(10, 54, 34, 0.04);
 }
 
 .iconBox {
-  font-size: 2.2rem;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: #eef7f1;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--dm-radius-sm);
+  background-color: var(--mint-100);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cardTitle {
-  font-size: 1.12rem;
-  font-weight: 800;
-  color: #14221a;
-  line-height: 1.35;
+.icon {
+  color: var(--green-700);
 }
 
+/* H5: Poppins 600 18px/26px */
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+/* Body small: Noto Sans 400 14px/22px */
 .cardDesc {
-  font-size: 0.88rem;
-  color: #5a6d61;
-  line-height: 1.55;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--gray-600);
 }
 
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 36px;
   }
 }
 
@@ -111,6 +109,12 @@
   }
 
   .title {
-    font-size: 1.7rem;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    line-height: 20px;
   }
 }

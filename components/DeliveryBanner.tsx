@@ -2,6 +2,12 @@
 
 import React from "react";
 import Image from "next/image";
+import {
+  IconBolt,
+  IconMapPin,
+  IconShieldCheck,
+  IconArrowRight,
+} from "@tabler/icons-react";
 import styles from "./DeliveryBanner.module.css";
 
 interface DeliveryBannerProps {
@@ -18,9 +24,6 @@ export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerP
         <div className={styles.bannerCard}>
           {/* Left Title */}
           <div className={styles.titleColumn}>
-            <span className={styles.smallOverline}>
-              {isHi ? "⚡ डसमिट एक्सप्रेस डिलीवरी" : "⚡ DUSMINT EXPRESS"}
-            </span>
             <h2 className={styles.bannerTitle}>
               {isHi ? (
                 <>
@@ -30,10 +33,9 @@ export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerP
                 </>
               ) : (
                 <>
-                  From <br />
-                  Local Shops <br />
-                  to Your Doorstep <br />
-                  <span className={styles.yellowText}>in Minutes.</span>
+                  From local shops <br />
+                  to your doorstep <br />
+                  <span className={styles.yellowText}>in minutes.</span>
                 </>
               )}
             </h2>
@@ -42,14 +44,13 @@ export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerP
               className={styles.actionBtn}
               onClick={onOrderNow}
             >
-              <span>{isHi ? "ऑर्डर ट्रैक करें" : "Experience Dusmint"}</span>
-              <span className={styles.btnArrow}>→</span>
+              <span>{isHi ? "ऑर्डर करें" : "Shop local"}</span>
+              <IconArrowRight size={18} stroke={2.2} />
             </button>
           </div>
 
           {/* Center Visual: Delivery Partner */}
           <div className={styles.visualColumn}>
-            <div className={styles.imageGlow}></div>
             <div className={styles.imageWrapper}>
               <Image
                 src="/images/delivery_partner.jpg"
@@ -61,11 +62,11 @@ export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerP
             </div>
           </div>
 
-          {/* Right Highlights: 3 trust circles matching photo */}
+          {/* Right Highlights: 3 trust items with Tabler icons */}
           <div className={styles.metricsColumn}>
             <div className={styles.metricItem}>
               <div className={styles.metricIconWrap}>
-                <span className={styles.lightningIcon}>⚡</span>
+                <IconBolt size={24} stroke={2} className={styles.metricIcon} />
               </div>
               <div className={styles.metricText}>
                 <span className={styles.metricValue}>10–30</span>
@@ -77,7 +78,7 @@ export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerP
 
             <div className={styles.metricItem}>
               <div className={styles.metricIconWrap}>
-                <span className={styles.pinIcon}>📍</span>
+                <IconMapPin size={24} stroke={2} className={styles.metricIcon} />
               </div>
               <div className={styles.metricText}>
                 <span className={styles.metricValue}>
@@ -91,7 +92,7 @@ export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerP
 
             <div className={styles.metricItem}>
               <div className={styles.metricIconWrap}>
-                <span className={styles.shieldIcon}>📦</span>
+                <IconShieldCheck size={24} stroke={2} className={styles.metricIcon} />
               </div>
               <div className={styles.metricText}>
                 <span className={styles.metricValue}>

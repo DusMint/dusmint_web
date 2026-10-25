@@ -1,6 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import {
+  IconBuildingStore,
+  IconShoppingCart,
+  IconBike,
+} from "@tabler/icons-react";
 import styles from "./HowItWorks.module.css";
 
 interface HowItWorksProps {
@@ -14,8 +19,8 @@ export default function HowItWorks({ language }: HowItWorksProps) {
   const steps = [
     {
       step: "01",
-      icon: "🏪",
-      titleEn: "Choose Your Trusted Shop",
+      icon: <IconBuildingStore size={26} stroke={1.8} className={styles.stepIcon} />,
+      titleEn: "Choose your trusted shop",
       titleHi: "अपनी पसंदीदा स्थानीय दुकान चुनें",
       descEn:
         "Browse by your favorite Sharma Kirana, Fresh Basket greengrocer, or local fishmonger just down the street.",
@@ -24,8 +29,8 @@ export default function HowItWorks({ language }: HowItWorksProps) {
     },
     {
       step: "02",
-      icon: "🛒",
-      titleEn: "Live Store Inventory & Fair Rates",
+      icon: <IconShoppingCart size={26} stroke={1.8} className={styles.stepIcon} />,
+      titleEn: "Live store inventory & fair rates",
       titleHi: "दुकान की लाइव सूची और असली दाम",
       descEn:
         "Select Atta, Daal, fresh milk or morning fish at the exact price the shopkeeper charges on the counter.",
@@ -34,8 +39,8 @@ export default function HowItWorks({ language }: HowItWorksProps) {
     },
     {
       step: "03",
-      icon: "🛵",
-      titleEn: "Doorstep Delivery in 10-30 Mins",
+      icon: <IconBike size={26} stroke={1.8} className={styles.stepIcon} />,
+      titleEn: "Doorstep delivery in 10-30 mins",
       titleHi: "10-30 मिनट में दरवाज़े पर डिलीवरी",
       descEn:
         "Our electric scooter delivery partner picks up carefully packed items and arrives at your door with live GPS tracking.",
@@ -48,16 +53,13 @@ export default function HowItWorks({ language }: HowItWorksProps) {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.pillBadge}>
-            {isHi ? "आसान प्रक्रिया" : "SIMPLE 3-STEP PROCESS"}
-          </span>
           <h2 className={styles.title}>
-            {isHi ? "डसमिट कैसे काम करता है?" : "How Dusmint Works"}
+            {isHi ? "डसमिट कैसे काम करता है?" : "How Dusmint works"}
           </h2>
           <p className={styles.subtitle}>
             {isHi
-              ? "पड़ोस की सुविधा, अत्याधुनिक तकनीक के साथ"
-              : "Neighbourhood warmth meets quick commerce speed"}
+              ? "पड़ोस की सुविधा, त्वरित डिलीवरी गति के साथ"
+              : "Neighbourhood warmth meets quick delivery speed"}
           </p>
         </div>
 
@@ -73,7 +75,7 @@ export default function HowItWorks({ language }: HowItWorksProps) {
               >
                 <div className={styles.stepTop}>
                   <span className={styles.stepNumber}>{s.step}</span>
-                  <div className={styles.stepIcon}>{s.icon}</div>
+                  <div className={styles.iconBox}>{s.icon}</div>
                 </div>
 
                 <h3 className={styles.stepTitle}>
