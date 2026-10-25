@@ -1,5 +1,5 @@
 .section {
-  padding: 4.5rem 1.5rem;
+  padding: 5.5rem 3rem;
   background-color: var(--cream);
   border-top: 1px solid var(--gray-300);
   border-bottom: 1px solid var(--gray-300);
@@ -12,36 +12,36 @@
 
 .header {
   text-align: center;
-  max-width: 680px;
-  margin: 0 auto 3rem;
+  max-width: 780px;
+  margin: 0 auto 3.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* H2: Poppins 600 36px/44px */
+/* H2: Poppins 700 36px/44px */
 .title {
   font-family: var(--font-heading);
   font-size: 36px;
   line-height: 44px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink-900);
   letter-spacing: -0.02em;
 }
 
-/* Body: Noto Sans 400 16px/26px */
+/* Body: Noto Sans 400 17px/28px */
 .subtitle {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 17px;
+  line-height: 28px;
   color: var(--gray-600);
-  margin-top: 0.5rem;
+  margin-top: 0.65rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
 /* Card Surface: white, 1px gray-300 border, radius 12 */
@@ -49,16 +49,23 @@
   background-color: var(--white);
   border: 1px solid var(--gray-300);
   border-radius: var(--dm-radius-md);
-  padding: 1.75rem 1.5rem;
+  padding: 2.25rem 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 1rem;
   box-shadow: 0 1px 4px rgba(10, 54, 34, 0.04);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--green-700);
+  box-shadow: 0 8px 24px rgba(10, 54, 34, 0.08);
 }
 
 .iconBox {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--dm-radius-sm);
   background-color: var(--mint-100);
   display: flex;
@@ -70,51 +77,51 @@
   color: var(--green-700);
 }
 
-/* H5: Poppins 600 18px/26px */
+/* H5: Poppins 600 19px/26px */
 .cardTitle {
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 19px;
   line-height: 26px;
   font-weight: 600;
   color: var(--ink-900);
 }
 
-/* Body small: Noto Sans 400 14px/22px */
+/* Body small: Noto Sans 400 15px/24px */
 .cardDesc {
   font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 15px;
+  line-height: 24px;
   color: var(--gray-600);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .title {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 38px;
   }
 }
 
 @media (max-width: 640px) {
   .section {
-    padding: 3rem 1rem;
+    padding: 3.5rem 1.25rem;
   }
 
   .grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .title {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 26px;
+    line-height: 34px;
   }
 
   .subtitle {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 22px;
   }
 }

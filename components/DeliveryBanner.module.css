@@ -1,5 +1,5 @@
 .section {
-  padding: 1.5rem 1.5rem 4rem;
+  padding: 2.5rem 3rem 5rem;
   background-color: var(--cream);
 }
 
@@ -12,13 +12,13 @@
   position: relative;
   background-color: var(--green-900);
   border-radius: var(--dm-radius-lg);
-  padding: 3rem;
+  padding: 3.5rem 4rem;
   display: grid;
-  grid-template-columns: 1.1fr 1.3fr 1fr;
+  grid-template-columns: 1.25fr 1.2fr 0.95fr;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3.5rem;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(10, 54, 34, 0.15);
+  box-shadow: 0 8px 30px rgba(10, 54, 34, 0.15);
 }
 
 .titleColumn {
@@ -32,7 +32,7 @@
 .bannerTitle {
   font-family: var(--font-heading);
   font-size: 36px;
-  line-height: 44px;
+  line-height: 46px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.02em;
@@ -42,28 +42,38 @@
   color: var(--yellow-500);
 }
 
-/* btn-yellow on dark (design.md 2.7) */
+.bannerSubtitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 24px;
+  color: #cde4d6;
+  max-width: 480px;
+}
+
+/* btn-yellow on dark */
 .actionBtn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   width: fit-content;
-  min-height: 48px;
+  min-height: 50px;
   padding: 0 24px;
   background-color: var(--yellow-500);
   color: var(--ink-900);
   font-family: var(--font-heading);
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 15px;
+  line-height: 22px;
   font-weight: 600;
   border-radius: var(--dm-radius-md);
   border: none;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+  margin-top: 0.5rem;
 }
 
 .actionBtn:hover {
   background-color: var(--btn-yellow-hover);
+  transform: translateY(-1px);
 }
 
 .actionBtn:active {
@@ -81,11 +91,12 @@
 .imageWrapper {
   position: relative;
   width: 100%;
-  max-width: 440px;
-  height: 250px;
+  max-width: 460px;
+  height: 270px;
   border-radius: var(--dm-radius-md);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .riderImage {
@@ -97,21 +108,18 @@
 /* Metrics Column */
 .metricsColumn {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.25rem;
   background: rgba(255, 255, 255, 0.08);
-  padding: 1.25rem 1rem;
+  padding: 1.75rem 1.5rem;
   border-radius: var(--dm-radius-md);
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .metricItem {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .metricIconWrap {
@@ -123,6 +131,7 @@
   align-items: center;
   justify-content: center;
   color: var(--green-700);
+  flex-shrink: 0;
 }
 
 .metricIcon {
@@ -136,8 +145,8 @@
 
 .metricValue {
   font-family: var(--font-heading);
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 700;
   color: #ffffff;
 }
@@ -150,11 +159,11 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .bannerCard {
     grid-template-columns: 1fr;
-    padding: 2.25rem 1.75rem;
-    gap: 2rem;
+    padding: 3rem 2rem;
+    gap: 2.5rem;
     text-align: center;
   }
 
@@ -162,26 +171,44 @@
     align-items: center;
   }
 
-  .bannerTitle {
-    font-size: 28px;
-    line-height: 36px;
+  .metricsColumn {
+    flex-direction: row;
+    justify-content: space-around;
   }
 
-  .metricsColumn {
-    width: 100%;
+  .metricItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .section {
-    padding: 1rem 1rem 3rem;
+    padding: 1.5rem 1.25rem 3.5rem;
   }
 
   .bannerCard {
-    padding: 1.75rem 1.25rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .bannerTitle {
+    font-size: 26px;
+    line-height: 34px;
   }
 
   .imageWrapper {
-    height: 180px;
+    height: 200px;
+  }
+
+  .metricsColumn {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .metricItem {
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
   }
 }

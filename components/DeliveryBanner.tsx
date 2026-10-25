@@ -6,17 +6,26 @@ import {
   IconBolt,
   IconMapPin,
   IconShieldCheck,
-  IconArrowRight,
+  IconDeviceMobile,
 } from "@tabler/icons-react";
 import styles from "./DeliveryBanner.module.css";
 
 interface DeliveryBannerProps {
   language: "en" | "hi";
-  onOrderNow: () => void;
+  onExploreApp?: () => void;
 }
 
-export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerProps) {
+export default function DeliveryBanner({ language, onExploreApp }: DeliveryBannerProps) {
   const isHi = language === "hi";
+
+  const handleDownloadClick = () => {
+    if (onExploreApp) {
+      onExploreApp();
+    } else {
+      const el = document.getElementById("download-app");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section className={styles.section}>
@@ -27,25 +36,30 @@ export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerP
             <h2 className={styles.bannerTitle}>
               {isHi ? (
                 <>
-                  स्थानीय दुकानों से <br />
-                  आपके दरवाज़े तक <br />
-                  <span className={styles.yellowText}>मिनटों में।</span>
+                  पड़ोस की दुकानों से <br />
+                  सीधे आपके घर तक, <br />
+                  <span className={styles.yellowText}>10 से 30 मिनट में।</span>
                 </>
               ) : (
                 <>
                   From local shops <br />
                   to your doorstep <br />
-                  <span className={styles.yellowText}>in minutes.</span>
+                  <span className={styles.yellowText}>in 10 to 30 minutes.</span>
                 </>
               )}
             </h2>
+            <p className={styles.bannerSubtitle}>
+              {isHi
+                ? "प्रत्येक ऑर्डर 1.5 किमी के भीतर के स्थानीय किराना से उठाया जाता है और पर्यावरण-अनुकूल इलेक्ट्रिक स्कूटर द्वारा आपके घर पहुंचता है।"
+                : "Every order is assigned to an eco-friendly EV rider within 1.5 km of your local shop. No warehouses, no cold storage—just morning-fresh delivery."}
+            </p>
             <button
               type="button"
               className={styles.actionBtn}
-              onClick={onOrderNow}
+              onClick={handleDownloadClick}
             >
-              <span>{isHi ? "ऑर्डर करें" : "Shop local"}</span>
-              <IconArrowRight size={18} stroke={2.2} />
+              <IconDeviceMobile size={18} stroke={2.2} />
+              <span>{isHi ? "ऐप पर लाइव ट्रैक करें" : "Track live on customer app"}</span>
             </button>
           </div>
 
@@ -62,7 +76,7 @@ export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerP
             </div>
           </div>
 
-          {/* Right Highlights: 3 trust items with Tabler icons */}
+          {/* Right Highlights: 3 metrics */}
           <div className={styles.metricsColumn}>
             <div className={styles.metricItem}>
               <div className={styles.metricIconWrap}>
@@ -71,7 +85,7 @@ export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerP
               <div className={styles.metricText}>
                 <span className={styles.metricValue}>10–30</span>
                 <span className={styles.metricLabel}>
-                  {isHi ? "मिनट" : "Minutes"}
+                  {isHi ? "मिनट डिलीवरी" : "Mins delivery"}
                 </span>
               </div>
             </div>
@@ -81,11 +95,9 @@ export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerP
                 <IconMapPin size={24} stroke={2} className={styles.metricIcon} />
               </div>
               <div className={styles.metricText}>
-                <span className={styles.metricValue}>
-                  {isHi ? "लाइव" : "Live"}
-                </span>
+                <span className={styles.metricValue}>1.5 km</span>
                 <span className={styles.metricLabel}>
-                  {isHi ? "ट्रैकिंग" : "Tracking"}
+                  {isHi ? "हाइपरलोकल दायरा" : "Hyperlocal radius"}
                 </span>
               </div>
             </div>
@@ -95,11 +107,9 @@ export default function DeliveryBanner({ language, onOrderNow }: DeliveryBannerP
                 <IconShieldCheck size={24} stroke={2} className={styles.metricIcon} />
               </div>
               <div className={styles.metricText}>
-                <span className={styles.metricValue}>
-                  {isHi ? "ताज़ा" : "Fresh &"}
-                </span>
+                <span className={styles.metricValue}>100%</span>
                 <span className={styles.metricLabel}>
-                  {isHi ? "सुरक्षित" : "Hygienic"}
+                  {isHi ? "स्थानीय इन्वेंट्री" : "Local inventory"}
                 </span>
               </div>
             </div>
