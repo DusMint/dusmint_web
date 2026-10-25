@@ -56,7 +56,7 @@ export default function WhyDusmint({ language }: WhyDusmintProps) {
   ];
 
   return (
-    <section className={styles.section}>
+    <section id="why-dusmint" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>

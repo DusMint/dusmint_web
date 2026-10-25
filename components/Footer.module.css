@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--green-900);
   color: #d1ded6;
-  padding: 4rem 1.5rem 2rem;
+  padding: 4.5rem 3rem 2.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -13,7 +13,7 @@
 .topRow {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 3rem;
+  gap: 3.5rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
