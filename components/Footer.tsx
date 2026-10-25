@@ -96,11 +96,6 @@ export default function Footer({ language, onOpenVendorModal }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/admin">
-                  {isHi ? "ऑपरेशंस एडमिन" : "Admin operations"}
-                </Link>
-              </li>
-              <li>
                 <a
                   href="https://play.google.com/store/apps/details?id=com.dusmint.partner"
                   target="_blank"

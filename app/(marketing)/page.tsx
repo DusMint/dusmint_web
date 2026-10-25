@@ -3,7 +3,7 @@
 import React, { useContext, useState } from "react";
 import Hero from "@/components/Hero";
 import CategoriesSection from "@/components/CategoriesSection";
-import PopularShopsSection, { SHOPS } from "@/components/PopularShopsSection";
+import PopularShopsSection from "@/components/PopularShopsSection";
 import DeliveryBanner from "@/components/DeliveryBanner";
 import WhyDusmint from "@/components/WhyDusmint";
 import HowItWorks from "@/components/HowItWorks";
@@ -14,8 +14,15 @@ export default function IntroPage() {
   const { language, openVendorModal, openShopModal } = useContext(MarketingContext);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const scrollToShops = () => {
-    const el = document.getElementById("shops");
+  const scrollToDownload = () => {
+    const el = document.getElementById("download-app");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToNetwork = () => {
+    const el = document.getElementById("network");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
@@ -23,37 +30,36 @@ export default function IntroPage() {
 
   return (
     <div>
-      {/* 1. Hero Section matching reference photo */}
+      {/* 1. Hero Section - Product overview & capabilities */}
       <Hero
         language={language}
-        onShopNowClick={scrollToShops}
+        onExploreAppClick={scrollToDownload}
         onPartnerClick={openVendorModal}
       />
 
-      {/* 2. Shop by Category matching reference photo */}
+      {/* 2. Categories digitized on Dusmint */}
       <CategoriesSection
         language={language}
         selectedCategory={selectedCategory}
         onSelectCategory={(id) => {
           setSelectedCategory(id);
           if (id) {
-            const el = document.getElementById("shops");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
+            scrollToNetwork();
           }
         }}
       />
 
-      {/* 3. Popular Shops Near You matching reference photo */}
+      {/* 3. Verified Store Network Showcase */}
       <PopularShopsSection
         language={language}
         selectedCategory={selectedCategory}
         onOpenShopModal={openShopModal}
       />
 
-      {/* 4. Bottom Delivery Banner matching reference photo */}
+      {/* 4. Electric Hyperlocal Delivery Fleet & Tracking */}
       <DeliveryBanner
         language={language}
-        onOrderNow={() => openShopModal(SHOPS[0])}
+        onExploreApp={scrollToDownload}
       />
 
       {/* 5. Why Dusmint (Hyperlocal vs Dark Stores) */}
