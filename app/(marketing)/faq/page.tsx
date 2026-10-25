@@ -9,7 +9,7 @@ export default function FAQPage() {
     },
     {
       q: "Are the prices on Dusmint higher than what the store charges in person?",
-      a: "No! We strictly mandate honest counter rates. The prices you see on Dusmint are the same honest MRP and shop rates as shopping in person.",
+      a: "No. We strictly mandate honest counter rates. The prices you see on Dusmint are the same honest MRP and shop rates as shopping in person.",
     },
     {
       q: "Who packs my grocery bag?",
@@ -25,15 +25,14 @@ export default function FAQPage() {
     },
     {
       q: "How do I list my shop on Dusmint?",
-      a: "Simply click 'Partner with Us' in the menu or visit our Vendors page. Our Kolkata merchant success team will verify your store and get you online within 24 hours.",
+      a: "Simply click 'Become a vendor' in the menu or visit our Vendors page. Our Kolkata merchant team will verify your store and get you online within 24 hours.",
     },
   ];
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <span className={styles.badge}>HELP & FAQS</span>
-        <h1 className={styles.title}>Frequently Asked Questions</h1>
+        <h1 className={styles.title}>Frequently asked questions</h1>
         <p className={styles.subtitle}>
           Everything you need to know about ordering, delivery speeds, pricing, and merchant partnerships on Dusmint.
         </p>

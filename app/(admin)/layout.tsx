@@ -15,6 +15,13 @@ import {
   Divider,
   Box,
 } from "@mantine/core";
+import {
+  IconBolt,
+  IconBuildingStore,
+  IconShieldCheck,
+  IconAdjustmentsHorizontal,
+  IconArrowUpRight,
+} from "@tabler/icons-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -22,21 +29,21 @@ const dusmintTheme = createTheme({
   primaryColor: "green",
   colors: {
     green: [
-      "#eefaf2",
-      "#d8f3e2",
-      "#b1e6c4",
-      "#84d4a1",
-      "#5ec082",
-      "#0b5c38", // brand primary
-      "#094e2f",
-      "#073e26",
-      "#06321f",
-      "#042315",
+      "#E8F5EC",
+      "#d0eedc",
+      "#a4dfbd",
+      "#74ce9a",
+      "#48be7a",
+      "#11663A", // green-700 from design.md
+      "#0E5330",
+      "#0A3E24",
+      "#0A3622", // green-900
+      "#051d12",
     ],
   },
-  fontFamily: "var(--font-dm-sans), -apple-system, BlinkMacSystemFont, sans-serif",
+  fontFamily: "var(--font-body), 'Noto Sans', system-ui, sans-serif",
   headings: {
-    fontFamily: "var(--font-dm-sans), -apple-system, BlinkMacSystemFont, sans-serif",
+    fontFamily: "var(--font-heading), 'Poppins', system-ui, sans-serif",
   },
 });
 
@@ -70,12 +77,12 @@ export default function AdminLayout({
         padding="md"
         styles={{
           main: {
-            backgroundColor: "#f4f7f5",
+            backgroundColor: "#FFFCF2", /* cream surface from design.md */
             minHeight: "100vh",
           },
         }}
       >
-        <AppShell.Header style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #e1ebe4" }}>
+        <AppShell.Header style={{ backgroundColor: "#0A3622", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
           <Group h="100%" px="md" justify="space-between">
             <Group>
               <Burger
@@ -83,11 +90,12 @@ export default function AdminLayout({
                 onClick={() => setOpened(!opened)}
                 hiddenFrom="sm"
                 size="sm"
+                color="#ffffff"
               />
               <Group gap="xs">
-                <Text fw={900} size="xl" c="#0b5c38">
-                  dus<span style={{ color: "#10854d" }}>mint</span>
-                  <span style={{ color: "#ffc20e" }}>.admin</span>
+                <Text fw={700} size="xl" c="#ffffff">
+                  dus<span style={{ color: "#22c55e" }}>mint</span>
+                  <span style={{ color: "#FFC82E" }}>.admin</span>
                 </Text>
                 <Badge color="green" variant="light" size="sm">
                   Ops Console v2.4
@@ -97,7 +105,7 @@ export default function AdminLayout({
 
             <Group gap="md">
               <Badge color="blue" variant="dot" size="md">
-                Kolkata Central Hub (Live)
+                Kolkata Central Hub
               </Badge>
               <Group gap="xs">
                 <Box
@@ -105,7 +113,7 @@ export default function AdminLayout({
                     width: 32,
                     height: 32,
                     borderRadius: "50%",
-                    backgroundColor: "#0b5c38",
+                    backgroundColor: "#11663A",
                     color: "#ffffff",
                     display: "flex",
                     alignItems: "center",
@@ -117,10 +125,10 @@ export default function AdminLayout({
                   AK
                 </Box>
                 <Box visibleFrom="xs">
-                  <Text size="xs" fw={700} c="#121e17">
+                  <Text size="xs" fw={700} c="#ffffff">
                     Anirban Kar
                   </Text>
-                  <Text size="10px" c="dimmed">
+                  <Text size="10px" c="#b1c7ba">
                     Cluster Ops Lead
                   </Text>
                 </Box>
@@ -131,14 +139,16 @@ export default function AdminLayout({
                 variant="subtle"
                 color="gray"
                 size="xs"
+                rightSection={<IconArrowUpRight size={14} />}
+                c="#d1ded6"
               >
-                Public Site ↗
+                Public site
               </Button>
             </Group>
           </Group>
         </AppShell.Header>
 
-        <AppShell.Navbar p="md" style={{ backgroundColor: "#ffffff", borderRight: "1px solid #e1ebe4" }}>
+        <AppShell.Navbar p="md" style={{ backgroundColor: "#ffffff", borderRight: "1px solid #D3DBD6" }}>
           <Box mb="md">
             <Text size="xs" fw={700} c="dimmed" tt="uppercase" mb="xs">
               Operations Control
@@ -147,7 +157,7 @@ export default function AdminLayout({
               component={Link}
               href="/admin"
               label="Live Orders Board"
-              leftSection="⚡"
+              leftSection={<IconBolt size={18} stroke={2} />}
               active={pathname === "/admin"}
               color="green"
               fw={600}
@@ -157,7 +167,7 @@ export default function AdminLayout({
               component={Link}
               href="/admin/vendors"
               label="Vendor Approvals"
-              leftSection="🏪"
+              leftSection={<IconBuildingStore size={18} stroke={2} />}
               rightSection={<Badge size="xs" color="yellow">3 New</Badge>}
               active={pathname === "/admin/vendors"}
               color="green"
@@ -168,7 +178,7 @@ export default function AdminLayout({
               component={Link}
               href="/admin/claims"
               label="Claims & Refunds"
-              leftSection="🛡️"
+              leftSection={<IconShieldCheck size={18} stroke={2} />}
               rightSection={<Badge size="xs" color="red">1</Badge>}
               active={pathname === "/admin/claims"}
               color="green"
@@ -179,7 +189,7 @@ export default function AdminLayout({
               component={Link}
               href="/admin/slots"
               label="Slot & Price Bands"
-              leftSection="⚙️"
+              leftSection={<IconAdjustmentsHorizontal size={18} stroke={2} />}
               active={pathname === "/admin/slots"}
               color="green"
               fw={600}
@@ -193,16 +203,16 @@ export default function AdminLayout({
             <Box
               p="sm"
               style={{
-                backgroundColor: "#f0f8f3",
+                backgroundColor: "#E8F5EC",
                 borderRadius: 12,
-                border: "1px solid #cce5d5",
+                border: "1px solid #D3DBD6",
               }}
             >
-              <Text size="xs" fw={700} c="#0b5c38">
+              <Text size="xs" fw={700} c="#11663A">
                 Cluster Health
               </Text>
-              <Text size="11px" c="#3f5a4a">
-                Salt Lake & New Town: 99.2% deliveries within 20 mins.
+              <Text size="11px" c="#56655D">
+                Salt Lake & New Town: 99.2% on-time delivery
               </Text>
             </Box>
 
