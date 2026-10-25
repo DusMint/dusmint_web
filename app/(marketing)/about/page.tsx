@@ -6,7 +6,6 @@ export default function AboutPage() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <span className={styles.badge}>OUR MISSION</span>
         <h1 className={styles.title}>About Dusmint</h1>
         <p className={styles.subtitle}>
           Connecting traditional Indian neighbourhood commerce with lightning-fast electric hyper-routing.
@@ -15,7 +14,7 @@ export default function AboutPage() {
 
       <div className={styles.content}>
         <div className={styles.sectionBlock}>
-          <h2 className={styles.sectionTitle}>Why Dusmint was Founded</h2>
+          <h2 className={styles.sectionTitle}>Why Dusmint was founded</h2>
           <p>
             Quick commerce in India made delivery convenient, but it centralized power into anonymous warehouse dark stores—stocking produce days in advance and squeezing local shopkeepers out of business.
           </p>
@@ -25,22 +24,22 @@ export default function AboutPage() {
         </div>
 
         <div className={styles.sectionBlock}>
-          <h2 className={styles.sectionTitle}>The Kolkata Hyperlocal Promise</h2>
+          <h2 className={styles.sectionTitle}>The Kolkata hyperlocal promise</h2>
           <ul className={styles.list}>
-            <li><strong>10 to 30 Minute Delivery:</strong> Dispatched from stores within 1.5 km of your address.</li>
-            <li><strong>Zero Artificial Surge Markups:</strong> What the shopkeeper writes on the chalkboard is what you pay.</li>
-            <li><strong>Zero Dark Stores:</strong> We hold 0 inventory. 100% of orders support local retail families.</li>
-            <li><strong>Eco-Friendly Fleet:</strong> Delivered primarily on EV scooters and bicycles.</li>
+            <li><strong>10 to 30 minute delivery:</strong> Dispatched from stores within 1.5 km of your address.</li>
+            <li><strong>Zero artificial surge markups:</strong> What the shopkeeper writes on the chalkboard is what you pay.</li>
+            <li><strong>Zero dark stores:</strong> We hold 0 inventory. 100% of orders support local retail families.</li>
+            <li><strong>Eco-friendly fleet:</strong> Delivered primarily on EV scooters and bicycles.</li>
           </ul>
         </div>
 
         <div className={styles.ctaBox}>
-          <h3 style={{ fontSize: "1.5rem", fontWeight: 800 }}>Are you a local shopkeeper in Kolkata?</h3>
-          <p style={{ maxWidth: 480, opacity: 0.9 }}>
+          <h3>Are you a local shopkeeper in Kolkata?</h3>
+          <p>
             Join 450+ verified vendors in Salt Lake, New Town, and Ballygunge. 0% commission for your first month.
           </p>
           <Link href="/vendors" className={styles.ctaBtn}>
-            Learn About Merchant Partnership →
+            Learn about merchant partnership →
           </Link>
         </div>
       </div>
