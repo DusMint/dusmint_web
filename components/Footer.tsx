@@ -117,7 +117,10 @@ export default function Footer({ language, onOpenVendorModal }: FooterProps) {
                 <Link href="/privacy">{isHi ? "गोपनीयता नीति" : "Privacy policy"}</Link>
               </li>
               <li>
-                <Link href="/terms">{isHi ? "नियम और शर्तें" : "Terms of service"}</Link>
+                <Link href="/terms">{isHi ? "नियम और शर्तें" : "Terms and conditions"}</Link>
+              </li>
+              <li>
+                <Link href="/delete-account">{isHi ? "खाता हटाएं" : "Delete account"}</Link>
               </li>
               <li>
                 <span className={styles.fssaiBadge}>FSSAI Lic: 12824001000456</span>
