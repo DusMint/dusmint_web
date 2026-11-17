@@ -146,7 +146,7 @@
   background-color: var(--mint-100);
 }
 
-/* Highlight Yellow Get The App Button */
+/* Highlight Primary Rose Get The App Button */
 .getAppBtn {
   display: inline-flex;
   align-items: center;
@@ -154,19 +154,22 @@
   height: 46px;
   padding: 0 20px;
   background-color: var(--yellow-500);
-  color: var(--ink-900);
-  border: 1px solid var(--btn-yellow-border);
+  color: #FFFFFF;
+  border: none;
   border-radius: var(--dm-radius-md);
   font-family: var(--font-heading);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  box-shadow: 0 4px 14px rgba(255, 45, 108, 0.28);
+  transition: all 0.15s ease;
   white-space: nowrap;
 }
 
 .getAppBtn:hover {
   background-color: var(--btn-yellow-hover);
+  box-shadow: 0 6px 20px rgba(255, 45, 108, 0.38);
+  transform: translateY(-1px);
 }
 
 .getAppBtn:active {

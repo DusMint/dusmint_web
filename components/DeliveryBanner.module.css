@@ -50,7 +50,7 @@
   max-width: 480px;
 }
 
-/* btn-yellow on dark */
+/* Primary Rose on dark */
 .actionBtn {
   display: inline-flex;
   align-items: center;
@@ -59,21 +59,23 @@
   min-height: 50px;
   padding: 0 24px;
   background-color: var(--yellow-500);
-  color: var(--ink-900);
+  color: #FFFFFF;
   font-family: var(--font-heading);
   font-size: 15px;
   line-height: 22px;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: var(--dm-radius-md);
   border: none;
   cursor: pointer;
-  transition: background-color 0.15s ease, transform 0.15s ease;
+  box-shadow: 0 6px 18px rgba(255, 45, 108, 0.32);
+  transition: all 0.15s ease;
   margin-top: 0.5rem;
 }
 
 .actionBtn:hover {
   background-color: var(--btn-yellow-hover);
-  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255, 45, 108, 0.42);
+  transform: translateY(-2px);
 }
 
 .actionBtn:active {

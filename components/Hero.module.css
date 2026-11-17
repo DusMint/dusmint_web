@@ -70,7 +70,7 @@
   margin-top: 0.25rem;
 }
 
-/* Highlight Yellow Button with 1px border on light surface */
+/* Highlight Primary Rose Button */
 .getAppBtn {
   display: inline-flex;
   align-items: center;
@@ -78,20 +78,22 @@
   min-height: 52px;
   padding: 0 26px;
   background-color: var(--yellow-500);
-  color: var(--ink-900);
-  border: 1px solid var(--btn-yellow-border);
+  color: #FFFFFF;
+  border: none;
   border-radius: var(--dm-radius-md);
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   cursor: pointer;
-  transition: background-color 0.15s ease, transform 0.15s ease;
+  box-shadow: 0 6px 18px rgba(255, 45, 108, 0.28);
+  transition: all 0.15s ease;
 }
 
 .getAppBtn:hover {
   background-color: var(--btn-yellow-hover);
-  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255, 45, 108, 0.38);
+  transform: translateY(-2px);
 }
 
 .getAppBtn:active {

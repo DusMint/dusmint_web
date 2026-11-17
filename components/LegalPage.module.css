@@ -198,17 +198,17 @@
 /* Callout Box */
 .calloutBox {
   background: var(--yellow-100);
-  border: 1px solid #edd58d;
+  border: 1px solid #FECDD3;
   border-radius: var(--dm-radius-md);
   padding: 1.25rem;
   margin: 1.25rem 0;
-  color: var(--yellow-800);
+  color: #9F1239;
   font-size: 14px;
   line-height: 22px;
 }
 
 .calloutBox strong {
-  color: #553e00;
+  color: #881337;
 }
 
 /* Action button area */

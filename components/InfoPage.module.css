@@ -92,7 +92,7 @@
   line-height: 22px;
 }
 
-/* btn-yellow on-dark */
+/* Primary Rose on-dark */
 .ctaBtn {
   display: inline-flex;
   align-items: center;
@@ -100,18 +100,21 @@
   height: 48px;
   padding: 0 24px;
   background: var(--yellow-500);
-  color: var(--ink-900);
+  color: #FFFFFF;
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   border-radius: var(--dm-radius-md);
   border: none;
-  transition: background-color 0.15s ease;
+  box-shadow: 0 4px 14px rgba(255, 45, 108, 0.28);
+  transition: all 0.15s ease;
 }
 
 .ctaBtn:hover {
   background: var(--btn-yellow-hover);
+  box-shadow: 0 6px 18px rgba(255, 45, 108, 0.38);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {

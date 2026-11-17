@@ -1,38 +1,48 @@
-/* Dusmint Design System Design Tokens (from design.md) */
+/* Dusmint Design System Design Tokens - Zepto-Inspired Berry & Mandi Fresh Palette */
 :root {
   /* 2.1 Brand Colours */
-  --green-900: #0A3622; /* Forest: Splash, footer, dark brand panels, dark nav */
-  --green-700: #11663A; /* Dusmint Green (primary): Primary buttons, links, price text */
-  --green-600: #1A8A4F; /* Fresh Green: Icons, large headings */
-  --mint-100:  #E8F5EC; /* Mint Tint: Selected states, chips, soft section backgrounds */
-  --mint-50:   #F4FBF6; /* Mint Mist: Page background alternative */
-  --yellow-500:#FFC82E; /* Marigold (accent): Highlight buttons, discount badges */
-  --yellow-100:#FFF3C4; /* Butter: Offer strips, info callouts, soft highlights */
-  --yellow-800:#7A5A00; /* Turmeric Dark: Text that sits on yellow-100 */
+  --green-900: #072A1B; /* Deep Forest: Splash, footer, dark hero/delivery panels */
+  --green-700: #059669; /* Fresh Mandi Green (accent): Links, veg markers, trust chips */
+  --green-600: #10B981; /* Mint Leaf Green: Badges, checkmarks, leaf accents */
+  --mint-100:  #ECFDF5; /* Soft Mint: Selected states, chips, soft section backgrounds */
+  --mint-50:   #F4FBF7; /* Mint Mist: Page background alternative */
+
+  /* Zepto Berry Pink / Electric Rose Tokens */
+  --pink-500:  #FF2D6C; /* Zepto Rose Berry: Primary CTAs, high-energy buttons */
+  --pink-600:  #E01D58; /* Hover state */
+  --pink-700:  #C4144A; /* Pressed state */
+  --pink-100:  #FFF1F5; /* Soft Rose Tint: Discount badges, notification pills */
+  --pink-800:  #9F1239; /* Deep Berry text for pink badges */
+
+  /* Primary Button / Callout Accent (Mapped from Yellow to Electric Berry Pink) */
+  --yellow-500:#FF2D6C; /* Primary CTAs & Electric Highlights */
+  --yellow-100:#FFF1F5; /* Offer strips & highlight callouts */
+  --yellow-800:#FF2D6C; /* Electric Pink brand highlight text */
 
   /* 2.2 Neutrals */
-  --cream:     #FFFCF2; /* Default page and card surface */
-  --white:     #FFFFFF; /* Cards, sheets, inputs */
-  --ink-900:   #14211B; /* Primary text and headings */
-  --gray-600:  #56655D; /* Secondary text (units, descriptions, captions) */
-  --gray-500:  #6B7A72; /* Placeholder text and disabled labels */
-  --gray-300:  #D3DBD6; /* Dividers and input borders */
+  --cream:     #FAF9F6; /* Ultra-clean, fresh canvas */
+  --white:     #FFFFFF; /* Pure White cards, sheets, inputs */
+  --ink-900:   #0F172A; /* Slate ink for crisp modern typography */
+  --gray-600:  #475569; /* Secondary text */
+  --gray-500:  #64748B; /* Placeholder text and disabled labels */
+  --gray-300:  #E2E8F0; /* Clean borders and dividers */
 
   /* 2.3 Status colours */
-  --error:     #C62828; /* Errors, rejected, failed payment */
-  --error-bg:  #FDECEA; /* Error banners */
-  --offer-coral: #E8553D;
+  --error:     #EF4444; /* Clean modern red */
+  --error-bg:  #FEF2F2;
+  --offer-coral: #FF2D6C;
 
   /* 2.7 Button Tokens */
-  --btn-green: #11663A;
-  --btn-green-hover: #0E5330;
-  --btn-green-pressed: #0A3E24;
-  --btn-yellow: #FFC82E;
-  --btn-yellow-hover: #F5B800;
-  --btn-yellow-pressed: #E0A500;
-  --btn-yellow-border: #B88700;
-  --btn-disabled-bg: #D3DBD6;
-  --btn-disabled-text: #6B7A72;
+  --btn-green: #059669;
+  --btn-green-hover: #047857;
+  --btn-green-pressed: #065F46;
+
+  --btn-yellow: #FF2D6C;
+  --btn-yellow-hover: #E01D58;
+  --btn-yellow-pressed: #C4144A;
+  --btn-yellow-border: transparent;
+  --btn-disabled-bg: #E2E8F0;
+  --btn-disabled-text: #94A3B8;
 
   /* Aliases for semantic usage */
   --dm-bg: var(--cream);
@@ -47,8 +57,8 @@
 
   /* Shapes and Spacing */
   --dm-radius-sm: 8px;
-  --dm-radius-md: 12px;
-  --dm-radius-lg: 16px;
+  --dm-radius-md: 14px;
+  --dm-radius-lg: 20px;
   --dm-radius-pill: 999px;
   --dm-max-width: 1480px;
 }
