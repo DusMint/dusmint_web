@@ -1,127 +1,171 @@
+/* Why Dusmint Section — Illustrated 4-Card Grid */
 .section {
-  padding: 5.5rem 3rem;
-  background-color: var(--cream);
-  border-top: 1px solid var(--gray-300);
-  border-bottom: 1px solid var(--gray-300);
+  width: 100%;
+  background-color: #ffffff;
+  padding: 5.5rem 1.5rem 6rem;
+  box-sizing: border-box;
 }
 
 .container {
-  max-width: var(--dm-max-width);
+  max-width: 1140px;
   margin: 0 auto;
 }
 
 .header {
   text-align: center;
-  max-width: 780px;
-  margin: 0 auto 3.5rem;
+  max-width: 680px;
+  margin: 0 auto 3.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.85rem;
 }
 
-/* H2: Poppins 700 36px/44px */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #15803d; /* DusMint primary brand green */
+  background-color: #f0fdf4;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
 .title {
   font-family: var(--font-heading);
-  font-size: 36px;
-  line-height: 44px;
-  font-weight: 700;
-  color: var(--ink-900);
-  letter-spacing: -0.02em;
+  font-size: 2.75rem;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  margin: 0;
+  text-wrap: balance;
 }
 
-/* Body: Noto Sans 400 17px/28px */
 .subtitle {
   font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 28px;
-  color: var(--gray-600);
-  margin-top: 0.65rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #64748b;
+  margin: 0;
+  text-wrap: balance;
 }
 
+/* 2x2 Grid on Desktop (Matching Reference Layout) */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.75rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.25rem 2.5rem;
 }
 
-/* Card Surface: white, 1px gray-300 border, radius 12 */
 .card {
-  background-color: var(--white);
-  border: 1px solid var(--gray-300);
-  border-radius: var(--dm-radius-md);
-  padding: 2.25rem 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  box-shadow: 0 1px 4px rgba(10, 54, 34, 0.04);
-  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  border-color: var(--green-700);
-  box-shadow: 0 8px 24px rgba(10, 54, 34, 0.08);
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #FFF6E5; /* Cream base from brand palette */
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(5, 65, 42, 0.08);
 }
 
-.iconBox {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--dm-radius-sm);
-  background-color: var(--mint-100);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.icon {
-  color: var(--green-700);
+.card:hover .cardImage {
+  transform: scale(1.02);
 }
 
-/* H5: Poppins 600 19px/26px */
+.cardContent {
+  padding-top: 1.25rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .cardTitle {
   font-family: var(--font-heading);
-  font-size: 19px;
-  line-height: 26px;
-  font-weight: 600;
-  color: var(--ink-900);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
-/* Body small: Noto Sans 400 15px/24px */
 .cardDesc {
   font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 24px;
-  color: var(--gray-600);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
 }
 
-@media (max-width: 1100px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .title {
-    font-size: 30px;
-    line-height: 38px;
-  }
-}
-
-@media (max-width: 640px) {
+/* =========================================================
+   Responsive Design: Tablet & Mobile
+   ========================================================= */
+@media (max-width: 900px) {
   .section {
-    padding: 3.5rem 1.25rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    padding: 4.5rem 1.25rem 5rem;
   }
 
   .title {
-    font-size: 26px;
-    line-height: 34px;
+    font-size: 2.25rem;
+  }
+
+  .grid {
+    gap: 2.5rem 1.75rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .section {
+    padding: 3.5rem 1rem 4rem;
+  }
+
+  .header {
+    margin-bottom: 2.5rem;
+    gap: 0.6rem;
+  }
+
+  .title {
+    font-size: 1.85rem;
   }
 
   .subtitle {
-    font-size: 15px;
-    line-height: 22px;
+    font-size: 0.95rem;
+  }
+
+  /* 1-column on mobile matching prompt specification */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .imageWrapper {
+    border-radius: 18px;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .cardDesc {
+    font-size: 0.95rem;
   }
 }
