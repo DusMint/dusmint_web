@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   IconLanguage,
   IconMenu2,
@@ -22,6 +23,24 @@ export default function Navbar({
   onToggleLanguage,
 }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    if (!isHomePage) return;
+
+    const handleScroll = () => {
+      // Hide top bar at top like Zomato, reveal once scrolled past hero threshold
+      setIsScrolled(window.scrollY > 200);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHomePage]);
+
+  const isHidden = isHomePage && !isScrolled;
   const isHi = language === "hi";
 
   const handleDownloadClick = () => {
@@ -32,7 +51,11 @@ export default function Navbar({
   };
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        isHidden ? styles.headerHidden : styles.headerVisible
+      }`}
+    >
       <div className={styles.container}>
         {/* Brand Logo - Clean, bold, no extra tagline or lines */}
         <Link href="/" className={styles.logoGroup} aria-label="Dusmint Home">
