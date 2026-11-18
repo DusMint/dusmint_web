@@ -29,12 +29,12 @@ export default function AppDownloadBanner({ language }: AppDownloadBannerProps) 
             <h2 className={styles.title}>
               {isHi ? (
                 <>
-                  डसमिट ऐप से किराना मंगवाएं, <br />
-                  <span className={styles.yellowText}>और पाएं ₹100 की पहली छूट।</span>
+                  डसमिट ऐप से ऑर्डर करें, <br />
+                  <span className={styles.yellowText}>पहली डिलीवरी पर ₹100 की छूट।</span>
                 </>
               ) : (
                 <>
-                  Order faster with the Dusmint app, <br />
+                  Order on the Dusmint app, <br />
                   <span className={styles.yellowText}>get ₹100 off your first delivery.</span>
                 </>
               )}
@@ -42,8 +42,8 @@ export default function AppDownloadBanner({ language }: AppDownloadBannerProps) 
 
             <p className={styles.desc}>
               {isHi
-                ? "लाइव डिलीवरी पार्टनर लोकेशन, त्वरित रिपीट ऑर्डर्स और आपके पड़ोस के किराना स्टोर की विशेष छूट का लाभ उठाएं।"
-                : "Real-time rider tracking, instant 1-tap reordering from your favorite neighbourhood kirana, and exclusive daily deals."}
+                ? "स्थानीय दुकानें, खरा तौल और ऐप पर एक्सक्लूसिव बचत — सीधे आपके दरवाज़े तक।"
+                : "Your favourite neighbourhood shops, honest weights, and exclusive app savings."}
             </p>
 
             {/* Unified Sleek SMS Capsule Form */}
