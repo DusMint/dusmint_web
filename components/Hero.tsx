@@ -97,13 +97,13 @@ export default function Hero({
               <>
                 <span className={styles.freshHighlight}>ताज़गी</span> का एक पता है,
                 <br />
-                वो आपका घर है
+                वो <span className={styles.yoursUnderline}>आपका घर</span> है
               </>
             ) : (
               <>
                 <span className={styles.freshHighlight}>Fresh</span> has an address,
                 <br />
-                it’s yours
+                it’s <span className={styles.yoursUnderline}>yours</span>
               </>
             )}
           </h1>

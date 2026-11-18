@@ -125,6 +125,14 @@
   color: #22c55e;
 }
 
+.yoursUnderline {
+  font-style: italic;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 3.5px;
+  text-decoration-color: #22c55e;
+}
+
 /* Subtitle — Tucked neatly in between the headline width */
 .heroSubtitle {
   font-family: var(--font-body);
@@ -187,7 +195,7 @@
 
 .merchantPartnerLabel {
   font-family: var(--font-heading);
-  font-size: 14.5px;
+  font-size: 16px;
   font-weight: 600;
   color: #ffffff;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
@@ -198,25 +206,25 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #22c55e;
+  background: #15803d; /* Calm, organic, easy-on-the-eyes forest emerald — no piercing glare */
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 7px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 8px 22px;
   border-radius: 9999px;
   font-family: var(--font-heading);
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.01em;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); /* Subtle depth, no neon glow */
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .merchantPartnerGreenBtn:hover {
-  background: #16a34a;
-  border-color: rgba(255, 255, 255, 0.45);
+  background: #166534;
+  border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
 }
 
 .merchantPartnerGreenBtn:active {
