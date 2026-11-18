@@ -62,7 +62,7 @@
   pointer-events: none;
 }
 
-/* Centered Content Wrapper */
+/* Centered Content Wrapper — Shifted downwards for lower-center cinematic focus */
 .heroContentWrapper {
   position: relative;
   z-index: 5;
@@ -72,6 +72,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  margin-top: 7rem;
 }
 
 .heroContent {
@@ -81,12 +82,9 @@
   gap: 1.25rem;
 }
 
-/* Brand Logo Lockup */
+/* Brand Logo Lockup — Hidden on desktop (placed in top-left header), shown on mobile */
 .logoLockup {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 0.25rem;
+  display: none;
 }
 
 .leafIcon {
@@ -278,6 +276,18 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+  .heroContentWrapper {
+    margin-top: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .logoLockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.25rem;
+  }
+
   .brandTitle {
     font-size: 2.75rem;
   }
