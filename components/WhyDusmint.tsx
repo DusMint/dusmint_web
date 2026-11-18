@@ -73,13 +73,20 @@ export default function WhyDusmint({ language = "en" }: WhyDusmintProps) {
       <div className={styles.container}>
         {/* Section Header */}
         <div className={styles.header}>
-          <span className={styles.eyebrow}>
-            {isHi ? "डसमिट ही क्यों?" : "Why Dusmint"}
-          </span>
           <h2 className={styles.title}>
-            {isHi
-              ? "स्थानीय दुकानें। खरा तौल। आपका समय।"
-              : "Local shops. Honest weight. Your time."}
+            {isHi ? (
+              <>
+                स्थानीय दुकानें। खरा तौल।
+                <br />
+                <span className={styles.titleAccent}>आपका समय।</span>
+              </>
+            ) : (
+              <>
+                Local shops. Honest weight.
+                <br />
+                <span className={styles.titleAccent}>Your time.</span>
+              </>
+            )}
           </h2>
           <p className={styles.subtitle}>
             {isHi
