@@ -18,7 +18,7 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
 
   return (
     <section className={styles.missionSection} aria-label="DusMint Mission & Impact">
-      {/* 1. Darker Hand-Drawn Organic Curved Line Trails (Zomato Style) */}
+      {/* 1. Darker Hand-Drawn Organic Curved Line Trails (Dipping below text to prevent clashing) */}
       <svg
         className={styles.decorativeCurves}
         viewBox="0 0 1440 680"
@@ -28,13 +28,13 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         aria-hidden="true"
       >
         <path
-          d="M-30 200 C160 100, 220 20, 150 90 C70 160, 90 460, 240 500 C400 540, 520 280, 720 280 C920 280, 1020 90, 1160 50 C1280 10, 1410 70, 1370 230 C1310 430, 1160 610, 1280 650 C1380 680, 1480 580, 1480 580"
+          d="M-40 180 C140 80, 180 20, 130 90 C60 180, 60 420, 180 470 C280 510, 360 430, 480 440 C620 450, 720 460, 840 430 C960 400, 1040 120, 1180 60 C1300 10, 1410 80, 1360 250 C1300 460, 1140 580, 1260 630 C1340 660, 1460 580, 1480 560"
           stroke="rgba(21, 128, 61, 0.42)"
           strokeWidth="2.5"
           strokeLinecap="round"
         />
         <path
-          d="M40 590 C200 510, 320 600, 480 560 C640 520, 800 640, 1000 600 C1160 560, 1320 620, 1460 580"
+          d="M40 610 C200 540, 320 620, 480 590 C640 560, 800 660, 1000 620 C1160 580, 1320 640, 1460 600"
           stroke="rgba(21, 128, 61, 0.32)"
           strokeWidth="2"
           strokeLinecap="round"
@@ -42,14 +42,14 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         />
       </svg>
 
-      {/* 2. Isolated Single-Item Farm Produce & Artisanal Dairy (Transparent PNGs) */}
+      {/* 2. Isolated Single-Item Farm Produce & Artisanal Dairy (Transparent PNGs, Rotated Free Flow) */}
       {/* Top Left: Fresh Broccoli Crown */}
       <div className={`${styles.singleItem} ${styles.itemBroccoli}`}>
         <Image
           src="/images/single_broccoli.png"
           alt="Fresh farm broccoli"
-          width={220}
-          height={220}
+          width={160}
+          height={160}
           className={styles.produceImg}
           priority
         />
@@ -60,8 +60,8 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         <Image
           src="/images/single_bell_pepper.png"
           alt="Crisp red bell pepper"
-          width={210}
-          height={210}
+          width={150}
+          height={150}
           className={styles.produceImg}
           priority
         />
@@ -72,8 +72,8 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         <Image
           src="/images/single_milk_bottle.png"
           alt="Fresh pure farm milk bottle"
-          width={130}
-          height={270}
+          width={95}
+          height={220}
           className={styles.produceImg}
           priority
         />
@@ -84,15 +84,15 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         <Image
           src="/images/single_matka_curd.png"
           alt="Artisanal clay matka curd"
-          width={220}
-          height={220}
+          width={165}
+          height={165}
           className={styles.produceImg}
         />
       </div>
 
-      {/* Floating Accent Garnishes: Mint leaf & dewy cherry tomato */}
+      {/* Subtle Accent Garnishes: Mint leaf & dewy cherry tomato */}
       <div className={`${styles.staticGarnish} ${styles.garnishMint}`}>
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="#22C55E">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#22C55E">
           <path d="M12 2C8 6 4 11 6 16C8 21 15 22 18 19C21 16 20 8 12 2Z" opacity="0.9" />
           <path d="M12 2C13 8 15 14 18 19" stroke="#15803D" strokeWidth="1.2" strokeLinecap="round" />
         </svg>
@@ -102,7 +102,7 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         <div className={styles.cherryTomatoGarnish} />
       </div>
 
-      {/* 3. Center Mission Headline & Description */}
+      {/* 3. Center Mission Headline & Positioned Description */}
       <div className={styles.centerContent}>
         <h2 className={styles.sectionHeading}>
           {isHi ? (
@@ -127,9 +127,24 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         </p>
       </div>
 
-      {/* 4. Bottom Trust Pillars Pill (Genuine Trust, No Fake Metrics) */}
+      {/* 4. Bottom Trust Pillars Pill (Flat, No Shadow/Hover, Continuous Animated Running Green Beam) */}
       <div className={styles.statsCardWrapper}>
         <div className={styles.statsCard}>
+          {/* Animated Running Green Accent Border */}
+          <svg className={styles.runningBorderSvg} aria-hidden="true">
+            <rect
+              className={styles.runningBorderTrack}
+              x="1.5"
+              y="1.5"
+            />
+            <rect
+              className={styles.runningBorderBeam}
+              x="1.5"
+              y="1.5"
+              pathLength="100"
+            />
+          </svg>
+
           {/* Pillar 1: Trusted Shops */}
           <div className={styles.statItem}>
             <div className={styles.statTextCol}>

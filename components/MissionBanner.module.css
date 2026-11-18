@@ -23,7 +23,7 @@
   z-index: 1;
 }
 
-/* 2. Isolated Single-Item Produce & Dairy (Transparent PNGs) */
+/* 2. Isolated Single-Item Produce & Dairy (Transparent PNGs, Rotated Free Flow) */
 .singleItem {
   position: absolute;
   z-index: 3;
@@ -37,36 +37,39 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  /* Soft, natural, studio-grounded drop shadow */
-  filter: drop-shadow(0 14px 28px rgba(15, 23, 42, 0.12));
+  filter: drop-shadow(0 10px 22px rgba(15, 23, 42, 0.1));
 }
 
-/* Top Left: Fresh Broccoli Crown */
+/* Top Left: Fresh Broccoli Crown (Rotated slightly for natural free flow) */
 .itemBroccoli {
-  left: 8%;
-  top: 14%;
-  width: 190px;
+  left: 10%;
+  top: 13%;
+  width: 150px;
+  transform: rotate(-12deg);
 }
 
-/* Bottom Left: Crisp Red Bell Pepper */
+/* Bottom Left: Crisp Red Bell Pepper (Rotated slightly for natural free flow) */
 .itemPepper {
-  left: 9%;
-  bottom: 14%;
-  width: 185px;
-}
-
-/* Top Right: Farm-Fresh Milk Bottle */
-.itemMilk {
-  right: 10%;
-  top: 9%;
-  width: 110px;
-}
-
-/* Bottom Right: Artisanal Clay Matka Curd */
-.itemCurd {
-  right: 8%;
+  left: 11%;
   bottom: 13%;
-  width: 200px;
+  width: 145px;
+  transform: rotate(14deg);
+}
+
+/* Top Right: Farm-Fresh Milk Bottle (Rotated slightly for natural free flow) */
+.itemMilk {
+  right: 12%;
+  top: 8%;
+  width: 88px;
+  transform: rotate(8deg);
+}
+
+/* Bottom Right: Artisanal Clay Matka Curd (Rotated slightly for natural free flow) */
+.itemCurd {
+  right: 11%;
+  bottom: 11%;
+  width: 160px;
+  transform: rotate(-10deg);
 }
 
 /* Static Accent Garnishes */
@@ -80,7 +83,7 @@
 .garnishMint {
   top: 18%;
   left: 31%;
-  transform: rotate(-10deg);
+  transform: rotate(-12deg);
 }
 
 .garnishTomato {
@@ -89,11 +92,11 @@
 }
 
 .cherryTomatoGarnish {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 9999px;
   background: radial-gradient(circle at 35% 35%, #ff5252, #c62828);
-  box-shadow: 0 4px 12px rgba(198, 40, 40, 0.35);
+  box-shadow: 0 4px 10px rgba(198, 40, 40, 0.3);
   position: relative;
 }
 
@@ -105,10 +108,10 @@
   width: 5px;
   height: 5px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
 }
 
-/* 3. Center Content (Headline & Subtitle) */
+/* 3. Center Content (Headline & Positioned Subtitle) */
 .centerContent {
   position: relative;
   z-index: 10;
@@ -118,7 +121,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.15rem;
+  gap: 1.65rem; /* Spacious gap moving description downward so it doesn't clash with line */
 }
 
 .sectionHeading {
@@ -133,21 +136,21 @@
 }
 
 .headingAccent {
-  color: #16a34a; /* Slightly warmer vibrant green accent */
+  color: #16a34a; /* Vibrant green accent */
 }
 
 .sectionSubtitle {
   font-family: var(--font-body);
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.65;
   font-weight: 450;
   color: #475569;
-  max-width: 540px;
+  max-width: 530px;
   margin: 0;
   text-wrap: balance;
 }
 
-/* 4. Bottom Floating Trust Pillars Pill (Zomato Style) */
+/* 4. Bottom Trust Pillars Pill (Flat, No Shadow/Hover, Constant Animated Running Green Line) */
 .statsCardWrapper {
   position: relative;
   z-index: 10;
@@ -158,27 +161,69 @@
 }
 
 .statsCard {
+  position: relative;
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 9999px;
   padding: 1.15rem 2.75rem;
-  box-shadow:
-    0 18px 46px rgba(15, 23, 42, 0.07),
-    0 2px 8px rgba(15, 23, 42, 0.04);
+  /* NO shadow as requested */
+  box-shadow: none;
+  border: none;
   display: inline-flex;
   align-items: center;
   gap: 2.75rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: visible;
+  /* NO hover translation / elevation */
 }
 
-.statsCard:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 24px 56px rgba(15, 23, 42, 0.1),
-    0 4px 12px rgba(15, 23, 42, 0.05);
+/* Running Border SVG Overlay */
+.runningBorderSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  border-radius: 9999px;
+}
+
+/* Base Border Track */
+.runningBorderTrack {
+  width: calc(100% - 3px);
+  height: calc(100% - 3px);
+  fill: none;
+  stroke: rgba(34, 197, 94, 0.22);
+  stroke-width: 1.5;
+  rx: 36px;
+  ry: 36px;
+}
+
+/* Running Green Accent Beam */
+.runningBorderBeam {
+  width: calc(100% - 3px);
+  height: calc(100% - 3px);
+  fill: none;
+  stroke: #22c55e;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  rx: 36px;
+  ry: 36px;
+  stroke-dasharray: 22 78;
+  animation: runBeamAroundBox 4s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(34, 197, 94, 0.6));
+}
+
+@keyframes runBeamAroundBox {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
 }
 
 .statItem {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -224,6 +269,8 @@
 }
 
 .statDivider {
+  position: relative;
+  z-index: 1;
   width: 1px;
   height: 38px;
   background-color: #e2e8f0;
@@ -234,22 +281,22 @@
    ========================================================= */
 @media (max-width: 1180px) {
   .itemBroccoli {
-    width: 155px;
+    width: 125px;
     left: 4%;
   }
 
   .itemPepper {
-    width: 150px;
+    width: 120px;
     left: 5%;
   }
 
   .itemMilk {
-    width: 90px;
+    width: 75px;
     right: 6%;
   }
 
   .itemCurd {
-    width: 160px;
+    width: 130px;
     right: 5%;
   }
 
@@ -276,28 +323,28 @@
 
   /* Reposition single items to sides gracefully on tablet */
   .itemBroccoli {
-    width: 110px;
+    width: 95px;
     left: -15px;
     top: 15%;
     opacity: 0.85;
   }
 
   .itemPepper {
-    width: 105px;
+    width: 90px;
     left: -15px;
     bottom: 18%;
     opacity: 0.85;
   }
 
   .itemMilk {
-    width: 70px;
+    width: 58px;
     right: -10px;
     top: 10%;
     opacity: 0.85;
   }
 
   .itemCurd {
-    width: 115px;
+    width: 100px;
     right: -15px;
     bottom: 18%;
     opacity: 0.85;
@@ -311,6 +358,16 @@
     border-radius: 20px;
     width: 100%;
     max-width: 360px;
+  }
+
+  .runningBorderSvg {
+    border-radius: 20px;
+  }
+
+  .runningBorderTrack,
+  .runningBorderBeam {
+    rx: 20px;
+    ry: 20px;
   }
 
   .statDivider {
@@ -333,25 +390,25 @@
   }
 
   .itemBroccoli {
-    width: 85px;
+    width: 75px;
     left: -20px;
     top: 18%;
   }
 
   .itemPepper {
-    width: 80px;
+    width: 70px;
     left: -20px;
     bottom: 22%;
   }
 
   .itemMilk {
-    width: 55px;
+    width: 48px;
     right: -15px;
     top: 12%;
   }
 
   .itemCurd {
-    width: 85px;
+    width: 75px;
     right: -20px;
     bottom: 22%;
   }
