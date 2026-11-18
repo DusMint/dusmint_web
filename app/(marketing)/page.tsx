@@ -2,6 +2,7 @@
 
 import React, { useContext, useState } from "react";
 import Hero from "@/components/Hero";
+import MissionBanner from "@/components/MissionBanner";
 import CategoriesSection from "@/components/CategoriesSection";
 import PopularShopsSection from "@/components/PopularShopsSection";
 import DeliveryBanner from "@/components/DeliveryBanner";
@@ -37,7 +38,10 @@ export default function IntroPage() {
         onPartnerClick={openVendorModal}
       />
 
-      {/* 2. Categories digitized on Dusmint */}
+      {/* 2. Mission & Impact Section (Zomato-Style with Floating Produce & Dairy) */}
+      <MissionBanner language={language} />
+
+      {/* 3. Categories digitized on Dusmint */}
       <CategoriesSection
         language={language}
         selectedCategory={selectedCategory}
