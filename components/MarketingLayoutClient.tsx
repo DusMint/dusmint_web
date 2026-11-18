@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton";
@@ -36,6 +37,8 @@ export default function MarketingLayoutClient({
   const [isLocationModalOpen, setIsLocationModalOpen] = useState(false);
   const [isVendorModalOpen, setIsVendorModalOpen] = useState(false);
   const [selectedShop, setSelectedShop] = useState<Shop | null>(null);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === "en" ? "hi" : "en"));
@@ -57,7 +60,9 @@ export default function MarketingLayoutClient({
         onToggleLanguage={toggleLanguage}
       />
 
-      <main style={{ minHeight: "80vh" }}>{children}</main>
+      <main style={{ minHeight: "80vh", paddingTop: isHomePage ? 0 : "78px" }}>
+        {children}
+      </main>
 
       <Footer
         language={language}
