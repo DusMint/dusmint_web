@@ -122,8 +122,8 @@ export default function AppDownloadBanner({ language }: AppDownloadBannerProps) 
               <Image
                 src="/images/phone_qr_mockup.png"
                 alt="Scan QR code on Dusmint app preview to download"
-                width={250}
-                height={500}
+                width={310}
+                height={605}
                 className={styles.phoneMockupImg}
                 priority
               />
