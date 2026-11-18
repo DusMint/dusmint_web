@@ -18,7 +18,7 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
 
   return (
     <section className={styles.missionSection} aria-label="DusMint Mission & Impact">
-      {/* 1. Decorative Hand-Drawn Organic Curved Line Trails (Zomato Style) */}
+      {/* 1. Darker Hand-Drawn Organic Curved Line Trails (Zomato Style) */}
       <svg
         className={styles.decorativeCurves}
         viewBox="0 0 1440 680"
@@ -28,65 +28,77 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         aria-hidden="true"
       >
         <path
-          d="M-40 220 C180 120, 240 20, 160 80 C80 140, 120 480, 260 520 C420 560, 520 280, 720 280 C920 280, 1020 80, 1160 40 C1280 0, 1400 80, 1360 220 C1300 420, 1160 620, 1280 660 C1380 690, 1480 580, 1480 580"
-          stroke="rgba(34, 197, 94, 0.22)"
-          strokeWidth="1.75"
+          d="M-30 200 C160 100, 220 20, 150 90 C70 160, 90 460, 240 500 C400 540, 520 280, 720 280 C920 280, 1020 90, 1160 50 C1280 10, 1410 70, 1370 230 C1310 430, 1160 610, 1280 650 C1380 680, 1480 580, 1480 580"
+          stroke="rgba(21, 128, 61, 0.42)"
+          strokeWidth="2.5"
           strokeLinecap="round"
         />
         <path
-          d="M60 620 C220 540, 340 620, 500 580"
-          stroke="rgba(34, 197, 94, 0.16)"
-          strokeWidth="1.5"
+          d="M40 590 C200 510, 320 600, 480 560 C640 520, 800 640, 1000 600 C1160 560, 1320 620, 1460 580"
+          stroke="rgba(21, 128, 61, 0.32)"
+          strokeWidth="2"
           strokeLinecap="round"
-          strokeDasharray="4 6"
+          strokeDasharray="6 8"
         />
       </svg>
 
-      {/* 2. Floating Farm-Fresh Produce & Artisanal Dairy Items */}
-      {/* Item 1: Farm-Fresh Vegetables Arrangement (Left) */}
-      <div className={`${styles.floatingItem} ${styles.itemVegetables}`}>
+      {/* 2. Isolated Single-Item Farm Produce & Artisanal Dairy (Transparent PNGs) */}
+      {/* Top Left: Fresh Broccoli Crown */}
+      <div className={`${styles.singleItem} ${styles.itemBroccoli}`}>
         <Image
-          src="/images/mission_vegetables.jpg"
-          alt="Farm fresh vegetables"
-          width={280}
-          height={280}
-          className={styles.itemImage}
+          src="/images/single_broccoli.png"
+          alt="Fresh farm broccoli"
+          width={220}
+          height={220}
+          className={styles.produceImg}
           priority
         />
       </div>
 
-      {/* Item 2: Artisanal Dairy, Paneer & Clay Matka Dahi (Top Right) */}
-      <div className={`${styles.floatingItem} ${styles.itemDairy}`}>
+      {/* Bottom Left: Crisp Red Bell Pepper */}
+      <div className={`${styles.singleItem} ${styles.itemPepper}`}>
         <Image
-          src="/images/mission_dairy.jpg"
-          alt="Fresh artisanal dairy and paneer"
-          width={260}
-          height={260}
-          className={styles.itemImage}
+          src="/images/single_bell_pepper.png"
+          alt="Crisp red bell pepper"
+          width={210}
+          height={210}
+          className={styles.produceImg}
           priority
         />
       </div>
 
-      {/* Item 3: Fresh Harvest Basket with Carrots & Peas (Bottom Right) */}
-      <div className={`${styles.floatingItem} ${styles.itemHarvest}`}>
+      {/* Top Right: Pure Farm-Fresh Milk Bottle */}
+      <div className={`${styles.singleItem} ${styles.itemMilk}`}>
         <Image
-          src="/images/mission_harvest.jpg"
-          alt="Fresh harvest basket with carrots and herbs"
-          width={270}
+          src="/images/single_milk_bottle.png"
+          alt="Fresh pure farm milk bottle"
+          width={130}
           height={270}
-          className={styles.itemImage}
+          className={styles.produceImg}
+          priority
         />
       </div>
 
-      {/* Floating Garnishes: Mint leaf & dewy cherry tomato accents */}
-      <div className={`${styles.floatingGarnish} ${styles.garnishMint}`}>
-        <svg viewBox="0 0 24 24" width="32" height="32" fill="#22C55E">
-          <path d="M12 2C8 6 4 11 6 16C8 21 15 22 18 19C21 16 20 8 12 2Z" opacity="0.85" />
+      {/* Bottom Right: Authentic Terracotta Clay Matka Curd */}
+      <div className={`${styles.singleItem} ${styles.itemCurd}`}>
+        <Image
+          src="/images/single_matka_curd.png"
+          alt="Artisanal clay matka curd"
+          width={220}
+          height={220}
+          className={styles.produceImg}
+        />
+      </div>
+
+      {/* Floating Accent Garnishes: Mint leaf & dewy cherry tomato */}
+      <div className={`${styles.staticGarnish} ${styles.garnishMint}`}>
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="#22C55E">
+          <path d="M12 2C8 6 4 11 6 16C8 21 15 22 18 19C21 16 20 8 12 2Z" opacity="0.9" />
           <path d="M12 2C13 8 15 14 18 19" stroke="#15803D" strokeWidth="1.2" strokeLinecap="round" />
         </svg>
       </div>
 
-      <div className={`${styles.floatingGarnish} ${styles.garnishTomato}`}>
+      <div className={`${styles.staticGarnish} ${styles.garnishTomato}`}>
         <div className={styles.cherryTomatoGarnish} />
       </div>
 
@@ -115,49 +127,55 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         </p>
       </div>
 
-      {/* 4. Bottom Floating Impact & Stats Card (Zomato Style) */}
+      {/* 4. Bottom Trust Pillars Pill (Genuine Trust, No Fake Metrics) */}
       <div className={styles.statsCardWrapper}>
         <div className={styles.statsCard}>
-          {/* Stat 1: Verified Local Stores */}
+          {/* Pillar 1: Trusted Shops */}
           <div className={styles.statItem}>
             <div className={styles.statTextCol}>
-              <span className={styles.statNumber}>5,000+</span>
+              <span className={styles.statTitle}>
+                {isHi ? "विश्वसनीय दुकानें" : "Trusted Shops"}
+              </span>
               <span className={styles.statLabel}>
-                {isHi ? "स्थानीय दुकानें" : "local stores"}
+                {isHi ? "सत्यापित स्थानीय किराना" : "Verified local kiranas"}
               </span>
             </div>
             <div className={styles.statIconBadge}>
-              <IconBuildingStore size={26} stroke={1.75} className={styles.statIcon} />
+              <IconBuildingStore size={24} stroke={1.75} className={styles.statIcon} />
             </div>
           </div>
 
           <div className={styles.statDivider} />
 
-          {/* Stat 2: Express Delivery */}
+          {/* Pillar 2: Faster Delivery */}
           <div className={styles.statItem}>
             <div className={styles.statTextCol}>
-              <span className={styles.statNumber}>10–30 mins</span>
+              <span className={styles.statTitle}>
+                {isHi ? "तेज़ डिलीवरी" : "Faster Delivery"}
+              </span>
               <span className={styles.statLabel}>
-                {isHi ? "एक्सप्रेस डिलीवरी" : "express delivery"}
+                {isHi ? "सीधे आपके दरवाज़े तक" : "Direct to your doorstep"}
               </span>
             </div>
             <div className={styles.statIconBadge}>
-              <IconBolt size={26} stroke={1.75} className={styles.statIcon} />
+              <IconBolt size={24} stroke={1.75} className={styles.statIcon} />
             </div>
           </div>
 
           <div className={styles.statDivider} />
 
-          {/* Stat 3: 100% Fresh Guaranteed */}
+          {/* Pillar 3: Secure Payments */}
           <div className={styles.statItem}>
             <div className={styles.statTextCol}>
-              <span className={styles.statNumber}>100%</span>
+              <span className={styles.statTitle}>
+                {isHi ? "सुरक्षित भुगतान" : "Secure Payments"}
+              </span>
               <span className={styles.statLabel}>
-                {isHi ? "पूरा तोला, पूरा भरोसा" : "farm-fresh & poora tola"}
+                {isHi ? "UPI, कार्ड और कैश" : "UPI, Cards & Cash"}
               </span>
             </div>
             <div className={styles.statIconBadge}>
-              <IconShieldCheck size={26} stroke={1.75} className={styles.statIcon} />
+              <IconShieldCheck size={24} stroke={1.75} className={styles.statIcon} />
             </div>
           </div>
         </div>
