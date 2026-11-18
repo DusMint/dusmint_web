@@ -2,10 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import {
-  IconChevronDown,
-  IconBuildingStore,
-} from "@tabler/icons-react";
+import { IconChevronDown } from "@tabler/icons-react";
 import styles from "./Hero.module.css";
 
 interface HeroProps {
@@ -155,17 +152,17 @@ export default function Hero({
             </button>
           </div>
 
-          {/* Merchant Partner Pill Link */}
-          <div className={styles.merchantPillRow}>
+          {/* Merchant Partner Row */}
+          <div className={styles.merchantPartnerRow}>
+            <span className={styles.merchantPartnerLabel}>
+              {isHi ? "दुकान है आपकी?" : "Own a store:"}
+            </span>
             <button
               type="button"
-              className={styles.merchantPillBtn}
+              className={styles.merchantPartnerGreenBtn}
               onClick={onPartnerClick}
             >
-              <IconBuildingStore size={18} stroke={1.8} />
-              <span>
-                {isHi ? "दुकानदार पार्टनर बनें — मुफ़्त में रजिस्टर करें" : "Own a local store? Partner with DusMint"}
-              </span>
+              <span>{isHi ? "पार्टनर बनें" : "Become a partner"}</span>
             </button>
           </div>
         </div>

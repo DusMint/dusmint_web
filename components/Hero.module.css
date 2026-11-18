@@ -107,17 +107,17 @@
   color: #22c55e;
 }
 
-/* Main Hero Heading */
+/* Main Hero Heading — Bold, Dominating & Professional */
 .heroHeading {
   font-family: var(--font-heading);
-  font-size: 3.25rem;
-  line-height: 1.18;
+  font-size: 3.95rem;
+  line-height: 1.12;
   font-weight: 800;
   color: #ffffff;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   margin: 0;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
-  max-width: 820px;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.75);
+  max-width: 860px;
 }
 
 .freshHighlight,
@@ -125,14 +125,15 @@
   color: #22c55e;
 }
 
-/* Subtitle */
+/* Subtitle — Tucked neatly in between the headline width */
 .heroSubtitle {
   font-family: var(--font-body);
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.15rem;
+  line-height: 1.5;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
-  max-width: 640px;
+  max-width: 480px;
+  text-wrap: balance;
   margin: 0;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
 }
@@ -174,33 +175,52 @@
   border-radius: 10px;
 }
 
-/* Merchant Partner Pill */
-.merchantPillRow {
-  margin-top: 0.65rem;
-}
-
-.merchantPillBtn {
+/* Merchant Partner Row — "Own a store:" + Green "Become a partner" Button */
+.merchantPartnerRow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  padding: 8px 18px;
-  border-radius: 9999px;
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  gap: 10px;
+  margin-top: 0.85rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.merchantPillBtn:hover {
-  background: rgba(255, 255, 255, 0.22);
+.merchantPartnerLabel {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  letter-spacing: -0.01em;
+}
+
+.merchantPartnerGreenBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #22c55e;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 7px 18px;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.merchantPartnerGreenBtn:hover {
+  background: #16a34a;
   border-color: rgba(255, 255, 255, 0.45);
   transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
+}
+
+.merchantPartnerGreenBtn:active {
+  transform: translateY(0);
 }
 
 /* Bottom "Scroll down ︾" Indicator */
@@ -271,14 +291,15 @@
   }
 
   .heroHeading {
-    font-size: 2rem;
-    line-height: 1.25;
+    font-size: 2.35rem;
+    line-height: 1.18;
   }
 
   .heroSubtitle {
-    font-size: 1.05rem;
-    line-height: 1.5;
-    padding: 0 0.5rem;
+    font-size: 1rem;
+    line-height: 1.45;
+    max-width: 330px;
+    padding: 0;
   }
 
   .storeBadgesRow {
@@ -303,11 +324,15 @@
   }
 
   .heroHeading {
-    font-size: 1.75rem;
+    font-size: 1.95rem;
   }
 
-  .merchantPillBtn {
+  .merchantPartnerLabel {
+    font-size: 13.5px;
+  }
+
+  .merchantPartnerGreenBtn {
     font-size: 12.5px;
-    padding: 7px 14px;
+    padding: 6px 14px;
   }
 }
