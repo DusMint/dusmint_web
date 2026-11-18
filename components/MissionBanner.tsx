@@ -102,6 +102,10 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         <div className={styles.cherryTomatoGarnish} />
       </div>
 
+      <div className={`${styles.staticGarnish} ${styles.garnishTomatoBottom}`}>
+        <div className={styles.cherryTomatoGarnish} />
+      </div>
+
       {/* 3. Center Mission Headline & Positioned Description */}
       <div className={styles.centerContent}>
         <h2 className={styles.sectionHeading}>
@@ -127,11 +131,11 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         </p>
       </div>
 
-      {/* 4. Bottom Trust Badge (Clean, Flat, No Runny Glow, Black Drawn Icons with Soft Green Accent) */}
+      {/* 4. Bottom Trust Cards (Desktop: unified pill; Mobile: 3 staggered overlapping cards like Zomato) */}
       <div className={styles.statsCardWrapper}>
         <div className={styles.statsCard}>
           {/* Pillar 1: Verified Stores */}
-          <div className={styles.statItem}>
+          <div className={`${styles.statItem} ${styles.statCardOne}`}>
             <span className={styles.statTitle}>
               {isHi ? "सत्यापित दुकानें" : "Verified Stores"}
             </span>
@@ -143,7 +147,7 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
           <div className={styles.statDivider} />
 
           {/* Pillar 2: Instant Delivery */}
-          <div className={styles.statItem}>
+          <div className={`${styles.statItem} ${styles.statCardTwo}`}>
             <span className={styles.statTitle}>
               {isHi ? "एक्सप्रेस डिलीवरी" : "Instant Delivery"}
             </span>
@@ -155,7 +159,7 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
           <div className={styles.statDivider} />
 
           {/* Pillar 3: Secure Checkout */}
-          <div className={styles.statItem}>
+          <div className={`${styles.statItem} ${styles.statCardThree}`}>
             <span className={styles.statTitle}>
               {isHi ? "सुरक्षित चेकआउट" : "Secure Checkout"}
             </span>
