@@ -200,6 +200,8 @@
 .qrCode {
   width: 140px;
   height: 140px;
+  object-fit: contain;
+  display: block;
   margin-bottom: 0.75rem;
 }
 
