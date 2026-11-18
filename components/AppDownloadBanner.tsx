@@ -116,20 +116,17 @@ export default function AppDownloadBanner({ language }: AppDownloadBannerProps) 
             </div>
           </div>
 
-          {/* Right QR Code Box */}
-          <div className={styles.qrCol}>
-            <div className={styles.qrBox}>
+          {/* Right Phone Mockup with Embedded QR Code */}
+          <div className={styles.phoneCol}>
+            <div className={styles.phoneMockupWrap}>
               <Image
-                src="/images/app_download_qr.png"
-                alt="Scan QR code to download Dusmint customer app on Google Play"
-                width={140}
-                height={140}
-                className={styles.qrCode}
+                src="/images/phone_qr_mockup.png"
+                alt="Scan QR code on Dusmint app preview to download"
+                width={250}
+                height={500}
+                className={styles.phoneMockupImg}
+                priority
               />
-              <span className={styles.qrLabel}>
-                {isHi ? "स्कैन करके डाउनलोड करें" : "Scan to download"}
-              </span>
-              <span className={styles.qrSub}>Android & iOS</span>
             </div>
           </div>
         </div>
