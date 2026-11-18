@@ -21,8 +21,8 @@ interface FeatureCard {
 const CARDS: FeatureCard[] = [
   {
     id: "shops-you-know",
-    image: "/images/why_dusmint_shops_you_know.webp",
-    alt: "Handmade cut-paper collage illustration of a friendly local Indian neighbourhood shop",
+    image: "/images/card1.png",
+    alt: "Shops You Know - Local neighbourhood kirana shop with fresh produce",
     titleEn: "Shops You Know",
     titleHi: "आपकी जानी-पहचानी दुकानें",
     descEn:
@@ -32,8 +32,8 @@ const CARDS: FeatureCard[] = [
   },
   {
     id: "weighed-and-sealed",
-    image: "/images/why_dusmint_weighed_sealed.webp",
-    alt: "Handmade cut-paper collage illustration of produce weighed on digital scale and sealed in delivery bag",
+    image: "/images/card2.png",
+    alt: "Weighed & Sealed - Order weighed on digital scale and sealed at shop",
     titleEn: "Weighed & Sealed",
     titleHi: "पूरा तोला, सुरक्षित सीलबंद",
     descEn:
@@ -43,8 +43,8 @@ const CARDS: FeatureCard[] = [
   },
   {
     id: "your-slot-your-time",
-    image: "/images/why_dusmint_your_slot.webp",
-    alt: "Handmade cut-paper collage illustration of morning and evening delivery time slots",
+    image: "/images/card3.png",
+    alt: "Your Slot, Your Time - Flexible morning and evening delivery time slots",
     titleEn: "Your Slot, Your Time",
     titleHi: "आपका स्लॉट, आपका समय",
     descEn:
@@ -54,8 +54,8 @@ const CARDS: FeatureCard[] = [
   },
   {
     id: "made-for-your-town",
-    image: "/images/why_dusmint_made_for_your_town.webp",
-    alt: "Handmade cut-paper collage illustration of lightweight app running smoothly on budget phones",
+    image: "/images/card4.png",
+    alt: "Made for Your Town - Lightweight app running smoothly on budget phones across town",
     titleEn: "Made for Your Town",
     titleHi: "आपके शहर के लिए खास बना",
     descEn:
