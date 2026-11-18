@@ -95,11 +95,21 @@ export default function Hero({
             </span>
           </div>
 
-          {/* Main Hero Headline - Brand Slogan */}
+          {/* Main Hero Headline - Brand Slogan (2 Lines) */}
           <h1 className={styles.heroHeading}>
-            {isHi
-              ? "ताज़गी का नया पता, अब आपके पास"
-              : "Fresh has an address, it’s yours"}
+            {isHi ? (
+              <>
+                <span className={styles.freshHighlight}>ताज़गी</span> का एक पता है,
+                <br />
+                वो आपका घर है
+              </>
+            ) : (
+              <>
+                <span className={styles.freshHighlight}>Fresh</span> has an address,
+                <br />
+                it’s yours
+              </>
+            )}
           </h1>
 
           {/* Subtitle */}

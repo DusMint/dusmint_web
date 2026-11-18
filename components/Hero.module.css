@@ -109,17 +109,22 @@
   color: #22c55e;
 }
 
-/* Main Hero Heading (Matching Zomato: "India's #1 food delivery app") */
+/* Main Hero Heading */
 .heroHeading {
   font-family: var(--font-heading);
   font-size: 3.25rem;
-  line-height: 1.15;
+  line-height: 1.18;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.025em;
   margin: 0;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
   max-width: 820px;
+}
+
+.freshHighlight,
+.mehendiGreen {
+  color: #22c55e;
 }
 
 /* Subtitle */
