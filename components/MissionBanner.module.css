@@ -40,35 +40,35 @@
   filter: drop-shadow(0 10px 22px rgba(15, 23, 42, 0.1));
 }
 
-/* Top Left: Fresh Broccoli Crown (Rotated slightly for natural free flow) */
-.itemBroccoli {
-  left: 10%;
-  top: 13%;
-  width: 150px;
-  transform: rotate(-12deg);
-}
-
-/* Bottom Left: Crisp Red Bell Pepper (Rotated slightly for natural free flow) */
-.itemPepper {
-  left: 11%;
-  bottom: 13%;
-  width: 145px;
-  transform: rotate(14deg);
-}
-
-/* Top Right: Farm-Fresh Milk Bottle (Rotated slightly for natural free flow) */
+/* Top Left: Farm-Fresh Milk Bottle */
 .itemMilk {
-  right: 12%;
-  top: 8%;
-  width: 88px;
-  transform: rotate(8deg);
+  left: 10%;
+  top: 9%;
+  width: 85px;
+  transform: rotate(-8deg);
 }
 
-/* Bottom Right: Artisanal Clay Matka Curd (Rotated slightly for natural free flow) */
+/* Bottom Left: Fresh Cut Red Apple */
+.itemApple {
+  left: 10%;
+  bottom: 12%;
+  width: 140px;
+  transform: rotate(12deg);
+}
+
+/* Top Right: Fresh Broccoli Crown */
+.itemBroccoli {
+  right: 11%;
+  top: 11%;
+  width: 145px;
+  transform: rotate(10deg);
+}
+
+/* Bottom Right: Artisanal Clay Matka Curd */
 .itemCurd {
   right: 11%;
   bottom: 11%;
-  width: 160px;
+  width: 155px;
   transform: rotate(-10deg);
 }
 
@@ -115,19 +115,19 @@
 .centerContent {
   position: relative;
   z-index: 10;
-  max-width: 620px;
+  max-width: 680px;
   text-align: center;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.65rem; /* Spacious gap moving description downward so it doesn't clash with line */
+  gap: 1.65rem;
 }
 
 .sectionHeading {
   font-family: var(--font-heading);
-  font-size: 3.15rem;
-  line-height: 1.14;
+  font-size: 2.95rem;
+  line-height: 1.15;
   font-weight: 800;
   color: #15803d; /* DusMint primary brand green */
   letter-spacing: -0.03em;
@@ -150,7 +150,7 @@
   text-wrap: balance;
 }
 
-/* 4. Bottom Trust Pillars Pill (Flat, No Shadow/Hover, Constant Animated Running Green Line) */
+/* 4. Bottom Trust Badge (Clean, Flat, No Glow/Runny Border, Black Drawn Icons) */
 .statsCardWrapper {
   position: relative;
   z-index: 10;
@@ -163,116 +163,50 @@
 .statsCard {
   position: relative;
   background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 9999px;
-  padding: 1.15rem 2.75rem;
-  /* NO shadow as requested */
+  padding: 0.85rem 2.5rem;
   box-shadow: none;
-  border: none;
   display: inline-flex;
   align-items: center;
-  gap: 2.75rem;
-  overflow: visible;
-  /* NO hover translation / elevation */
-}
-
-/* Running Border SVG Overlay */
-.runningBorderSvg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: visible;
-  border-radius: 9999px;
-}
-
-/* Base Border Track */
-.runningBorderTrack {
-  width: calc(100% - 3px);
-  height: calc(100% - 3px);
-  fill: none;
-  stroke: rgba(34, 197, 94, 0.22);
-  stroke-width: 1.5;
-  rx: 36px;
-  ry: 36px;
-}
-
-/* Running Green Accent Beam */
-.runningBorderBeam {
-  width: calc(100% - 3px);
-  height: calc(100% - 3px);
-  fill: none;
-  stroke: #22c55e;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  rx: 36px;
-  ry: 36px;
-  stroke-dasharray: 22 78;
-  animation: runBeamAroundBox 4s linear infinite;
-  filter: drop-shadow(0 0 5px rgba(34, 197, 94, 0.6));
-}
-
-@keyframes runBeamAroundBox {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -100;
-  }
+  gap: 2.25rem;
 }
 
 .statItem {
-  position: relative;
-  z-index: 1;
   display: flex;
   align-items: center;
-  gap: 16px;
-}
-
-.statTextCol {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+  gap: 12px;
 }
 
 .statTitle {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #0f172a;
+  font-size: 1.15rem;
+  font-weight: 500; /* Clean medium weight, not bold as requested */
+  color: #1e293b;
   line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-.statLabel {
-  font-family: var(--font-body);
-  font-size: 13.5px;
-  font-weight: 500;
-  color: #64748b;
-  line-height: 1.25;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
 }
 
 .statIconBadge {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background-color: #f0fdf4;
+  width: 38px;
+  height: 38px;
+  border-radius: 9999px;
+  background-color: rgba(34, 197, 94, 0.12); /* Soft green accent */
+  border: none; /* NO fixed boundary line as requested */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 1px solid rgba(34, 197, 94, 0.18);
 }
 
 .statIcon {
-  color: #15803d;
+  color: #0f172a; /* Black draw for the icon */
 }
 
 .statDivider {
-  position: relative;
-  z-index: 1;
   width: 1px;
-  height: 38px;
+  height: 28px;
   background-color: #e2e8f0;
 }
 
@@ -280,29 +214,29 @@
    Responsive Design: Tablet & Mobile
    ========================================================= */
 @media (max-width: 1180px) {
-  .itemBroccoli {
-    width: 125px;
+  .itemMilk {
+    width: 72px;
     left: 4%;
   }
 
-  .itemPepper {
-    width: 120px;
-    left: 5%;
+  .itemApple {
+    width: 115px;
+    left: 4%;
   }
 
-  .itemMilk {
-    width: 75px;
-    right: 6%;
+  .itemBroccoli {
+    width: 120px;
+    right: 5%;
   }
 
   .itemCurd {
-    width: 130px;
+    width: 125px;
     right: 5%;
   }
 
   .statsCard {
-    gap: 2rem;
-    padding: 1.1rem 2.2rem;
+    gap: 1.75rem;
+    padding: 0.8rem 2rem;
   }
 }
 
@@ -321,30 +255,29 @@
     max-width: 440px;
   }
 
-  /* Reposition single items to sides gracefully on tablet */
-  .itemBroccoli {
-    width: 95px;
-    left: -15px;
-    top: 15%;
+  .itemMilk {
+    width: 55px;
+    left: -10px;
+    top: 10%;
     opacity: 0.85;
   }
 
-  .itemPepper {
-    width: 90px;
+  .itemApple {
+    width: 85px;
     left: -15px;
     bottom: 18%;
     opacity: 0.85;
   }
 
-  .itemMilk {
-    width: 58px;
-    right: -10px;
-    top: 10%;
+  .itemBroccoli {
+    width: 90px;
+    right: -15px;
+    top: 15%;
     opacity: 0.85;
   }
 
   .itemCurd {
-    width: 100px;
+    width: 95px;
     right: -15px;
     bottom: 18%;
     opacity: 0.85;
@@ -353,21 +286,11 @@
   .statsCard {
     flex-direction: column;
     align-items: stretch;
-    gap: 1.25rem;
-    padding: 1.5rem;
+    gap: 1.1rem;
+    padding: 1.35rem;
     border-radius: 20px;
     width: 100%;
-    max-width: 360px;
-  }
-
-  .runningBorderSvg {
-    border-radius: 20px;
-  }
-
-  .runningBorderTrack,
-  .runningBorderBeam {
-    rx: 20px;
-    ry: 20px;
+    max-width: 320px;
   }
 
   .statDivider {
@@ -389,27 +312,27 @@
     font-size: 0.95rem;
   }
 
-  .itemBroccoli {
-    width: 75px;
-    left: -20px;
-    top: 18%;
+  .itemMilk {
+    width: 45px;
+    left: -15px;
+    top: 12%;
   }
 
-  .itemPepper {
-    width: 70px;
-    left: -20px;
+  .itemApple {
+    width: 68px;
+    left: -18px;
     bottom: 22%;
   }
 
-  .itemMilk {
-    width: 48px;
-    right: -15px;
-    top: 12%;
+  .itemBroccoli {
+    width: 70px;
+    right: -18px;
+    top: 18%;
   }
 
   .itemCurd {
     width: 75px;
-    right: -20px;
+    right: -18px;
     bottom: 22%;
   }
 }

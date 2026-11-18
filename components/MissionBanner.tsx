@@ -18,7 +18,7 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
 
   return (
     <section className={styles.missionSection} aria-label="DusMint Mission & Impact">
-      {/* 1. Darker Hand-Drawn Organic Curved Line Trails (Dipping below text to prevent clashing) */}
+      {/* 1. Organic Curved Line Trails (Dipping safely below text) */}
       <svg
         className={styles.decorativeCurves}
         viewBox="0 0 1440 680"
@@ -42,38 +42,38 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         />
       </svg>
 
-      {/* 2. Isolated Single-Item Farm Produce & Artisanal Dairy (Transparent PNGs, Rotated Free Flow) */}
-      {/* Top Left: Fresh Broccoli Crown */}
-      <div className={`${styles.singleItem} ${styles.itemBroccoli}`}>
-        <Image
-          src="/images/single_broccoli.png"
-          alt="Fresh farm broccoli"
-          width={160}
-          height={160}
-          className={styles.produceImg}
-          priority
-        />
-      </div>
-
-      {/* Bottom Left: Crisp Red Bell Pepper */}
-      <div className={`${styles.singleItem} ${styles.itemPepper}`}>
-        <Image
-          src="/images/single_bell_pepper.png"
-          alt="Crisp red bell pepper"
-          width={150}
-          height={150}
-          className={styles.produceImg}
-          priority
-        />
-      </div>
-
-      {/* Top Right: Pure Farm-Fresh Milk Bottle */}
+      {/* 2. Isolated Single-Item Farm Produce & Dairy (Transparent PNGs, Rotated Free Flow) */}
+      {/* Top Left: Pure Farm-Fresh Milk Bottle (Swapped with Broccoli) */}
       <div className={`${styles.singleItem} ${styles.itemMilk}`}>
         <Image
           src="/images/single_milk_bottle.png"
           alt="Fresh pure farm milk bottle"
-          width={95}
-          height={220}
+          width={88}
+          height={210}
+          className={styles.produceImg}
+          priority
+        />
+      </div>
+
+      {/* Bottom Left: Fresh Cut Red Apple (Replacing Bell Pepper) */}
+      <div className={`${styles.singleItem} ${styles.itemApple}`}>
+        <Image
+          src="/images/single_cut_apple.png"
+          alt="Crisp cut fresh red apple"
+          width={145}
+          height={140}
+          className={styles.produceImg}
+          priority
+        />
+      </div>
+
+      {/* Top Right: Fresh Broccoli Crown (Swapped from Top Left) */}
+      <div className={`${styles.singleItem} ${styles.itemBroccoli}`}>
+        <Image
+          src="/images/single_broccoli.png"
+          alt="Fresh farm broccoli crown"
+          width={145}
+          height={145}
           className={styles.produceImg}
           priority
         />
@@ -84,8 +84,8 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         <Image
           src="/images/single_matka_curd.png"
           alt="Artisanal clay matka curd"
-          width={165}
-          height={165}
+          width={155}
+          height={155}
           className={styles.produceImg}
         />
       </div>
@@ -107,15 +107,15 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         <h2 className={styles.sectionHeading}>
           {isHi ? (
             <>
-              ताज़ा और खरा सामान,
+              स्थानीय दुकानों की ताज़गी,
               <br />
-              <span className={styles.headingAccent}>हर घर के लिए</span>
+              <span className={styles.headingAccent}>सीधे आपके दरवाज़े तक।</span>
             </>
           ) : (
             <>
-              Better food for
+              Your local shop’s freshest,
               <br />
-              <span className={styles.headingAccent}>more people</span>
+              <span className={styles.headingAccent}>brought to your door.</span>
             </>
           )}
         </h2>
@@ -127,70 +127,40 @@ export default function MissionBanner({ language = "en" }: MissionBannerProps) {
         </p>
       </div>
 
-      {/* 4. Bottom Trust Pillars Pill (Flat, No Shadow/Hover, Continuous Animated Running Green Beam) */}
+      {/* 4. Bottom Trust Badge (Clean, Flat, No Runny Glow, Black Drawn Icons with Soft Green Accent) */}
       <div className={styles.statsCardWrapper}>
         <div className={styles.statsCard}>
-          {/* Animated Running Green Accent Border */}
-          <svg className={styles.runningBorderSvg} aria-hidden="true">
-            <rect
-              className={styles.runningBorderTrack}
-              x="1.5"
-              y="1.5"
-            />
-            <rect
-              className={styles.runningBorderBeam}
-              x="1.5"
-              y="1.5"
-              pathLength="100"
-            />
-          </svg>
-
-          {/* Pillar 1: Trusted Shops */}
+          {/* Pillar 1: Verified Stores */}
           <div className={styles.statItem}>
-            <div className={styles.statTextCol}>
-              <span className={styles.statTitle}>
-                {isHi ? "विश्वसनीय दुकानें" : "Trusted Shops"}
-              </span>
-              <span className={styles.statLabel}>
-                {isHi ? "सत्यापित स्थानीय किराना" : "Verified local kiranas"}
-              </span>
-            </div>
+            <span className={styles.statTitle}>
+              {isHi ? "सत्यापित दुकानें" : "Verified Stores"}
+            </span>
             <div className={styles.statIconBadge}>
-              <IconBuildingStore size={24} stroke={1.75} className={styles.statIcon} />
+              <IconBuildingStore size={20} stroke={2} className={styles.statIcon} />
             </div>
           </div>
 
           <div className={styles.statDivider} />
 
-          {/* Pillar 2: Faster Delivery */}
+          {/* Pillar 2: Instant Delivery */}
           <div className={styles.statItem}>
-            <div className={styles.statTextCol}>
-              <span className={styles.statTitle}>
-                {isHi ? "तेज़ डिलीवरी" : "Faster Delivery"}
-              </span>
-              <span className={styles.statLabel}>
-                {isHi ? "सीधे आपके दरवाज़े तक" : "Direct to your doorstep"}
-              </span>
-            </div>
+            <span className={styles.statTitle}>
+              {isHi ? "एक्सप्रेस डिलीवरी" : "Instant Delivery"}
+            </span>
             <div className={styles.statIconBadge}>
-              <IconBolt size={24} stroke={1.75} className={styles.statIcon} />
+              <IconBolt size={20} stroke={2} className={styles.statIcon} />
             </div>
           </div>
 
           <div className={styles.statDivider} />
 
-          {/* Pillar 3: Secure Payments */}
+          {/* Pillar 3: Secure Checkout */}
           <div className={styles.statItem}>
-            <div className={styles.statTextCol}>
-              <span className={styles.statTitle}>
-                {isHi ? "सुरक्षित भुगतान" : "Secure Payments"}
-              </span>
-              <span className={styles.statLabel}>
-                {isHi ? "UPI, कार्ड और कैश" : "UPI, Cards & Cash"}
-              </span>
-            </div>
+            <span className={styles.statTitle}>
+              {isHi ? "सुरक्षित चेकआउट" : "Secure Checkout"}
+            </span>
             <div className={styles.statIconBadge}>
-              <IconShieldCheck size={24} stroke={1.75} className={styles.statIcon} />
+              <IconShieldCheck size={20} stroke={2} className={styles.statIcon} />
             </div>
           </div>
         </div>
