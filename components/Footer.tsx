@@ -61,10 +61,10 @@ export default function Footer({ language, onOpenVendorModal }: FooterProps) {
                 <Link href="/">{isHi ? "मुख्य पृष्ठ" : "Home"}</Link>
               </li>
               <li>
-                <a href="#shops">{isHi ? "दुकानें" : "Popular shops"}</a>
+                <a href="#why-dusmint">{isHi ? "डसमिट क्यों?" : "Why Dusmint"}</a>
               </li>
               <li>
-                <a href="#categories">{isHi ? "श्रेणियां" : "Categories"}</a>
+                <a href="#download-app">{isHi ? "ऐप डाउनलोड" : "Download app"}</a>
               </li>
               <li>
                 <Link href="/about">{isHi ? "डसमिट के बारे में" : "About us"}</Link>
