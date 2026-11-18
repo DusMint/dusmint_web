@@ -37,6 +37,30 @@ export default function Navbar({
 
   return (
     <header className={styles.stickyHeader}>
+      {/* Brand Logo - Top Left Corner (Desktop) */}
+      <Link href="/" className={styles.headerLogo} aria-label="DusMint Home">
+        <svg
+          className={styles.headerLeafIcon}
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 3C16 3 7 8 7 17C7 22.5 11 27 16 29C21 27 25 22.5 25 17C25 8 16 3 16 3Z"
+            fill="#22C55E"
+          />
+          <path
+            d="M16 11V22M16 15L12 13M16 18L13 19M16 17L19 16"
+            stroke="#0A3622"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+        </svg>
+        <span className={styles.headerBrandTitle}>
+          dus<span className={styles.brandMint}>mint</span>
+        </span>
+      </Link>
+
       <nav className={styles.pillContainer} aria-label="Main Navigation">
         {/* Desktop Navigation Links (Hidden completely on mobile) */}
         <div className={styles.desktopNav}>
