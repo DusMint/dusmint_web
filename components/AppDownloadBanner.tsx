@@ -46,23 +46,21 @@ export default function AppDownloadBanner({ language }: AppDownloadBannerProps) 
                 : "Real-time rider tracking, instant 1-tap reordering from your favorite neighbourhood kirana, and exclusive daily deals."}
             </p>
 
-            {/* SMS Link Input */}
+            {/* Unified Sleek SMS Capsule Form */}
             {!smsSent ? (
               <form onSubmit={handleSendLink} className={styles.smsForm}>
-                <div className={styles.inputWrap}>
-                  <span className={styles.countryCode}>+91</span>
-                  <input
-                    type="tel"
-                    required
-                    maxLength={10}
-                    placeholder="Enter 10-digit mobile"
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ""))}
-                    className={styles.smsInput}
-                  />
-                </div>
+                <span className={styles.countryCode}>+91</span>
+                <input
+                  type="tel"
+                  required
+                  maxLength={10}
+                  placeholder={isHi ? "मोबाइल नंबर दर्ज करें" : "Enter mobile number"}
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ""))}
+                  className={styles.smsInput}
+                />
                 <button type="submit" className={styles.sendBtn}>
-                  {isHi ? "ऐप लिंक भेजें" : "Get app link"}
+                  {isHi ? "लिंक भेजें" : "Get link"}
                 </button>
               </form>
             ) : (
@@ -70,7 +68,7 @@ export default function AppDownloadBanner({ language }: AppDownloadBannerProps) 
                 <IconCheck size={18} stroke={3} />
                 <span>
                   {isHi
-                    ? `ऐप डाउनलोड लिंक ${phoneNumber} पर भेज दिया गया है!`
+                    ? `ऐप डाउनलोड लिंक +91 ${phoneNumber} पर भेज दिया गया!`
                     : `App download link sent to +91 ${phoneNumber}!`}
                 </span>
               </div>
