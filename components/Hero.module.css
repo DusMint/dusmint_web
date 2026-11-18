@@ -133,17 +133,18 @@
   text-decoration-color: #22c55e;
 }
 
-/* Subtitle — Tucked neatly in between the headline width */
+/* Subtitle — Matching Zomato's large, crisp, high-clarity typography */
 .heroSubtitle {
-  font-family: var(--font-body);
-  font-size: 1.15rem;
-  line-height: 1.5;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 480px;
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+  max-width: 620px;
   text-wrap: balance;
   margin: 0;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85);
 }
 
 /* App Store & Google Play Badges Row (Zomato Style) */
@@ -303,9 +304,9 @@
   }
 
   .heroSubtitle {
-    font-size: 1.05rem;
-    line-height: 1.48;
-    max-width: 340px;
+    font-size: 1.25rem;
+    line-height: 1.42;
+    max-width: 380px;
     padding: 0;
   }
 
@@ -340,9 +341,9 @@
   }
 
   .heroSubtitle {
-    font-size: 0.95rem;
-    line-height: 1.45;
-    max-width: 310px;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    max-width: 340px;
   }
 
   .merchantPartnerLabel {
