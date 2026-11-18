@@ -282,11 +282,9 @@
     padding: 1.5rem 1rem;
   }
 
+  /* Logo is placed in top-left header bar on mobile too, so hide center duplicate */
   .logoLockup {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.85rem;
-    margin-bottom: 0.25rem;
+    display: none !important;
   }
 
   .brandTitle {
@@ -336,11 +334,11 @@
   }
 
   .merchantPartnerLabel {
-    font-size: 13.5px;
+    font-size: 14.5px;
   }
 
   .merchantPartnerGreenBtn {
-    font-size: 12.5px;
-    padding: 6px 14px;
+    font-size: 13.5px;
+    padding: 7px 16px;
   }
 }
