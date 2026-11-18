@@ -245,6 +245,18 @@
   }
 }
 
+@media (max-width: 1024px) and (min-width: 861px) {
+  .sectionHeading {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
 /* Mobile & Small Tablet (Matching Zomato Reference Layout Exactly) */
 @media (max-width: 860px) {
   .missionSection {
@@ -264,9 +276,9 @@
   }
 
   .sectionSubtitle {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    max-width: 270px;
+    font-size: 1rem;
+    line-height: 1.55;
+    max-width: 280px;
   }
 
   /* Food Produce & Dairy Positioning: Placed safely in outer margins (Zero Overlap with Text) */
@@ -415,11 +427,13 @@
 @media (max-width: 380px) {
   .sectionHeading {
     font-size: 1.65rem;
+    line-height: 1.2;
   }
 
   .sectionSubtitle {
-    font-size: 0.85rem;
-    max-width: 240px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 250px;
   }
 
   .itemBroccoli {
