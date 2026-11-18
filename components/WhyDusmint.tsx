@@ -1,87 +1,116 @@
 "use client";
 
 import React from "react";
-import {
-  IconBuildingStore,
-  IconLeaf,
-  IconTag,
-  IconClock,
-} from "@tabler/icons-react";
+import Image from "next/image";
 import styles from "./WhyDusmint.module.css";
 
 interface WhyDusmintProps {
-  language: "en" | "hi";
+  language?: "en" | "hi";
 }
 
-export default function WhyDusmint({ language }: WhyDusmintProps) {
+interface FeatureCard {
+  id: string;
+  image: string;
+  alt: string;
+  titleEn: string;
+  titleHi: string;
+  descEn: string;
+  descHi: string;
+}
+
+const CARDS: FeatureCard[] = [
+  {
+    id: "shops-you-know",
+    image: "/images/why_dusmint_shops_you_know.webp",
+    alt: "Handmade cut-paper collage illustration of a friendly local Indian neighbourhood shop",
+    titleEn: "Shops You Know",
+    titleHi: "आपकी जानी-पहचानी दुकानें",
+    descEn:
+      "Fresh veggies, meat and milk come from real shops in your own neighbourhood, the ones you already trust.",
+    descHi:
+      "ताज़ी सब्ज़ियाँ, मांस और दूध आपके अपने पड़ोस की असली दुकानों से आते हैं, जिन पर आप पहले से भरोसा करते हैं।",
+  },
+  {
+    id: "weighed-and-sealed",
+    image: "/images/why_dusmint_weighed_sealed.webp",
+    alt: "Handmade cut-paper collage illustration of produce weighed on digital scale and sealed in delivery bag",
+    titleEn: "Weighed & Sealed",
+    titleHi: "पूरा तोला, सुरक्षित सीलबंद",
+    descEn:
+      "Every order is weighed, photographed and sealed at the shop. If something's off, report it in the app.",
+    descHi:
+      "हर ऑर्डर को दुकान पर ही तौला, फोटो खींचा और सील किया जाता है। यदि कुछ भी गलत लगे, तो तुरंत ऐप में रिपोर्ट करें।",
+  },
+  {
+    id: "your-slot-your-time",
+    image: "/images/why_dusmint_your_slot.webp",
+    alt: "Handmade cut-paper collage illustration of morning and evening delivery time slots",
+    titleEn: "Your Slot, Your Time",
+    titleHi: "आपका स्लॉट, आपका समय",
+    descEn:
+      "Pick a morning or evening slot and plan your day around it. No rush, no waiting around.",
+    descHi:
+      "सुबह या शाम का अपनी पसंद का स्लॉट चुनें और अपना दिन प्लान करें। कोई हड़बड़ी नहीं, कोई इंतज़ार नहीं।",
+  },
+  {
+    id: "made-for-your-town",
+    image: "/images/why_dusmint_made_for_your_town.webp",
+    alt: "Handmade cut-paper collage illustration of lightweight app running smoothly on budget phones",
+    titleEn: "Made for Your Town",
+    titleHi: "आपके शहर के लिए खास बना",
+    descEn:
+      "A light app that runs smoothly on slow networks and budget phones, in your language.",
+    descHi:
+      "एक हल्का ऐप जो धीमे नेटवर्क और किफ़ायती स्मार्टफोन पर भी आपकी अपनी भाषा में सरलता से चलता है।",
+  },
+];
+
+export default function WhyDusmint({ language = "en" }: WhyDusmintProps) {
   const isHi = language === "hi";
 
-  const pillars = [
-    {
-      icon: <IconBuildingStore size={26} stroke={1.8} className={styles.icon} />,
-      titleEn: "Empower your local kirana",
-      titleHi: "अपने स्थानीय दुकानदार को सशक्त बनाएं",
-      descEn:
-        "Every order directly supports family-run stores in your neighbourhood, keeping hard-earned money within your community.",
-      descHi:
-        "प्रत्येक ऑर्डर सीधे आपके पड़ोस के पारिवारिक स्टोर का समर्थन करता है, जिससे आपके समुदाय का पैसा समुदाय में ही रहता है।",
-    },
-    {
-      icon: <IconLeaf size={26} stroke={1.8} className={styles.icon} />,
-      titleEn: "Fresh from today's mandi",
-      titleHi: "आज की मंडी से सीधे ताज़ा",
-      descEn:
-        "No artificial warehouse chilling. Your trusted local shopkeeper handpicks vegetables, fruits, and dairy fresh every morning.",
-      descHi:
-        "गोदामों में बासी पड़ा सामान नहीं। आपके भरोसेमंद दुकानदार हर सुबह मंडी से हाथ से चुनी हुई ताज़ी सब्ज़ियाँ लाते हैं।",
-    },
-    {
-      icon: <IconTag size={26} stroke={1.8} className={styles.icon} />,
-      titleEn: "Real store pricing (zero hidden markups)",
-      titleHi: "असली दुकान वाला दाम (कोई छुपा शुल्क नहीं)",
-      descEn:
-        "Pay the exact honest MRP and printed prices as walk-in customers, with zero inflated packaging or surge convenience fees.",
-      descHi:
-        "वही ईमानदार दाम जो आप खुद जाकर देते हैं। कोई छिपा हुआ पैकिंग चार्ज या अचानक बढ़ा हुआ शुल्क नहीं।",
-    },
-    {
-      icon: <IconClock size={26} stroke={1.8} className={styles.icon} />,
-      titleEn: "True hyperlocal: 10–30 mins",
-      titleHi: "सच्ची हाइपरलोकल: 10-30 मिनट",
-      descEn:
-        "Because our delivery riders pick up from shops just 500m to 1.5km from your home, delivery is fast, safe, and reliable.",
-      descHi:
-        "क्योंकि डिलीवरी पार्टनर आपके घर से सिर्फ 500 मीटर से 1.5 किमी दूर की दुकान से सामान उठाते हैं, इसलिए डिलीवरी तुरंत होती है।",
-    },
-  ];
-
   return (
-    <section id="why-dusmint" className={styles.section}>
+    <section id="why-dusmint" className={styles.section} aria-label="Why Dusmint">
       <div className={styles.container}>
+        {/* Section Header */}
         <div className={styles.header}>
+          <span className={styles.eyebrow}>
+            {isHi ? "डसमिट ही क्यों?" : "Why Dusmint"}
+          </span>
           <h2 className={styles.title}>
             {isHi
-              ? "डसमिट डार्क स्टोर्स से बेहतर क्यों है?"
-              : "Why Dusmint is better than dark stores"}
+              ? "स्थानीय दुकानें। खरा तौल। आपका समय।"
+              : "Local shops. Honest weight. Your time."}
           </h2>
           <p className={styles.subtitle}>
             {isHi
-              ? "हम स्थानीय किराना नेटवर्क को डिजिटल तकनीक से जोड़कर आपको सर्वोत्तम अनुभव देते हैं"
-              : "We connect real neighbourhood kiranas with hyper-efficient routing for maximum freshness and trust."}
+              ? "ताज़ा और खरा सामान, आपके अपने पड़ोस के तरीके से — सीधे आपके दरवाज़े तक।"
+              : "Freshness, the neighbourhood way. Built around your lane, your favourite kirana, and your schedule."}
           </p>
         </div>
 
+        {/* 2x2 Grid (Desktop) / 1-Column (Mobile) */}
         <div className={styles.grid}>
-          {pillars.map((p, idx) => (
-            <div key={idx} className={styles.card}>
-              <div className={styles.iconBox}>{p.icon}</div>
-              <h3 className={styles.cardTitle}>
-                {isHi ? p.titleHi : p.titleEn}
-              </h3>
-              <p className={styles.cardDesc}>
-                {isHi ? p.descHi : p.descEn}
-              </p>
-            </div>
+          {CARDS.map((card) => (
+            <article key={card.id} className={styles.card}>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={card.image}
+                  alt={card.alt}
+                  width={1200}
+                  height={900}
+                  className={styles.cardImage}
+                  sizes="(max-width: 768px) 100vw, 560px"
+                />
+              </div>
+              <div className={styles.cardContent}>
+                <h3 className={styles.cardTitle}>
+                  {isHi ? card.titleHi : card.titleEn}
+                </h3>
+                <p className={styles.cardDesc}>
+                  {isHi ? card.descHi : card.descEn}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
       </div>

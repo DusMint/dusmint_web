@@ -41,7 +41,10 @@ export default function IntroPage() {
       {/* 2. Mission & Impact Section (Zomato-Style with Floating Produce & Dairy) */}
       <MissionBanner language={language} />
 
-      {/* 3. Categories digitized on Dusmint */}
+      {/* 3. Why Dusmint (Illustrated 4-Card Grid: Local shops, Honest weight, Your time) */}
+      <WhyDusmint language={language} />
+
+      {/* 4. Categories digitized on Dusmint */}
       <CategoriesSection
         language={language}
         selectedCategory={selectedCategory}
@@ -53,26 +56,23 @@ export default function IntroPage() {
         }}
       />
 
-      {/* 3. Verified Store Network Showcase */}
+      {/* 5. Verified Store Network Showcase */}
       <PopularShopsSection
         language={language}
         selectedCategory={selectedCategory}
         onOpenShopModal={openShopModal}
       />
 
-      {/* 4. Electric Hyperlocal Delivery Fleet & Tracking */}
+      {/* 6. Electric Hyperlocal Delivery Fleet & Tracking */}
       <DeliveryBanner
         language={language}
         onExploreApp={scrollToDownload}
       />
 
-      {/* 5. Why Dusmint (Hyperlocal vs Dark Stores) */}
-      <WhyDusmint language={language} />
-
-      {/* 6. How It Works (3 Steps) */}
+      {/* 7. How It Works (3 Steps) */}
       <HowItWorks language={language} />
 
-      {/* 7. App Download & QR Code Section */}
+      {/* 8. App Download & QR Code Section */}
       <AppDownloadBanner language={language} />
     </div>
   );
