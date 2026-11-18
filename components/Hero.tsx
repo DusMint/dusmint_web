@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import {
-  IconBrandGooglePlay,
-  IconBrandApple,
   IconChevronDown,
   IconBuildingStore,
 } from "@tabler/icons-react";
@@ -124,29 +123,35 @@ export default function Hero({
             {/* Google Play Button */}
             <button
               type="button"
-              className={styles.storeBadgeBtn}
+              className={styles.storeBadgeImgBtn}
               onClick={onExploreAppClick}
               aria-label="Get it on Google Play"
             >
-              <IconBrandGooglePlay size={28} className={styles.storeIcon} />
-              <div className={styles.storeTextCol}>
-                <span className={styles.storeTopText}>GET IT ON</span>
-                <span className={styles.storeMainText}>Google Play</span>
-              </div>
+              <Image
+                src="/images/google-play-badge.png"
+                alt="Get it on Google Play"
+                width={175}
+                height={52}
+                className={styles.badgeImg}
+                priority
+              />
             </button>
 
             {/* Apple App Store Button */}
             <button
               type="button"
-              className={styles.storeBadgeBtn}
+              className={styles.storeBadgeImgBtn}
               onClick={onExploreAppClick}
               aria-label="Download on the App Store"
             >
-              <IconBrandApple size={28} className={styles.storeIcon} />
-              <div className={styles.storeTextCol}>
-                <span className={styles.storeTopText}>Download on the</span>
-                <span className={styles.storeMainText}>App Store</span>
-              </div>
+              <Image
+                src="/images/app-store-badge.png"
+                alt="Download on the App Store"
+                width={156}
+                height={52}
+                className={styles.badgeImg}
+                priority
+              />
             </button>
           </div>
 

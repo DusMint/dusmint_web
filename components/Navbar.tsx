@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import {
-  IconBrandAndroid,
-  IconBrandApple,
   IconChevronDown,
   IconArrowUpRight,
 } from "@tabler/icons-react";
@@ -23,17 +21,6 @@ export default function Navbar({
 }: NavbarProps) {
   const [aboutOpen, setAboutOpen] = useState(false);
   const isHi = language === "hi";
-
-  const handleDownloadClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const el = document.getElementById("download-app");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      // Fallback: smooth scroll to bottom or play store
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-    }
-  };
 
   return (
     <header className={styles.stickyHeader}>
@@ -62,7 +49,7 @@ export default function Navbar({
       </Link>
 
       <nav className={styles.pillContainer} aria-label="Main Navigation">
-        {/* Desktop Navigation Links (Hidden completely on mobile) */}
+        {/* Desktop Navigation Links */}
         <div className={styles.desktopNav}>
           {/* About us with sleek dropdown */}
           <div
@@ -134,26 +121,6 @@ export default function Navbar({
             <IconArrowUpRight size={14} className={styles.arrowIcon} />
           </button>
         </div>
-
-        {/* 
-          Get App Pill Action:
-          On desktop: neatly placed on the right of the pill.
-          On mobile: THE ENTIRE PILL SHRINKS TO ONLY THIS DOWNLOAD ELEMENT!
-        */}
-        <a
-          href="#download-app"
-          onClick={handleDownloadClick}
-          className={styles.getAppPill}
-          aria-label="Download DusMint App for Android & iOS"
-        >
-          <span className={styles.getAppText}>
-            {isHi ? "ऐप पाएं:" : "Get app:"}
-          </span>
-          <div className={styles.storeIconsRow}>
-            <IconBrandAndroid size={18} className={styles.osIcon} />
-            <IconBrandApple size={18} className={styles.osIcon} />
-          </div>
-        </a>
       </nav>
     </header>
   );
