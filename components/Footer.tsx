@@ -6,6 +6,10 @@ import {
   IconMapPin,
   IconPhone,
   IconMail,
+  IconBrandX,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandWhatsapp,
 } from "@tabler/icons-react";
 import styles from "./Footer.module.css";
 
@@ -138,7 +142,42 @@ export default function Footer({ language, onOpenVendorModal }: FooterProps) {
             © 2026 Dusmint Hyperlocal Technologies Pvt. Ltd. All rights reserved. Kolkata, West Bengal.
           </p>
           <div className={styles.socialRow}>
-            <span>Twitter / X</span> • <span>Instagram</span> • <span>LinkedIn</span> • <span>WhatsApp</span>
+            <a
+              href="https://x.com/dusmint"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialIconBtn}
+              aria-label="Dusmint on X"
+            >
+              <IconBrandX size={17} stroke={1.8} />
+            </a>
+            <a
+              href="https://instagram.com/dusmint"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialIconBtn}
+              aria-label="Dusmint on Instagram"
+            >
+              <IconBrandInstagram size={18} stroke={1.8} />
+            </a>
+            <a
+              href="https://linkedin.com/company/dusmint"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialIconBtn}
+              aria-label="Dusmint on LinkedIn"
+            >
+              <IconBrandLinkedin size={18} stroke={1.8} />
+            </a>
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialIconBtn}
+              aria-label="Contact Dusmint on WhatsApp"
+            >
+              <IconBrandWhatsapp size={18} stroke={1.8} />
+            </a>
           </div>
         </div>
       </div>
