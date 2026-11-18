@@ -95,18 +95,18 @@ export default function Hero({
             </span>
           </div>
 
-          {/* Main Hero Headline - Big, Bold, Impactful like Zomato */}
+          {/* Main Hero Headline - Brand Slogan */}
           <h1 className={styles.heroHeading}>
             {isHi
-              ? "भारत का #1 हाइपरलोकल किराना व डेयरी ऐप"
-              : "India's #1 Local Grocery & Dairy App"}
+              ? "ताज़गी का नया पता, अब आपके पास"
+              : "Fresh has an address, it’s yours"}
           </h1>
 
           {/* Subtitle */}
           <p className={styles.heroSubtitle}>
             {isHi
-              ? "डसमिट ऐप पर अपने पड़ोस के किराना, सुबह की मंडी और ताज़ी डेयरी से 10–30 मिनट में डिलीवरी पाएं"
-              : "Experience fast & easy online ordering on the DusMint app"}
+              ? "डसमिट ऐप पर अपनी स्थानीय दुकान से ताज़ी सब्ज़ियां, मीट और डेयरी ऑर्डर करें।"
+              : "Order veggies, meat and dairy from your local shop on the Dusmint app."}
           </p>
 
           {/* App Store & Google Play Badges Row */}
